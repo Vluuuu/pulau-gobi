@@ -22,28 +22,22 @@ Rincian teknis tiap stage ada di [`ARCHITECTURE.md`](ARCHITECTURE.md) §10. Seti
 - [x] `LICENSES_AND_ASSETS.md` dibuat (catatan awal lisensi).
 - [x] Owner menerapkan patch dan push ke `main` (commit `0ad6a3c`).
 
-## Phase V — Visual Pre-Production (BERIKUTNYA; belum ada kode engine)
-- [x] Dipilih **Visual Asset Lab minimal dan reusable**; belum ada kode atau still nyata.
-- [x] Arah Gobi disetujui: semi-chibi berartikulasi; kaos oranye, celana navy, sneakers krem.
-- [ ] Detail wajah, rambut, material, proporsi terukur dan rig Gobi dikunci setelah still 3D nyata disetujui.
-- [x] Palet awal `Cozy Sky` dan pulau melayang disepakati sebagai **baseline v1**.
-- [ ] Warna final dan lighting dikunci berdasarkan still 3D.
-- [ ] Style pulau: kontur organik low-poly, bukan grid kubus (D2).
-- [ ] Evaluasi kamera (azimuth ±45°, elevasi ±35°) dan pencahayaan lewat beberapa still (D3).
-- [ ] Kalibrasi skala relatif Gobi, bangunan, tanaman, pulau (D8).
-- [ ] Tipografi subtitle.
-- [x] `docs/VISUAL_STANDARD.md` v1 dibuat dan di-push (commit `598efd9`); **concept baseline, belum VISUAL LOCKED**.
-- [ ] Still Character Sheet dan Island direview, ukuran/warna/kamera dikalibrasi, lalu status **VISUAL LOCKED** disetujui sebelum Episode 001.
+## Phase V — Arahan visual ringkas (SELESAI SEBAGAI KONSEP)
+- [x] Gaya sederhana: low-poly 3D berbasis kode, kualitas setara prototype Tiny Island sudah cukup; tidak perlu 3D detail.
+- [x] Gobi: semi-chibi, kaos oranye, celana pendek navy, sneakers krem, rig sederhana yang memungkinkan gestur/ekspresi dasar.
+- [x] Dunia: satu pulau kecil melayang di langit, kontur organik, langit pastel; Ep001 hanya Gobi dan pulau kosong.
+- [x] `docs/CHARACTER_BIBLE.md` dan `docs/VISUAL_STANDARD.md` menjadi **panduan fleksibel**, bukan syarat membuat Asset Lab terpisah.
+- [ ] Kualitas visual disesuaikan **setelah preview Episode 001 di laptop**, bukan melalui tahap still multi-angle sebelum coding.
 
 ## Phase 1 — Engine dan Episode 001
 - [ ] Stage 1 Bootstrap: versi dipin (Node, paket), `tsc`, ESLint, Vitest, konfigurasi Remotion.
 - [ ] Stage 2 Inti dunia tanpa 3D (multi-island capable, hanya command yang dibutuhkan).
-- [ ] Stage 3 Renderer produksi: pulau, air, preset kamera dan lampu.
-- [ ] Stage 4 Gobi produksi: rig articulated, clip dasar, ekspresi.
+- [ ] Stage 3 Renderer awal: pulau melayang, langit, kamera, lighting sederhana (tanpa air).
+- [ ] Stage 4 Gobi sederhana: rig/pivot dasar, wajah ekspresif secukupnya, idle/look-around/wave; tambah animasi saat cerita membutuhkan.
 - [ ] Naskah dan storyboard Episode 001 final.
 - [ ] VO Indonesia Episode 001 final (belum dibuat; tidak ada VO sementara sebagai audio final, D9).
 - [ ] Stage 5 Timeline, caption (word dan phrase), audio, outro permanen.
-- [ ] Stage 6 QA visual dan render laptop PASS.
+- [ ] Stage 6 Review preview/video Ep001 di laptop, perbaiki masalah yang nyata, render lokal PASS.
 - [ ] Upload Episode 001.
 
 ## Phase 2 — Engagement Loop

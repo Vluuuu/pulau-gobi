@@ -17,6 +17,6 @@
 13. Jangan mengubah visibility repo (private/publik) tanpa instruksi eksplisit owner.
 14. Jangan meminta akses tulis GitHub berulang kali. Bila lingkungan tidak mengizinkan push, berikan patch atau ZIP plus changed-files manifest untuk diterapkan manual.
 15. Scope guard: jangan membangun physics engine, AI penghuni, navigasi kompleks, atau simulasi ekosistem sebelum ada episode yang membutuhkannya. Implementasi bertahap; kualitas visual Gobi dan lingkungan low-poly adalah prioritas pertama.
-16. Urutan tahap: Stage 0 → Visual Pre-Production → bootstrap engine. Jangan memulai Episode 001 sebelum desain visual disetujui dan `docs/VISUAL_STANDARD.md` ada.
+16. Visual V1 sudah disepakati: low-poly 3D sederhana setara prototype Tiny Island cukup. **Tidak perlu Visual Asset Lab terpisah, multi-angle still, atau detail model berlebihan.** Setelah naskah dan VO Episode 001 disetujui, langsung buat MVP reusable secukupnya, lalu evaluasi dari preview laptop.
 17. Jangan membuat VO sementara yang dipakai sebagai audio final (D9). Catat lisensi setiap font, musik, SFX, dan aset di `docs/LICENSES_AND_ASSETS.md`.
 18. Laporkan status pengujian sebagai `PASS`, `FAIL`, atau `NOT-RUN` sesuai bukti nyata.

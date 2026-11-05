@@ -1,6 +1,6 @@
 # Visual Standard — Pulau Gobi
 
-> **v1.0 — concept baseline, 2026-11-05.** Arah visual dunia dan outfit Gobi telah disepakati. Nilai material, framing, skala, dan pencahayaan harus diuji pada still Three.js dan disetujui sebelum dianggap **VISUAL LOCKED**. Belum ada model/renderer produksi.
+> **v1.1 — panduan visual sederhana, 2026-11-05.** Arah pulau melayang dan outfit Gobi telah disepakati. Target kualitas adalah low-poly 3D sederhana seperti pilot Tiny Island. Nilai kamera/palet hanya titik awal; **tidak wajib membuat Asset Lab atau still multi-angle sebelum coding**. Evaluasi melalui preview Episode 001 di laptop. Belum ada model/renderer produksi.
 
 ## 1. Art direction dan dunia
 
@@ -84,15 +84,15 @@ Centralize warna dalam palet proyek. Verifikasi tampilannya setelah tone mapping
 - CTA/outro **persis**: **"Kalian yang komen, kita yang bangun. Yuk, bangun pulau ini bareng-bareng!"**. Elemen teks dan narasi akhir harus konsisten, tidak dipendekkan.
 - Final output **1080×1920, 30 FPS**; preview boleh lebih kecil. Durasi final mengikuti VO ElevenLabs, bukan angka detik asal.
 
-## 10. QA visual dan deliverables tahap V (belum dijalankan)
+## 10. QA visual MVP (sederhana, belum dijalankan)
 
-**Masih yang harus disetujui sebelum engine produksi / Episode 001:**
+Tidak diperlukan character sheet kompleks, Asset Lab terpisah, varian lighting 2–3 versi, atau gerbang VISUAL LOCKED sebelum Episode 001.
 
-1. Character sheet **dari model Three.js yang sama**: front, side, back, 3/4, neutral, surprise, wave/walk; bukan beberapa gambar AI yang tidak konsisten.
-2. Island still: top/3-4 isometric wide + medium Gobi; pulau utuh, kosong, tanah berfaset, awan tidak menutupi karakter.
-3. Varian lighting/palet 2–3 opsi dalam *lab minimal reusable* (tidak membangun seluruh engine).
-4. Pemeriksaan detail: wajah dan tangan, silhouette thumbnail, kaki kontak tanah, shadow bersih, warna antarframe, framing vertikal, tanpa clipping.
-5. Pemeriksaan teknis di laptop: TypeScript/build, preview still, dan visual review owner. Claude melaporkan PASS/FAIL/NOT-RUN secara jujur.
-6. Setelah owner memilih hasil still: catat revisi angka/palet/kamera dalam dokumen ini, beri status **VISUAL LOCKED**, dan versi asset Gobi disahkan.
+Setelah naskah/VO siap, Claude membuat **satu implementasi Episode 001 yang sederhana** dan reusable secukupnya. Pengguna memeriksa preview di laptop:
+1. Gobi terlihat jelas (kaos oranye, celana navy, sneakers krem), punya tangan/kaki dan gerakan dasar yang tidak kaku.
+2. Pulau kecil melayang utuh, tanpa pohon/rumah, kamera isometric dan lighting enak dilihat.
+3. Tidak ada clipping, overlap, bayangan buruk, atau teks menutupi aksi.
+4. Narasi, subtitle, dan outro sesuai brief.
+5. Perbaiki hanya masalah yang tampak pada preview. Jangan overengineer detail yang tidak berpengaruh pada kualitas tontonan.
 
-**Status sekarang:** keputusan kreatif fundamental **FINAL**, detail teknis **TARGET v1**, still/render/rig **NOT-RUN**. Jangan klaim model final atau fase V selesai sebelum bukti visual diperiksa.
+**Status:** arah kreatif disetujui; preview dan render proyek produksi masih NOT-RUN.

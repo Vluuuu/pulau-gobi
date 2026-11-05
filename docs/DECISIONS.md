@@ -31,3 +31,11 @@
 - **2026-11-05 — Urutan tahap.** Stage 0 (higiene dokumentasi) → Visual Pre-Production (desain Gobi, palet, proporsi, style pulau, kamera dan lighting lewat still, standar visual dikunci) → bootstrap engine. Episode 001 tidak dimulai sebelum desain visual disetujui.
 - **2026-11-05 — Workflow.** Claude Browser membuat source code dan dokumentasi; owner melakukan instalasi, testing, preview, rendering, Git commit/push. Bila lingkungan Claude tidak memberi akses tulis GitHub, Claude **tidak** meminta berulang kali; Claude memberikan patch atau ZIP untuk diterapkan manual. Status pengujian dilaporkan sebagai PASS, FAIL, atau NOT-RUN sesuai bukti.
 - **2026-11-05 — Dokumen arsitektur.** `docs/ARCHITECTURE_PROPOSAL.md` menjadi `docs/ARCHITECTURE.md` (rincian dari `TECHNICAL_SPEC.md`). Prioritas bila bertentangan: `DECISIONS.md` > `ARCHITECTURE.md` > `TECHNICAL_SPEC.md`.
+
+
+### 2026-11-05 — Penyederhanaan scope visual (keputusan terbaru)
+- Pengguna menyatakan kualitas **low-poly 3D sederhana seperti prototype Tiny Island** sudah cukup sebagai target; tidak perlu mengejar model premium yang sangat detail. Prototype tetap hanya referensi kualitas/gaya, bukan source code proyek produksi.
+- **Tidak perlu membuat Visual Asset Lab terpisah**, character sheet multi-angle, varian lighting, atau pose library lengkap sebelum Episode 001. Evaluasi visual dilakukan pada preview Episode 001 di laptop.
+- Gobi cukup **semi-chibi sederhana**, kaos oranye, celana pendek navy, sneakers krem; model 3D harus punya anggota tubuh yang bisa bergerak secara dasar, ekspresi sederhana, dan acting yang relevan. Detail mesh atau rig kompleks bukan prioritas.
+- Prioritas Claude Browser: **kode singkat, fungsional, reusable seperlunya**, tanpa overengineering dan tanpa render MP4 final. Produksi lanjut setelah naskah/VO Ep001 disetujui.
+- Keputusan ini **menggantikan kewajiban gerbang Visual Asset Lab/VISUAL LOCKED** yang ada pada draft roadmap/Visual Standard sebelumnya. Dokumentasi visual menjadi arahan, bukan checklist rinci yang harus dipenuhi sebelum MVP.

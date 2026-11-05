@@ -4,7 +4,7 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 
 ## Status
 - **Stage 0 (higiene dokumen): selesai dan sudah di-push (`0ad6a3c`).**
-- **Sekarang: Visual Pre-Production**. `docs/CHARACTER_BIBLE.md` dan `docs/VISUAL_STANDARD.md` v1 sudah masuk `main` (`598efd9`); identitas/outfit disetujui, model, skala, palet final, kamera, dan lighting **belum VISUAL LOCKED**. Berikutnya **Visual Asset Lab minimal reusable**, QA still di laptop, review owner. Belum ada bootstrap engine atau Episode 001.
+- **Sekarang: MVP Episode 001 setelah naskah dan VO disetujui**. Character/Visual V1 sudah cukup sebagai panduan. Visual cukup low-poly sederhana setara kualitas pilot; **tidak perlu Visual Asset Lab terpisah**, turnaround multi-angle, atau visual lock sebelum coding. Uji preview langsung dari episode di laptop. Belum ada bootstrap engine atau Episode 001.
 - **Belum ada source code, `package.json`, perintah build/test, atau episode.** Tidak ada hasil pengujian apa pun.
 - Repo sudah **Private** (diverifikasi 2026-11-05). Jangan ubah visibility.
 
@@ -32,7 +32,7 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 - Perubahan minimal berbentuk patch; jangan regenerasi atau merusak episode lama.
 - Jangan klaim sesuatu teruji tanpa bukti. Laporkan `PASS` / `FAIL` / `NOT-RUN`.
 - Claude tidak merender MP4 final dan tidak meminta akses tulis GitHub berulang; berikan patch/ZIP + manifest.
-- Jangan membuat Episode 001 sebelum desain visual disetujui.
+- Desain dasar sudah disetujui. Setelah naskah dan VO Episode 001 final, implementasikan MVP langsung; hindari tahap visual lab dan detail yang tidak diperlukan.
 
 ## Peta dokumen
 | Butuh | Buka |
@@ -54,4 +54,4 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 Belum ada snapshot. Rencana `after-ep001`: `island:main` (kecil, organik) + `res:gobi`; struktur 0, vegetasi 0.
 
 ## Tahap
-0 Higiene (selesai) → V Visual Pre-Production (berlangsung) → 1 Bootstrap → 2 Inti dunia → 3 Renderer → 4 Gobi produksi → 5 Timeline/AV → 6 QA Ep001 → 7 Engagement loop → 8 Ekspansi.
+0 Higiene (selesai) → V Arahan visual sederhana (disepakati) → 1 MVP bootstrap & Episode 001 → 2 Inti dunia → 3 Renderer → 4 Gobi produksi → 5 Timeline/AV → 6 QA Ep001 → 7 Engagement loop → 8 Ekspansi.

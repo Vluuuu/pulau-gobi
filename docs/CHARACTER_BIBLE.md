@@ -89,3 +89,7 @@ Clip lanjutan (`inspect`, `point`, `worried`, `sit`, dll.) dibuat saat cerita me
 ## 9. Gerbang persetujuan model 3D (belum PASS)
 
 Sebelum menyatakan model final, tunjukkan masih PNG berikut dari *kode Three.js sebenarnya*, bukan gambar generatif: (1) tampak depan, (2) samping, (3) belakang, (4) three-quarter/isometric, (5) close-up wajah netral dan kaget, (6) satu pose berjalan dan melambai, (7) Gobi pada pulau kosong dalam komposisi vertikal. Periksa keterbacaan siluet pada ukuran thumbnail dan setiap sambungan rig. Setelah owner menyetujui, kunci `GobiSpec` versi produksi. Saat ini statusnya **spesifikasi konsep disetujui; model 3D NOT-RUN/NOT-REVIEWED**.
+
+## 10. Scope praktis untuk implementasi awal (keputusan terbaru)
+
+**Prioritaskan karakter sederhana yang berfungsi baik, bukan model dengan detail tinggi.** Boleh memakai kombinasi geometry low-poly sederhana seperti prototype awal, selama hasilnya proporsional, mudah dikenali, dan tidak terlihat rusak saat bergerak. Rig bertingkat cukup untuk idle, menoleh, gestur tangan, dan gerakan dasar; tidak perlu menuntaskan semua clip/ekspresi di dokumen ini saat Episode 001. Model dinilai melalui preview episode, bukan wajib lewat character sheet atau Asset Lab terpisah.
