@@ -3,10 +3,10 @@
 Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentangan: `DECISIONS.md` > `ARCHITECTURE.md` > `TECHNICAL_SPEC.md`.
 
 ## Status
-- **Stage 0 (higiene dokumen): selesai di patch; menunggu owner menerapkan ke repo.**
-- Berikutnya: **Visual Pre-Production** (still desain Gobi, palet, style pulau, kamera, lighting → `docs/VISUAL_STANDARD.md`). Belum ada bootstrap engine. Belum ada Episode 001.
+- **Stage 0 (higiene dokumen): selesai dan sudah di-push (`0ad6a3c`).**
+- **Sekarang: Visual Pre-Production**. `docs/CHARACTER_BIBLE.md` dan `docs/VISUAL_STANDARD.md` v1 sudah masuk `main` (`598efd9`); identitas/outfit disetujui, model, skala, palet final, kamera, dan lighting **belum VISUAL LOCKED**. Berikutnya **Visual Asset Lab minimal reusable**, QA still di laptop, review owner. Belum ada bootstrap engine atau Episode 001.
 - **Belum ada source code, `package.json`, perintah build/test, atau episode.** Tidak ada hasil pengujian apa pun.
-- Repo harus private (D1; owner yang mengubah). Jangan ubah visibility.
+- Repo sudah **Private** (diverifikasi 2026-11-05). Jangan ubah visibility.
 
 ## Proyek dalam 6 baris
 - Serial video pendek vertikal 1080×1920, 30 fps, low-poly 3D berbasis kode, Bahasa Indonesia.
@@ -20,7 +20,7 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 - Terrain: himpunan cell untuk logika, **mesh organik low-poly**, bukan grid kubus. 1 unit = 1 cell.
 - Kamera orthographic, azimuth ±45°, elevasi ±35° (nilai final dari still).
 - State: command episode + snapshot JSON reproducible; objek lama tidak hilang tanpa peristiwa cerita.
-- Gobi: procedural low-poly, articulated rig; kualitas proporsi, ekspresi, animasi diutamakan. GLB boleh nanti untuk aset lain.
+- **Dunia:** pulau utama melayang di langit (tanpa laut/horizon air). **Gobi:** semi-chibi procedural low-poly articulated rig, kaos oranye, celana pendek navy, sneakers krem. Detail wajah/proporsi final menunggu review still; GLB boleh nanti untuk aset lain.
 - Caption: word-level dari timestamp ElevenLabs, fallback phrase-level.
 - VO Ep001 belum ada; **dilarang memakai VO sementara sebagai audio final.**
 - Lisensi dicatat di `LICENSES_AND_ASSETS.md`.
@@ -38,7 +38,7 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 | Butuh | Buka |
 | --- | --- |
 | Konsep, tone | `PROJECT_BIBLE.md` |
-| Gobi | `CHARACTER_BIBLE.md` |
+| Gobi | `CHARACTER_BIBLE.md` dan `VISUAL_STANDARD.md` |
 | Visual, kamera, lighting | `VISUAL_STYLE.md` |
 | Kontinuitas dunia | `WORLD_RULES.md` |
 | Naskah, subtitle, audio | `CONTENT_RULES.md` |
@@ -54,4 +54,4 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 Belum ada snapshot. Rencana `after-ep001`: `island:main` (kecil, organik) + `res:gobi`; struktur 0, vegetasi 0.
 
 ## Tahap
-0 Higiene → V Visual Pre-Production → 1 Bootstrap → 2 Inti dunia → 3 Renderer → 4 Gobi produksi → 5 Timeline/AV → 6 QA Ep001 → 7 Engagement loop → 8 Ekspansi.
+0 Higiene (selesai) → V Visual Pre-Production (berlangsung) → 1 Bootstrap → 2 Inti dunia → 3 Renderer → 4 Gobi produksi → 5 Timeline/AV → 6 QA Ep001 → 7 Engagement loop → 8 Ekspansi.

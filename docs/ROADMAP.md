@@ -6,7 +6,7 @@ Rincian teknis tiap stage ada di [`ARCHITECTURE.md`](ARCHITECTURE.md) §10. Seti
 - [x] Konsep Pulau Gobi, Gobi, Bahasa Indonesia, outro permanen diputuskan.
 - [x] Prototipe teknologi Tiny Island pernah dirender, tetapi **disisihkan sebagai eksperimen**.
 - [x] Repo GitHub `pulau-gobi` dibuat dan starter docs di-push (commit awal `dd9bb8e`).
-- [ ] Repo dijadikan **private** (D1; dikerjakan owner).
+- [x] Repo dijadikan **private** (D1; diverifikasi 2026-11-05).
 - [ ] Dokumen Project ChatGPT dimasukkan ke Project settings (dikerjakan owner).
 - [ ] Claude Project disambungkan ke GitHub dan file terpilih disinkronkan (dikerjakan owner; sinkron ulang setelah Stage 0 di-merge).
 - [x] Audit dokumentasi dan proposal arsitektur ditinjau dan disetujui dengan penyesuaian (D1–D10).
@@ -20,17 +20,20 @@ Rincian teknis tiap stage ada di [`ARCHITECTURE.md`](ARCHITECTURE.md) §10. Seti
 - [x] `AI_CONTEXT.md` dibuat.
 - [x] `ARCHITECTURE.md` (dari proposal) dirapikan dan diselaraskan dengan keputusan.
 - [x] `LICENSES_AND_ASSETS.md` dibuat (catatan awal lisensi).
-- [ ] Owner meninjau, menerapkan patch ke clone lokal, dan commit/push.
+- [x] Owner menerapkan patch dan push ke `main` (commit `0ad6a3c`).
 
 ## Phase V — Visual Pre-Production (BERIKUTNYA; belum ada kode engine)
-- [ ] Putuskan pendekatan lingkungan still (lab minimal atau kerangka Stage 1 minimal).
-- [ ] Opsi desain Gobi: wajah, pakaian, warna, proporsi → dipilih dan dikunci.
-- [ ] Opsi palet warna dunia → dipilih dan dikunci.
+- [x] Dipilih **Visual Asset Lab minimal dan reusable**; belum ada kode atau still nyata.
+- [x] Arah Gobi disetujui: semi-chibi berartikulasi; kaos oranye, celana navy, sneakers krem.
+- [ ] Detail wajah, rambut, material, proporsi terukur dan rig Gobi dikunci setelah still 3D nyata disetujui.
+- [x] Palet awal `Cozy Sky` dan pulau melayang disepakati sebagai **baseline v1**.
+- [ ] Warna final dan lighting dikunci berdasarkan still 3D.
 - [ ] Style pulau: kontur organik low-poly, bukan grid kubus (D2).
 - [ ] Evaluasi kamera (azimuth ±45°, elevasi ±35°) dan pencahayaan lewat beberapa still (D3).
 - [ ] Kalibrasi skala relatif Gobi, bangunan, tanaman, pulau (D8).
 - [ ] Tipografi subtitle.
-- [ ] `docs/VISUAL_STANDARD.md` dibuat dan disetujui. **Episode 001 tidak dimulai sebelum ini.**
+- [x] `docs/VISUAL_STANDARD.md` v1 dibuat dan di-push (commit `598efd9`); **concept baseline, belum VISUAL LOCKED**.
+- [ ] Still Character Sheet dan Island direview, ukuran/warna/kamera dikalibrasi, lalu status **VISUAL LOCKED** disetujui sebelum Episode 001.
 
 ## Phase 1 — Engine dan Episode 001
 - [ ] Stage 1 Bootstrap: versi dipin (Node, paket), `tsc`, ESLint, Vitest, konfigurasi Remotion.

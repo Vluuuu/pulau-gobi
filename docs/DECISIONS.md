@@ -7,6 +7,9 @@
 - **2026-11-05** — Episode 001: pulau kosong + Gobi saja. Tidak ada rumah/pohon sebelum komentar terpilih.
 - **2026-11-05** — Scope dunia terbuka: pulau diperluas, pulau baru, populasi, hewan dan fantasy (termasuk naga), dengan kontinuitas.
 - **2026-11-05** — Prototype Tiny Island lama hanya proof-of-concept teknis; proyek produksi dibangun baru.
+- **2026-11-05 — Visual V1.** Pulau utama **melayang di langit**, tanpa lautan atau permukaan tanah biasa di bawah; kontur organik berfaset. Pilihan ini final secara konsep.
+- **2026-11-05 — Gobi V1.** Proporsi **semi-chibi manusiawi** dengan articulated rig; outfit **kaos oranye, celana pendek navy, sneakers krem** ditetapkan. Rambut/wajah/material dan ukuran numerik menunggu still nyata.
+- **2026-11-05 — Visual Lab.** Pengujian still memakai **lab minimal reusable** yang dapat menjadi fondasi produksi, bukan proyek sementara yang nantinya dibuang. `VISUAL_STANDARD.md` masih **concept baseline**, bukan visual lock sampai owner menyetujui hasil render.
 - **2026-11-05** — Claude Browser menulis kode, user render di Windows, GitHub private adalah source of truth.
 
 ## Keputusan D1–D10 (arsitektur engine) — ditinjau bersama creative director

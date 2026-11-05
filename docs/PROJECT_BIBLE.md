@@ -18,7 +18,7 @@ Pulau kecil tanpa bangunan, satu penghuni: seorang pemuda bernama **Gobi**. Peno
 - Gobi bukan narator serba tahu yang selalu berhasil: ia dapat terkejut, bahagia, takut ringan, kesal lucu, dan memecahkan masalah.
 
 ## Arah perkembangan dunia
-- Mikro → pulau diperluas → permukiman/ekosistem → archipelago → dunia fantasi multibioma.
+- Mulai dari **pulau melayang di langit**; pulau diperluas → permukiman/ekosistem → kepulauan melayang → dunia fantasi multibioma.
 - Permintaan yang diperbolehkan secara kreatif: rumah, jembatan, pepohonan, kebun, kolam, pulau terbang, penduduk, naga, hutan ajaib, dll.
 - Jangan membatasi hanya objek realistis; tetap ada aturan fisika visual yang konsisten dalam universe.
 - Kontinuitas lebih penting daripada melayani semua permintaan secara literal.
@@ -30,5 +30,5 @@ Pulau kecil tanpa bangunan, satu penghuni: seorang pemuda bernama **Gobi**. Peno
 - Ending memberi payoff dan mengundang ide. Outro sama untuk semua episode.
 
 ## Belum diputuskan
-- Palet kode warna final, model rig Gobi final, tipografi final, suara ElevenLabs, musik tema, desain intro animasi, jadwal upload, nama akun handle.
+- Arah karakter **semi-chibi dengan kaos oranye, celana navy, sneakers krem** dan palet awal `Cozy Sky` sudah disetujui pada `VISUAL_STANDARD.md` v1. Yang masih menunggu still nyata: model/rig Gobi final, palet material terkalibrasi, kamera/lighting final. Tipografi final, suara ElevenLabs, musik tema, intro animasi, jadwal upload, serta handle belum ditentukan.
 - Jangan mengarang detail ini sebagai keputusan final; usulkan pilihan sebelum produksi pertama.
