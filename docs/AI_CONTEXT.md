@@ -5,7 +5,8 @@ Baca ini dulu. Buka dokumen lain hanya bila tugas membutuhkannya. Bila bertentan
 ## Status
 - **Stage 0 (higiene dokumen): selesai dan sudah di-push (`0ad6a3c`).**
 - **Sekarang: MVP Episode 001 setelah naskah dan VO disetujui**. Character/Visual V1 sudah cukup sebagai panduan. Visual cukup low-poly sederhana setara kualitas pilot; **tidak perlu Visual Asset Lab terpisah**, turnaround multi-angle, atau visual lock sebelum coding. Uji preview langsung dari episode di laptop. Belum ada bootstrap engine atau Episode 001.
-- **Belum ada source code, `package.json`, perintah build/test, atau episode.** Tidak ada hasil pengujian apa pun.
+- **Konsep/naskah/storyboard Ep001 sudah disetujui** di `docs/episodes/EP001_BRIEF.md`. Berikutnya generate VO satu suara Gobi via ElevenLabs, lalu beri audio final untuk coding.
+- **Belum ada source code, `package.json`, perintah build/test, atau implementasi episode.** Tidak ada hasil pengujian apa pun.
 - Repo sudah **Private** (diverifikasi 2026-11-05). Jangan ubah visibility.
 
 ## Proyek dalam 6 baris

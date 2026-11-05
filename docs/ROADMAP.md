@@ -34,7 +34,7 @@ Rincian teknis tiap stage ada di [`ARCHITECTURE.md`](ARCHITECTURE.md) §10. Seti
 - [ ] Stage 2 Inti dunia tanpa 3D (multi-island capable, hanya command yang dibutuhkan).
 - [ ] Stage 3 Renderer awal: pulau melayang, langit, kamera, lighting sederhana (tanpa air).
 - [ ] Stage 4 Gobi sederhana: rig/pivot dasar, wajah ekspresif secukupnya, idle/look-around/wave; tambah animasi saat cerita membutuhkan.
-- [ ] Naskah dan storyboard Episode 001 final.
+- [x] Naskah dan storyboard Episode 001 disetujui; lihat `docs/episodes/EP001_BRIEF.md` (durasi disesuaikan setelah MP3).
 - [ ] VO Indonesia Episode 001 final (belum dibuat; tidak ada VO sementara sebagai audio final, D9).
 - [ ] Stage 5 Timeline, caption (word dan phrase), audio, outro permanen.
 - [ ] Stage 6 Review preview/video Ep001 di laptop, perbaiki masalah yang nyata, render lokal PASS.
