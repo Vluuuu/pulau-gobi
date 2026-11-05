@@ -1,6 +1,8 @@
 # Technical Contract — Engine Pulau Gobi (Rencana)
 
 > Dokumen ini adalah kontrak desain; saat repository pertama dibuat belum ada runtime/source final. Claude perlu memverifikasi versi dependency dan kemampuan lingkungan implementasi.
+>
+> Rincian arsitektur (modul, skema world state, rig Gobi, timeline, strategi Remotion/R3F, roadmap) ada di [`ARCHITECTURE.md`](ARCHITECTURE.md); keputusan final ada di [`DECISIONS.md`](DECISIONS.md). Dokumen ini sengaja ringkas agar tidak menduplikasi keduanya.
 
 ## Stack awal
 React, TypeScript, Three.js, @react-three/fiber, Remotion, @remotion/three, pengelolaan data world/episode terstruktur JSON atau TS. Paket captions `@remotion/captions` bila diperlukan.
@@ -24,4 +26,4 @@ React, TypeScript, Three.js, @react-three/fiber, Remotion, @remotion/three, peng
 - Verifikasi dependency API terbaru dan konsistensi versi Remotion.
 
 ## Output tahap pertama
-- Fresh project bootstrapped, safe lint/typecheck, one Gobi model with purposeful idle/walk/wave, one small empty island, empty structures/vegetation, camera + lighting, one Indonesian VO-driven episode composition, persistent outro component, local preview & render scripts.
+Urutan tahap ada di `ROADMAP.md`. Sebelum engine dibootstrap, dilakukan **Visual Pre-Production** (desain Gobi, palet, style pulau, kamera dan lighting lewat still) hingga standar visual dikunci. Output engine tahap pertama (setelah itu): proyek baru dengan lint/typecheck, satu model Gobi, satu pulau kecil kosong tanpa struktur/vegetasi, kamera dan lighting, satu komposisi episode berbasis VO Indonesia **final**, outro permanen, dan script preview/render lokal.

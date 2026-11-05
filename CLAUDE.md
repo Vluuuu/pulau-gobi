@@ -1,6 +1,6 @@
 # Instruksi permanen untuk Claude Browser — Pulau Gobi
 
-**Baca `README.md`, `docs/PROJECT_BIBLE.md`, `docs/VISUAL_STYLE.md`, `docs/CHARACTER_BIBLE.md`, `docs/WORLD_RULES.md`, `docs/TECHNICAL_SPEC.md`, dan `docs/PRODUCTION_WORKFLOW.md` sebelum implementasi.** Jika tugas spesifik episode, baca snapshot dan brief episode tersebut.
+**Mulai dari `docs/AI_CONTEXT.md` (ringkasan). Lalu baca `README.md`, `docs/PROJECT_BIBLE.md`, `docs/VISUAL_STYLE.md`, `docs/CHARACTER_BIBLE.md`, `docs/WORLD_RULES.md`, `docs/TECHNICAL_SPEC.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/PRODUCTION_WORKFLOW.md`, `docs/CONTENT_RULES.md`, dan `docs/QA_CHECKLIST.md` sebelum implementasi** (untuk tugas kecil, baca yang relevan; `CONTENT_RULES.md` dan `QA_CHECKLIST.md` wajib untuk tugas yang menyentuh naskah, subtitle, audio, atau QA). Jika tugas spesifik episode, baca snapshot dan brief episode tersebut.
 
 1. Ini proyek **baru**; file awal hanya dokumentasi. Prototipe Tiny Island lama bukan source of truth. Buat engine baru berdasarkan kontrak dokumen, jangan meng-copy pilot tanpa keputusan owner.
 2. Setelah engine dibuat, **jangan membangun ulang** untuk tiap episode: pahami komponen existing, lakukan perubahan minimal, reusable, dan backward compatible.
@@ -14,3 +14,9 @@
 10. Jaga lisensi aset dan audio. Jangan commit `.env`, token, cache, `node_modules`, render output, atau file temporary.
 11. Prioritas: komposisi profesional, karakter bertindak sesuai cerita, gerak objek bermakna, bayangan & lighting meyakinkan, keterbacaan subtitle, scene tidak statis, tidak ada collision/overlap/clipping.
 12. Bila lingkungan tidak dapat `npm install`, lakukan QA yang memungkinkan dan nyatakan hasil runtime belum terverifikasi. Never claim full pass tanpa bukti.
+13. Jangan mengubah visibility repo (private/publik) tanpa instruksi eksplisit owner.
+14. Jangan meminta akses tulis GitHub berulang kali. Bila lingkungan tidak mengizinkan push, berikan patch atau ZIP plus changed-files manifest untuk diterapkan manual.
+15. Scope guard: jangan membangun physics engine, AI penghuni, navigasi kompleks, atau simulasi ekosistem sebelum ada episode yang membutuhkannya. Implementasi bertahap; kualitas visual Gobi dan lingkungan low-poly adalah prioritas pertama.
+16. Urutan tahap: Stage 0 → Visual Pre-Production → bootstrap engine. Jangan memulai Episode 001 sebelum desain visual disetujui dan `docs/VISUAL_STANDARD.md` ada.
+17. Jangan membuat VO sementara yang dipakai sebagai audio final (D9). Catat lisensi setiap font, musik, SFX, dan aset di `docs/LICENSES_AND_ASSETS.md`.
+18. Laporkan status pengujian sebagai `PASS`, `FAIL`, atau `NOT-RUN` sesuai bukti nyata.

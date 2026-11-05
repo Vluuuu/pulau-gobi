@@ -1,0 +1,29 @@
+# Semua teks disimpan LF di repo; Windows boleh checkout CRLF lewat autocrlf lokal.
+* text=auto eol=lf
+
+*.md   text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.json text eol=lf
+*.mjs  text eol=lf
+*.js   text eol=lf
+*.css  text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.srt  text eol=lf
+*.txt  text eol=lf
+
+# Biner: jangan diubah/di-diff sebagai teks
+*.mp3  binary
+*.wav  binary
+*.ogg  binary
+*.glb  binary
+*.gltf text eol=lf
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
