@@ -7,6 +7,13 @@
 - Gobi punya reaksi/acting sesuai kejadian.
 - Ending mempunyai payoff lalu CTA sama.
 
+## Durasi, narasi, dan caption (keputusan terbaru)
+- **Durasi fleksibel**, mengikuti kebutuhan cerita dan tempo VO; 20–60 detik atau lebih diperbolehkan. Jangan menambah filler untuk mengejar satu menit atau memangkas payoff demi durasi pendek.
+- **Caption/deskripsi media sosial singkat**, idealnya 1–3 kalimat yang memancing rasa ingin tahu dan komentar; hashtag relevan seperlunya, bukan deskripsi panjang.
+- Struktur cerita fleksibel: hook → masalah/kejadian → respons Gobi → payoff → CTA. Tidak harus selalu ada bangunan atau masalah baru, tetapi kejadian mesti berdampak pada karakter/dunia.
+- Humor muncul secara natural dari konsekuensi dunia dan kepribadian Gobi, bukan menyalin dialog kreator lain. Penonton ikut membangun dunia; Gobi menjalani konsekuensinya.
+- Utamakan naskah menarik, pacing, dan adegan sederhana yang jelas daripada kompleksitas model/engine 3D.
+
 ## Outro permanen
 **“Kalian yang komen, kita yang bangun. Yuk, bangun pulau ini bareng-bareng!”**
 
