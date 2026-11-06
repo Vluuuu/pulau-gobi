@@ -21,8 +21,8 @@
 
 Sumber data snapshot: [`../world/EP002_STATE.json`](../world/EP002_STATE.json). Episode 003 **harus mempertahankan** rumah, sawah, dua warga, dan ukuran pulau ini.
 
-## Status source GitHub
-Dokumentasi ini dapat dipush lebih awal daripada file produksi; **jangan menganggap source sudah berada di main sebelum folder `src/`, `public/`, `test/`, dan `package.json` benar-benar muncul**. Untuk baseline lengkap, sertakan MP3/screenshot asli tetapi jangan commit MP4, `node_modules` atau ZIP sementara. Rekam `package-lock.json` dari instalasi Windows saat tersedia.
+## Status source GitHub (terverifikasi 2026-11-06)
+**Source produksi lengkap sudah di-push** ke `main`, commit `a200877e02056c1f4f4caa24eea9505a118739fd`; tag `ep002-v4-approved`. Berkas source, `package.json`, `package-lock.json`, MP3 dan screenshot komentar ada di repo; MP4 tidak di-commit. Baseline Episode 003 adalah GitHub tag tersebut, bukan ZIP lawas.
 
 ## Cara kerja Episode berikutnya
 Gunakan source EP002 V4 final sebagai fondasi, patch minimal per komponen, lalu Windows melakukan preview dan render. Outro permanen tidak berubah: **"Kalian yang komen, kita yang bangun. Yuk, bangun pulau ini bareng-bareng!"**

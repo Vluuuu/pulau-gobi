@@ -1,29 +1,27 @@
-# Visual Style — Premium Low-Poly 3D
+# Visual Style — Pulau Gobi (mulai EP003)
 
-## Prinsip
-Sederhana dalam polygon, kaya dalam komposisi dan eksekusi. Jangan menyamakan low-poly dengan model kubus seadanya. Gunakan silhouette jelas, trim detail seperlunya, visual hierarchy, staging, shadow, dan gerak.
+## Identitas
+Gaya **polished simple low-poly 3D**, bukan mesh rumit; utamakan framing, wajah/acting Gobi, shadow, warna, staging dan ritme animasi. Karakter Gobi konsisten dengan EP001/EP002.
 
-## Kamera
-- Default ortografis/isometric; gerak kamera halus dan disengaja: zoom to action, pan untuk ekspansi, pull-back untuk reveal pulau baru.
-- Pastikan subjek relevan cukup besar pada layar ponsel; komposisi vertikal safe area untuk overlay/subtitle.
-- Pergantian shot tiap beberapa detik bila ritme cerita memerlukan; jangan melakukan gerakan tanpa alasan.
+## Sistem kamera beralasan cerita
+- **IslandWide / IsometricEstablishing:** memperlihatkan ukuran dan kontinuitas pulau/posisi aset. Orthographic/isometric adalah bahasa visual utama, bukan satu-satunya sudut.
+- **GobiFrontCloseup / GobiReaction:** ketika Gobi bicara/bertanya/kaget, kamera dari depan atau 3/4 sejajar wajah; mata, mulut dan gestur terbaca di layar HP.
+- **ObjectDetail:** pada pembangunan satu objek (rumah/sawah/kolam/sungai/dll.), kamera mendekat ke objek, fokus tahapan, detail material/gerak dan payoff.
+- **OverShoulder:** dari balik bahu Gobi saat melihat komentar atau pekerjaan.
+- **ConstructionReveal / IslandReveal:** setelah aksi, kamera membuka ke medium/wide untuk menunjukkan hasil relatif bangunan lama.
+- Low-angle/worm's-eye digunakan seperlunya untuk kejutan/drama, bukan setiap adegan.
+- Kamera jangan diam terlalu lama saat cerita membutuhkan aksi, tetapi **jangan** melakukan zoom/pan/orbit tanpa motivasi. Atur gerak halus dan transisi tidak memotong wajah, nama warga, subtitle atau objek.
 
-## Lighting/material
-- Palet konsisten antar episode (angka warna final akan ditetapkan bersama).
-- Lighting key + fill/ambient, soft shadow terarah, contact shadow/cast shadow, atmosfer ringan, tonal hierarchy.
-- Material sederhana tetapi berbeda antara rumput, tanah, air, kayu, batu, metal, makhluk fantasi.
-- Hindari flat lighting tanpa bayangan, overexposure, aset random yang tak serasi.
+## Acting dan kehidupan
+- Gobi menoleh, menunjuk, menggaruk kepala, bereaksi wajah/tubuh sesuai kata-kata; lip sync sederhana boleh bila feasible, tidak perlu sistem kompleks.
+- NPC punya aktivitas sederhana yang bervariasi: jalan, berhenti, saling melihat, melambai, menyiram/mengamati tanaman bila plot mendukung. Pertahankan identitas tiap warga.
+- Lingkungan bergerak halus: tanaman, awan, air, percikan/debu saat pembangunan, cahaya dan bayangan konsisten. Efek harus memperkuat cerita, bukan memenuhi layar.
+- Pembangunan: anticipation → perubahan yang jelas → settle → reaksi Gobi → reveal. Gunakan efek spesifik objek yang memuaskan.
+- SFX singkat dan bermakna; VO tetap dominan, subtitle kata/frasa aktif dan aman dari nama warga.
 
-## Gerak
-- Tiap objek muncul sesuai logika: pondasi → struktur → detail; tree growth; terrain expansion; bridge construction; summon fantasi dengan animasi berbeda.
-- Smooth easing, anticipation, follow-through, secondary animation seperlunya.
-- Selalu ada reaksi karakter bila tindakan memengaruhi Gobi.
-
-## Frame output
-- 1080x1920, 30fps final; preview boleh lebih rendah. Durasi mengikuti naskah/VO.
-- Subtitle Indonesia dinamis dengan highlight kata/frasa aktif, tidak menghalangi ekspresi Gobi atau pembangunan.
-- Kamera dan scene harus konsisten di seluruh episode; periksa 0%, 25%, 50%, 75%, 100% timeline.
-
-## Aset
-- Procedural geometry untuk aset sederhana; GLB low-poly untuk aset/karakter rumit jika dibutuhkan dan lisensinya jelas.
-- Setiap aset punya ID unik, pivot/scale dan metadata; reuse sebanyak mungkin.
+## Frame, teknis dan review
+- Output standar 1080×1920 30 FPS, durasi mengikuti cerita/VO.
+- Setiap shot/storyboard punya `subject`, `purpose`, `cameraPreset`, `angle`, `zoom`, `start/end`, `Gobi/NPC acting` dan `safe-area` jika relevan.
+- Claude F mengelola kamera preset dan lighting reusable; Claude B menyusun shot menggunakan kontraknya. Hindari konflik pada file yang sama.
+- Deterministik berbasis frame; lakukan QA Windows pada shot front close-up, detail bangunan, transisi ke wide, wajah, collision, bayangan, NPC name tag dan sinkronisasi VO.
+- Pada EP003, **ukuran pulau jauh lebih besar adalah arah kreatif**, angka radius 35–40 hanya hipotesis desain sampai disetujui. Rumah/sawah/NPC EP002 jangan hilang saat kamera atau terrain berubah.

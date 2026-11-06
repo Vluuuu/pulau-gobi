@@ -48,3 +48,15 @@
 - Episode 002 mengabadikan dua warga bernama `oktaa.blushh` dan `Afriza SuperStore`, rumah, sawah padi yang belum panen, pulau utama besar dan dekorasi yang sudah dirender.
 - Video EP002 V4 Windows Fix disetujui pemilik sebagai baseline untuk episode berikutnya. Simpan snapshot dunia, jangan reset aset/karakter atau mengubah episode lama.
 - Gunakan 4 peran Claude secara terpisah hanya jika benar-benar perlu, integrasikan patch ke satu baseline dan render final di Windows.
+
+### 2026-11-06 — Sistem warga, sinematografi, dan 6 spesialis (keputusan TERBARU)
+- **Menggantikan aturan lama:** calon warga adalah penonton yang follow dan komentar `Jadi Warga`; kreator memilih sebagian sebagai **Warga Biasa**. Follow+komentar bukan pendaftaran otomatis yang menjamin muncul, dan tidak ada klaim verifikasi follower otomatis.
+- Orang yang **ide komentarnya dipilih dan diwujudkan** menjadi **Warga Spesial**. `oktaa.blushh` dan `Afriza SuperStore` dari EP002 berstatus **Warga Spesial Angkatan Pertama**.
+- Warga terpilih mendapat model NPC low-poly 3D konsisten dari template reusable; tidak wajib menampilkan semua warga setiap episode.
+- Nama/username warga hanya tampil **±2–3 detik saat perkenalan** atau saat fokus kamera; tidak permanen, bisa memakai nama panggilan sesuai persetujuan.
+- Kamera tidak lagi selalu isometric dari atas. Saat Gobi berbicara: **front/3/4 face close-up** dan acting. Saat membangun satu objek: **detail/object close-up**. Establishing/reveal tetap isometric/orthographic. Shot dipilih karena cerita.
+- Upgrade kualitas: gestur/facial acting, aktivitas NPC sederhana, gerakan lingkungan, shadow/lighting, SFX dan build reveal yang satisfying.
+- Enam peran spesialis Claude Browser: **A World Builder, B Episode Director, C Audio/Captions, D Character/NPC, E Population/World State (baru), F Cinematography (baru)**. Peran dipakai seperlunya dengan file ownership, bukan wajib semuanya aktif tiap episode.
+- Episode 003 direncanakan memperluas pulau secara signifikan; **radius 35–40 unit adalah opsi desain, bukan angka yang sudah dikunci**. Storyboard/VO/komentar belum ditetapkan.
+- Repository GitHub telah memiliki source produksi pada `a200877` + tag `ep002-v4-approved`. Per 2026-11-06 status visibilitas terverifikasi **public**; jangan ubah visibilitas tanpa instruksi owner.
+- Jika ada konflik, butir keputusan 2026-11-06 ini **menggantikan keputusan terdahulu mengenai mekanisme warga, jumlah Claude, framing kamera, dan status repo**.

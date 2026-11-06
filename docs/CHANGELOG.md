@@ -21,3 +21,10 @@
 - `ROADMAP.md` diperbarui (menambah Phase V Visual Pre-Production); `CLAUDE.md` mewajibkan `CONTENT_RULES.md` dan `QA_CHECKLIST.md` serta menambah aturan baru.
 - Ditambahkan `docs/AI_CONTEXT.md` dan `docs/LICENSES_AND_ASSETS.md`.
 - Belum ada source engine. Tidak ada pengujian yang dijalankan (dokumen saja).
+
+## 2026-11-06 — Perbarui arah serial setelah EP002
+- Source Episode001/002 V4 approved sudah dipush ke main (`a200877`, tag `ep002-v4-approved`).
+- Aturan warga berubah: follow+komentar `Jadi Warga` = calon warga yang dapat dipilih; komentar ide diwujudkan = warga spesial; label nama non-permanen.
+- Gaya kamera selanjutnya: Gobi frontal/3-4 face closeup, object close-up saat build, isometric wide sebagai establishing/reveal.
+- Enam spesialis Claude dengan kepemilikan file: A world, B episode, C audio, D characters, E population/world state, F cinematography.
+- Dibuat creative direction EP003 (masih konsep; belum kode/naskah/VO).

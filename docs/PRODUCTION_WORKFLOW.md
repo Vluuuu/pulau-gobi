@@ -1,35 +1,37 @@
-# Workflow Produksi & Sinkronisasi GitHub
+# Workflow Produksi Pulau Gobi — 6 Spesialis
 
-## Peran
-- **ChatGPT:** creative strategy, storyboard, scripts, episode brief, review video, prompt untuk Claude, pemeliharaan dokumen.
-- **ElevenLabs:** VO narasi Indonesia dan satu outro tetap. Boleh alat TTS lain bila kualitas lebih cocok.
-- **Claude Browser:** membaca repo melalui GitHub integration/attachment, menulis dan merevisi source, memberikan ZIP/patch + manifest; jangan mengklaim skill CLI terpasang otomatis.
-- **Windows laptop:** npm install, preview, running QA, render MP4 dan Git commit/push.
-- **GitHub private:** sumber kebenaran teknis; snapshot tiap episode dan dokumentasi.
+## Sumber kebenaran
+- GitHub: https://github.com/Vluuuu/pulau-gobi (`main`); EP001–EP002 source sudah ada. Tag baseline `ep002-v4-approved`.
+- Pemilik melakukan preview/render Windows dan persetujuan akhir. ChatGPT melakukan konsep, storyboard, brief, review/QA, koordinasi dan dapat memperbarui docs lewat GitHub.
+- Claude bekerja di **Claude Browser**, menggunakan source terbaru dari GitHub. Jika konektor tidak memungkinkan write, hasilkan patch/ZIP dengan manifest; jangan buat ulang proyek.
+- ElevenLabs untuk VO bahasa Indonesia. MP4 final, node_modules, cache, secret dan ZIP kerja jangan di-commit.
+- **Repo saat pemeriksaan terakhir public**; hindari klaim private atau perubahan visibilitas tanpa keputusan owner.
 
-## Inisialisasi satu kali
-1. Buat repo private `pulau-gobi` kosong di GitHub (jangan centang inisialisasi README bila akan push starter kit ini).
-2. Ekstrak isi starter ZIP ke folder lokal `pulau-gobi`.
-3. `git init`, `git add .`, `git commit -m "docs: initialize Pulau Gobi production bible"`, `git branch -M main`, `git remote add origin https://github.com/USERNAME/pulau-gobi.git`, `git push -u origin main`.
-4. Hubungkan private repo dalam Claude Project melalui Project Knowledge → GitHub dan pilih README, CLAUDE.md, docs; klik Sync setelah push. Integrasi membantu baca konteks, bukan janji write access.
-5. Di Project ChatGPT, masukkan isi `PROJECT_INSTRUCTIONS_CHATGPT.md` melalui menu ••• → Project settings → Instructions.
+## Spesialisasi dan pemilik perubahan
+| Sesi | Peran | Pemilik utama |
+| --- | --- | --- |
+| Claude A | World Builder | terrain, expansion, asset bangunan, tanaman, kolam/sungai/lingkungan |
+| Claude B | Episode Director | `EpisodeNNNScene`, script staging, per-shot direction, timeline dan integrasi |
+| Claude C | Audio & Captions | caption timelines, timing VO, SFX, audio mix |
+| Claude D | Character & NPC | Gobi/NPC meshes, reusable animation, expression, name tag visual |
+| Claude E | Population & World State | registrasi/kandidat, roster, ID stabil, class biasa/spesial, snapshot state |
+| Claude F | Cinematography | shot/camera presets, camera transitions, lighting presets |
 
-## Untuk episode baru
-1. Dalam ChatGPT: pilih ide komentar, pastikan world state terakhir benar; buat naskah + storyboard + kebutuhan Gobi.
-2. Siapkan MP3 ElevenLabs narasi Indonesia dan outro tetap; transkrip/timestamp jika ada.
-3. Susun brief sesuai `EPISODE_BRIEF_TEMPLATE.md` dengan referensi episode/snapshot terakhir.
-4. Di Claude Browser: sync GitHub, attach brief+VO, prompt **berubah seminimal mungkin**; minta source code ZIP lengkap/patch, changed-file manifest, instruksi penerapan ke clone lokal, QA transparan.
-5. Di laptop: di branch kerja baru (`git checkout -b feat/epNNN`), salin hanya perubahan yang relevan, `npm install` bila lockfile berubah, jalankan checks dan Remotion Studio. Bandingkan hasil dengan sebelum.
-6. Periksa subtitle, framing kamera, reaksi Gobi, kontinuitas terrain, detail visual, dan render smoke test lokal. Kembalikan umpan balik ke Claude bila perlu.
-7. Setelah PASS, commit dengan pesan jelas, push branch, merge ke main setelah review, lalu sync Claude Project.
-8. Render dan upload ke media sosial. Catat metrik sesudah rilis untuk evaluasi strategi.
+**Aturan koordinasi:** tentukan file ownership sebelum tugas paralel. B tidak boleh menulis ulang sistem kamera F, rig D, roster E, environment A atau subtitles C tanpa sinkronisasi. E mendefinisikan **data** warga, D merender **visual**. B mengatur **kapan dan di mana** karakter/shot digunakan. Gunakan sesi seperlunya, bukan seluruh enam setiap episode.
 
-## Aturan perubahan file
-- Lebih baik **patch/diff** dari source existing daripada full regenerate.
-- Jika Claude memberi ZIP penuh, jangan blind overwrite; bandingkan dengan `git diff` dan file manifest.
-- Jangan menghapus perubahan user yang baru dibuat di lokal.
-- `.env`, token API ElevenLabs, cache, node_modules, MP4 final, dan file sementara jangan dimasukkan ke Git.
-- Buka issue untuk bug dan ide besar; satu PR/branch per tugas.
+## Alur per episode
+1. ChatGPT + owner pilih komentar/kandidat, sepakati arah kreatif, hook, konsekuensi, payoff, CTA. Gunakan world snapshot episode sebelumnya.
+2. Susun naskah dan storyboard **termasuk type shot kamera** serta target close-up, aktivitas warga, dan efek pembangunan. Finalkan ide dan durasi fleksibel.
+3. ElevenLabs hasilkan VO final; siapkan file MP3/timing subtitle.
+4. Buat brief: baseline commit/tag, file yang boleh diedit per spesialis, ketergantungan antar tugas, acceptance criteria, perkiraan timing, asset references, before/after world state.
+5. A/D/E/F bisa bekerja paralel hanya bila tidak menyentuh file yang sama. C mengerjakan caption, B mengorkestrasi setelah API/komponen stabil. Setiap Claude memberi patch/manifest + test PASS/FAIL/NOT-RUN.
+6. Integrasikan patch ke branch kerja dari main terbaru (jangan salin ZIP buta), jalankan test numerik/typecheck dan periksa import **case-insensitive Windows**. Laporkan yang belum dijalankan.
+7. Windows: `npm install` bila dependensi berubah, `npm run test:all`, `npm run dev`, pilih komposisi, preview, kemudian `npm run render:epNNN` jika script tersedia.
+8. ChatGPT/owner review MP4/frame nyata: Gobi saat berbicara menghadap kamera, zoom objek, reaksi, caption, NPC name tags, continuity objek, camera smoothness, soft shadows, VO/outro.
+9. Setelah owner setuju: merge code + update docs/episode snapshots + tag rilis yang layak; publikasi dan evaluasi komentar/follow/retensi.
 
-## Naming
-`ep001`, `ep002`; `feat/ep002-house`; `fix/gobi-walk`; `assets/dragon-v1`; `out/ep001-final.mp4` (ignored). VO `public/audio/ep001-vo.mp3`, outro `public/audio/shared-outro.mp3` bila hak pakai aman.
+## Praktik Git
+- Jangan menimpa Episode001/002 approved. Simpan snapshot dunia secara append-only sebagai rekam cerita.
+- Cabang/patch minimal; branch per kepemilikan. Manifest wajib. Hindari editing file yang sama dari dua Claude secara paralel.
+- Source repository dan nama file kompatibel Windows: jangan buat dua file yang hanya beda kapitalisasi, mis. `IslandDecor.tsx` vs `islandDecor.ts`.
+- Jangan mengklaim full typecheck/render PASS tanpa bukti. Source/tes komputer terpisah dari QA visual.

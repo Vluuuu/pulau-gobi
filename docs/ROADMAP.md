@@ -2,8 +2,11 @@
 - [x] EP001 voice-over, source, render, publikasi.
 - [x] EP002: dua komentar dipilih, pulau diperluas, rumah dan sawah dibangun, dua NPC komentator, subtitle highlight, VO final.
 - [x] EP002 V4 Windows Fix dirender dan disetujui; source ZIP frozen, snapshot editorial tercatat.
-- [ ] Sinkronisasi **source lengkap** termasuk MP3/screenshot ke GitHub root (`src/`, `public/`, `package.json`, `test/`).
-- [ ] Mulai storyboard/VO EP003 dari dunia akhir EP002.
+- [x] Sinkronisasi **source lengkap** termasuk MP3/screenshot ke GitHub root (`src/`, `public/`, `package.json`, `test/`), commit `a200877`, tag `ep002-v4-approved`.
+- [ ] Finalkan komentar, hook/storyboard sinematik, jumlah warga dan VO EP003 dari dunia akhir EP002 (lihat `EP003_CREATIVE_DIRECTION.md`).
+- [ ] Rancang integrasi visual NPC 3D terpilih + roster (Claude D/E).
+- [ ] Tambahkan camera presets frontal/objek/reveal reusable dengan alasan shot (Claude F/B).
+- [ ] Uji pembesaran pulau berikutnya tanpa menghilangkan world state EP002 (Claude A).
 
 > Checklist panjang di bawah adalah rancangan lama; beberapa butir blueprint telah digantikan oleh implementasi episode sederhana yang sudah berjalan. Tidak perlu membangun engine besar untuk menyelesaikannya.
 
