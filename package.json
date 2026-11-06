@@ -1,0 +1,34 @@
+{
+  "name": "pulau-gobi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pulau Gobi - Episode 001 & 002 (low-poly 3D, Remotion + React Three Fiber)",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Episode001 out/episode001.mp4 --gl=angle",
+    "still": "remotion still src/index.ts Episode001 out/preview.png --frame=330 --gl=angle",
+    "render:ep002": "remotion render src/index.ts Episode002 out/episode002.mp4 --gl=angle",
+    "still:ep002": "remotion still src/index.ts Episode002 out/ep002-still.png --frame=1000 --gl=angle",
+    "test:ep002": "node --experimental-strip-types test/ep002Direction.test.mjs",
+    "still:ep002-preview": "remotion still src/index.ts Ep002BuildPreview out/ep002-build-preview.png --frame=300 --gl=angle",
+    "still:ep002-npc": "remotion still src/index.ts Ep002NpcPreview out/ep002-npc-preview.png --frame=200 --gl=angle",
+    "test:npc": "node --experimental-strip-types test/villagerPath.test.mjs",
+    "test:island": "node --experimental-strip-types test/islandRocks.test.mjs",
+    "test:decor": "node --experimental-strip-types test/islandDecor.test.mjs",
+    "test:all": "npm run test:ep002 && npm run test:npc && npm run test:island && npm run test:decor"
+  },
+  "dependencies": {
+    "@react-three/fiber": "8.17.10",
+    "@remotion/cli": "^4.0.250",
+    "@remotion/three": "^4.0.250",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "^4.0.250",
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/three": "0.169.0",
+    "typescript": "5.6.3"
+  }
+}
