@@ -1,6 +1,6 @@
 # Episode 003 — Arahan Kreatif Awal (belum naskah atau implementasi)
 
-**Status:** ARAH KREATIF DISETUJUI; pilihan komentar, naskah, VO, storyboard detail, jumlah warga baru, model 3D dan ukuran pulau akhir BELUM diputuskan. Dokumen ini **bukan** perintah untuk langsung coding.
+**Status:** NASKAH VO V1 DISETUJUI + STORYBOARD V1 tersedia di [`episodes/EP003_STORYBOARD_V1.md`](episodes/EP003_STORYBOARD_V1.md). MP3 ElevenLabs, durasi/timing aktual, sumber screenshot komentar, model 3D baru dan radius final BELUM diselesaikan. Dokumen ini **bukan** perintah untuk langsung coding.
 
 ## Pilar yang sudah disetujui
 1. Episode 003 melanjutkan dunia EP002 V4 approved tanpa reset. Rumah pertama, sawah, dua warga lama, pohon, rumput, batu dan dekorasi tetap ada.
@@ -17,7 +17,7 @@
 - Camera presets reusable: `GobiFrontCloseup`, `GobiReaction`, `ObjectDetail`, `OverShoulder`, `IslandWide`, `ConstructionReveal`.
 
 ## Kebutuhan sebelum implementasi
-- Pilih komentar asli yang akan diwujudkan dan kandidat warga baru. Pastikan username/izin dan mekanisme follow dapat dibuktikan sebatas akses platform.
-- Tentukan hook/VO/dialog, storyboard dan alasan cerita ekspansi. Pilih radius akhir setelah melihat komposisi.
+- Komentar `shifalina_` dipilih untuk rumah tingkat + warteg, dan akan menjadi penjaga warteg/Warga Spesial (perlu screenshot sumber dan pemeriksaan identitas). Klaster lain untuk rumah, ekspansi, sungai, peternakan/perkebunan. Data warga biasa tambahan belum dipilih.
+- Naskah/ide dan storyboard V1 sudah ada; **buat VO MP3 final lebih dulu**, retime shot setelah itu. Pilih radius akhir setelah melihat komposisi.
 - Buat kontrak terpisah untuk Claude A (terrain), D (NPC visual), E (roster/world state), F (camera presets); B menyatukan adegan, C mengatur timing caption/VO.
 - Tes visual di Windows setelah integrasi; tidak ada klaim EP003 sudah berjalan sekarang.

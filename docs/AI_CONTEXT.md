@@ -6,7 +6,7 @@
 - EP001: pulau kecil + Gobi, sudah dirender dan dipublikasikan.
 - EP002 V4 Windows Fix: 90 detik, 1080×1920 30 FPS, sudah dirender di Windows dan disetujui. Tidak perlu dibuat ulang.
 - Snapshot editorial: `docs/world/EP001_STATE.json` dan `docs/world/EP002_STATE.json`; **belum otomatis dipakai runtime**. Release notes: `docs/episodes/EP002_RELEASE.md`.
-- Episode 003 **belum punya naskah, VO atau source final**. Diskusikan konsep dulu.
+- Episode 003 **naskah VO V1 sudah disetujui owner**, dan storyboard sinematik V1 sudah ditulis pada `docs/episodes/EP003_STORYBOARD_V1.md`. **VO MP3 belum dibuat**, timecode masih estimasi, source EP003 belum diimplementasikan.
 
 ## World state sesudah EP002
 - Satu pulau utama melayang dengan radius 11,7 unit.
@@ -29,7 +29,7 @@
 - Ketika membangun satu objek, gunakan object-detail close-up; kemudian reveal wide yang mempertahankan objek lama.
 - Reaksi tubuh/wajah yang sesuai narasi, aktivitas NPC, gerak lingkungan ringan, lighting, SFX dan kamera yang punya tujuan.
 - **Rencana, belum final:** pulau EP003 ingin sangat besar; radius 35–40 unit usulan eksploratif, bukan ukuran pasti.
-- Baca `docs/EP003_CREATIVE_DIRECTION.md` untuk brief arah visual/cerita, bukan instruksi langsung coding.
+- Baca `docs/episodes/EP003_STORYBOARD_V1.md` untuk naskah/shot draft yang disepakati. Ini **bukan perintah langsung coding** sebelum VO MP3, source komentar dan kontrak modul siap.
 
 ## Enam Claude Browser sesuai spesialisasi
 - A world builder (aset, terrain, bangunan); B episode director (scene, pacing, integrasi);
@@ -40,4 +40,4 @@
 - Repo saat dicek **public**. Jangan ubah visibility tanpa izin pemilik.
 
 ## Langkah selanjutnya
-Pilih ide/komentar EP003, rumuskan hook, naskah/storyboard sinematik dan keputusan ekspansi; tentukan peran Claude berdasarkan scope; baru finalkan VO dan coding.
+Siapkan MP3 ElevenLabs dari naskah EP003 yang disetujui; setelah durasi diketahui sesuaikan timecode storyboard, ambil screenshot komentar sah, finalkan radius/kontrak modul, baru prompt coding Claude A–F.
