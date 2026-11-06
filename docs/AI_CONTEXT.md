@@ -6,7 +6,7 @@
 - EP001: pulau kecil + Gobi, sudah dirender dan dipublikasikan.
 - EP002 V4 Windows Fix: 90 detik, 1080×1920 30 FPS, sudah dirender di Windows dan disetujui. Tidak perlu dibuat ulang.
 - Snapshot editorial: `docs/world/EP001_STATE.json` dan `docs/world/EP002_STATE.json`; **belum otomatis dipakai runtime**. Release notes: `docs/episodes/EP002_RELEASE.md`.
-- Episode 003 **naskah VO V1 sudah disetujui owner**, dan storyboard sinematik V1 sudah ditulis pada `docs/episodes/EP003_STORYBOARD_V1.md`. **VO MP3 belum dibuat**, timecode masih estimasi, source EP003 belum diimplementasikan.
+- Episode 003 **naskah VO dan cast disetujui**, storyboard ada di `docs/episodes/EP003_STORYBOARD_V1.md`; **VO final sudah tersedia sebagai lampiran pemilik `eps 3.mp3`, 99.552625 s (BELUM masuk repo)**. Brief handoff terbaru `docs/episodes/EP003_PRODUCTION_BRIEF.md`. Source EP003 belum diimplementasikan; timecode tiap kalimat menunggu alignment.
 
 ## World state sesudah EP002
 - Satu pulau utama melayang dengan radius 11,7 unit.
@@ -22,7 +22,7 @@
 - Warga spesial: komentar ide yang dipilih dan diwujudkan; tampil dalam momen cerita istimewa.
 - Nama panggilan/username: muncul sekitar 2–3 detik saat perkenalan atau saat fokus, **tidak permanen**.
 - Hanya sebagian NPC yang ditampilkan per adegan; yang lain tetap ada di roster. Jangan klaim akses follower otomatis.
-- **Belum diimplementasikan:** sistem pendaftaran calon warga, skala populasi dan pipeline identitas reusable baru. Claude E bertugas merancangnya bila diputuskan dalam brief.
+- **Belum diimplementasikan:** sistem pendaftaran dan pipeline identitas NPC reusable. Untuk EP003, 4 warga baru dipilih pemilik: `shifalina_`, `damar_zan`, `Eka Agustin`, `joy.__3.15`; total penghuni setelah EP003 direncanakan 7 termasuk Gobi. Detail klasifikasi lihat production brief.
 
 ## Arah sinematik baru — disetujui
 - Isometric/orthographic untuk establishing/wide reveal, tetapi ketika Gobi bicara gunakan frontal/three-quarter close-up yang menonjolkan wajah/gestur.
@@ -40,4 +40,4 @@
 - Repo saat dicek **public**. Jangan ubah visibility tanpa izin pemilik.
 
 ## Langkah selanjutnya
-Siapkan MP3 ElevenLabs dari naskah EP003 yang disetujui; setelah durasi diketahui sesuaikan timecode storyboard, ambil screenshot komentar sah, finalkan radius/kontrak modul, baru prompt coding Claude A–F.
+VO EP003 sudah tersedia sebagai lampiran pengguna (99.552625 s), screenshot komentar diterima, production brief serta prompt A–F ada di `docs/episodes/EP003_PRODUCTION_BRIEF.md` dan `docs/tasks/ep003/`. Berikutnya alignment MP3 oleh Claude C, kontrak A/E/F/D, lalu integrasi Claude B dan QA Windows. Radius final belum ditentukan.
