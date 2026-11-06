@@ -41,3 +41,8 @@
 
 ## Langkah selanjutnya
 VO EP003 sudah tersedia sebagai lampiran pengguna (99.552625 s), screenshot komentar diterima, production brief serta prompt A–F ada di `docs/episodes/EP003_PRODUCTION_BRIEF.md` dan `docs/tasks/ep003/`. Berikutnya alignment MP3 oleh Claude C, kontrak A/E/F/D, lalu integrasi Claude B dan QA Windows. Radius final belum ditentukan.
+
+## EP003 World Builder task split (6 Nov 2026)
+- Claude A untuk EP003 dipecah menjadi A1 terrain/layout, A2 river, A3 house renovation, A4 warteg. B membuat world barrel `src/episode003/world/index.ts` dan mengintegrasikan. Baca `docs/tasks/ep003/CLAUDE_A_SPLIT.md`.
+- Paket tugas Claude adalah ZIP scoped lokal; sesi Claude tidak perlu membuka GitHub. Source resmi tetap `main` untuk integrasi/commit akhir.
+- Claude E sudah melaporkan patch data selesai (6 warga, 105 follower agregat, radius draft 37.5) dengan 9/9 tests PASS, **belum** integrasi. Patch A1–A4 belum diterima/diuji.

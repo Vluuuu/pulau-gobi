@@ -1,3 +1,5 @@
+> **UPDATE 2026-11-06:** Claude A dipecah menjadi **A1 (terrain/layout), A2 (river), A3 (house), A4 (warteg)**. B mengintegrasikan `world/index.ts`. Lihat [`docs/tasks/ep003/CLAUDE_A_SPLIT.md`](../tasks/ep003/CLAUDE_A_SPLIT.md). Sesi Claude memakai ZIP scoped lokal tanpa GitHub. Empat modul baru belum diuji/render.
+
 # PULAU GOBI — EP003 PRODUCTION BRIEF (Handoff V1)
 **Tanggal:** 2026-11-06  
 **Tahap:** pra-implementasi → siap distribusi modul Claude; user sudah menyetujui konsep/naskah/cast.  

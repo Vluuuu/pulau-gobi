@@ -1,3 +1,5 @@
+> **DIARSIPKAN UNTUK EP003.** Scope World Builder di file ini sudah dipecah menjadi A1–A4. Gunakan [`CLAUDE_A_SPLIT.md`](CLAUDE_A_SPLIT.md) dan ZIP scoped masing-masing, bukan mengerjakan semua tugas di bawah ini sebagai Claude A tunggal.
+
 # PROMPT CLAUDE A — EP003 WORLD BUILDER
 
 Kamu Claude A, spesialis World Builder. Tugas ini **implementasi assets dunia** EP003 dari main terbaru, bukan desain ulang EP001/EP002.
