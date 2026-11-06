@@ -15,7 +15,10 @@
     "test:npc": "node --experimental-strip-types test/villagerPath.test.mjs",
     "test:island": "node --experimental-strip-types test/islandRocks.test.mjs",
     "test:decor": "node --experimental-strip-types test/islandDecor.test.mjs",
-    "test:all": "npm run test:ep002 && npm run test:npc && npm run test:island && npm run test:decor"
+    "test:all": "npm run test:ep002 && npm run test:npc && npm run test:island && npm run test:decor",
+    "test:ep003": "node --test --experimental-strip-types test/ep003*.test.mjs test/episode003-state.test.mjs",
+    "still:ep003": "remotion still src/index.ts Episode003 out/ep003-still.png --frame=2210 --gl=angle",
+    "build:ep003": "remotion bundle src/index.ts --out-dir=out/ep003-bundle"
   },
   "dependencies": {
     "@react-three/fiber": "8.17.10",
