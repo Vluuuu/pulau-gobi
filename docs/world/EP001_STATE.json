@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "episode": "EP001",
+  "state": "after-episode",
+  "narrative": "Gobi tersesat di pulau melayang yang belum mempunyai fasilitas",
+  "islands": [
+    {
+      "id": "island-main",
+      "type": "floating-lowpoly",
+      "radiusWorldUnits": 3,
+      "position": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mainCharacter": {
+    "id": "gobi",
+    "name": "Gobi",
+    "outfit": [
+      "orange-shirt",
+      "navy-shorts",
+      "cream-sneakers"
+    ]
+  },
+  "structures": [],
+  "farms": [],
+  "villagers": [],
+  "decorations": {
+    "trees": 0,
+    "shrubs": 0,
+    "flowers": 0,
+    "grassTufts": 0,
+    "pebbles": 0
+  },
+  "populationIncludingGobi": 1,
+  "sourceReferences": [
+    "src/Episode001.tsx",
+    "src/Island.tsx",
+    "src/Gobi.tsx"
+  ],
+  "note": "Snapshot kontinuitas editorial; belum otomatis dikonsumsi renderer."
+}

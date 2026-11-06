@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "episode": "EP002",
+  "state": "after-episode",
+  "narrative": "Pulau diperluas, rumah pertama berdiri, padi mulai ditanam, dan dua komentator terpilih menjadi warga.",
+  "islands": [
+    {
+      "id": "island-main",
+      "type": "floating-lowpoly",
+      "radiusWorldUnits": 11.7,
+      "relativeRadiusToEp001": 3.9,
+      "position": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "mainCharacter": {
+    "id": "gobi",
+    "name": "Gobi",
+    "outfit": [
+      "orange-shirt",
+      "navy-shorts",
+      "cream-sneakers"
+    ]
+  },
+  "structures": [
+    {
+      "id": "house-001",
+      "type": "wooden-house",
+      "islandId": "island-main",
+      "position": [
+        -5,
+        0,
+        -1
+      ],
+      "rotationYRadians": 0.7853981633974483,
+      "scale": 1.65
+    }
+  ],
+  "farms": [
+    {
+      "id": "rice-plot-001",
+      "type": "rice-field",
+      "islandId": "island-main",
+      "position": [
+        4.9,
+        0,
+        -2.6
+      ],
+      "rotationYRadians": 0.7853981633974483,
+      "scale": 1.9,
+      "status": "planted-not-harvested"
+    }
+  ],
+  "villagers": [
+    {
+      "id": "warga-1",
+      "displayName": "oktaa.blushh",
+      "islandId": "island-main",
+      "sourceCommentScreenshot": "public/episode002/comment_01_expand_home_food.png",
+      "behavior": "deterministic-walk-and-pause"
+    },
+    {
+      "id": "warga-2",
+      "displayName": "Afriza SuperStore",
+      "islandId": "island-main",
+      "sourceCommentScreenshot": "public/episode002/comment_02_farm_rice.png",
+      "behavior": "deterministic-walk-and-pause"
+    }
+  ],
+  "populationIncludingGobi": 3,
+  "decorations": {
+    "trees": 6,
+    "shrubs": 11,
+    "flowers": 47,
+    "grassTufts": 40,
+    "pebbles": 14
+  },
+  "storyFlags": {
+    "gobiHasHouse": true,
+    "riceHarvested": false,
+    "moreFoodNeeded": true,
+    "onlyOneHouse": true
+  },
+  "sourceReferences": [
+    "src/Episode002Scene.tsx",
+    "src/episode002/sceneLayout.ts",
+    "src/episode002/villagerRoster.ts",
+    "src/episode002/islandDecor.ts"
+  ],
+  "note": "Snapshot kontinuitas editorial; implementasi visual saat ini masih dikendalikan oleh TypeScript, bukan file JSON ini."
+}

@@ -39,3 +39,12 @@
 - Gobi cukup **semi-chibi sederhana**, kaos oranye, celana pendek navy, sneakers krem; model 3D harus punya anggota tubuh yang bisa bergerak secara dasar, ekspresi sederhana, dan acting yang relevan. Detail mesh atau rig kompleks bukan prioritas.
 - Prioritas Claude Browser: **kode singkat, fungsional, reusable seperlunya**, tanpa overengineering dan tanpa render MP4 final. Produksi lanjut setelah naskah/VO Ep001 disetujui.
 - Keputusan ini **menggantikan kewajiban gerbang Visual Asset Lab/VISUAL LOCKED** yang ada pada draft roadmap/Visual Standard sebelumnya. Dokumentasi visual menjadi arahan, bukan checklist rinci yang harus dipenuhi sebelum MVP.
+
+### 2026-11-06 — Keputusan produksi Episode 001–002
+- Kualitas target: **simple polished low-poly**, cerita dan acting lebih penting daripada detail mesh/engine berat.
+- Video mengikuti VO, durasi fleksibel (sekitar 20–90 detik atau lebih bila cerita perlu); deskripsi media sosial ringkas.
+- Penonton yang **komentarnya terpilih** menjadi warga permanen; follower/semua komentar tidak otomatis menjadi warga. Satu akun terpilih = satu identitas; nama boleh ditampilkan singkat saat perkenalan.
+- Warga adalah NPC ringan yang berjalan/diam/berputar deterministik berdasarkan frame, tanpa AI dan simulasi kompleks.
+- Episode 002 mengabadikan dua warga bernama `oktaa.blushh` dan `Afriza SuperStore`, rumah, sawah padi yang belum panen, pulau utama besar dan dekorasi yang sudah dirender.
+- Video EP002 V4 Windows Fix disetujui pemilik sebagai baseline untuk episode berikutnya. Simpan snapshot dunia, jangan reset aset/karakter atau mengubah episode lama.
+- Gunakan 4 peran Claude secara terpisah hanya jika benar-benar perlu, integrasikan patch ke satu baseline dan render final di Windows.

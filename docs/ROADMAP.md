@@ -1,3 +1,12 @@
+# STATUS TERKINI (2026-11-06, menggantikan checklist lama di bawah)
+- [x] EP001 voice-over, source, render, publikasi.
+- [x] EP002: dua komentar dipilih, pulau diperluas, rumah dan sawah dibangun, dua NPC komentator, subtitle highlight, VO final.
+- [x] EP002 V4 Windows Fix dirender dan disetujui; source ZIP frozen, snapshot editorial tercatat.
+- [ ] Sinkronisasi **source lengkap** termasuk MP3/screenshot ke GitHub root (`src/`, `public/`, `package.json`, `test/`).
+- [ ] Mulai storyboard/VO EP003 dari dunia akhir EP002.
+
+> Checklist panjang di bawah adalah rancangan lama; beberapa butir blueprint telah digantikan oleh implementasi episode sederhana yang sudah berjalan. Tidak perlu membangun engine besar untuk menyelesaikannya.
+
 # Roadmap
 
 Rincian teknis tiap stage ada di [`ARCHITECTURE.md`](ARCHITECTURE.md) §10. Setiap stage selesai dengan gerbang persetujuan owner. Status hanya dicentang bila ada buktinya.

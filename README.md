@@ -1,35 +1,31 @@
 # Pulau Gobi
 
-**Satu penduduk. Pulau kosong. Penonton ikut menentukan dunia berikutnya.**
+**Penonton mengusulkan pembangunan. Gobi menjalani konsekuensinya.**
 
-Proyek produksi serial low-poly 3D berbasis kode (Three.js + React Three Fiber + Remotion), bahasa Indonesia, dengan protagonis Gobi dan perkembangan dunia mengikuti komentar terpilih. Dunia dapat meluas ke pulau baru dan unsur fantasi, sambil menjaga kontinuitas antar episode.
+Serial animasi pendek low-poly 3D berbahasa Indonesia, dibangun dengan TypeScript, React, Three.js/React Three Fiber dan Remotion.
 
-> **Status:** `PRE-PRODUCTION / DOCS ONLY` (Stage 0 selesai; berikutnya *Visual Pre-Production*). Repository berisi kontrak kreatif, arsitektur, dan alur kerja. Belum ada engine atau episode yang bisa dijalankan. Prototype Tiny Island lama **bukan** dasar kode proyek final.
+## Status terbaru (6 November 2026)
+- **Episode 001:** sudah dirender dan dipublikasikan; Gobi sendiri di pulau kecil.
+- **Episode 002:** sudah dirender dan disetujui (V4 Windows Fix); pulau besar, rumah pertama, sawah, serta dua komentator menjadi warga.
+- Snapshot kontinuitas: [EP001](docs/world/EP001_STATE.json) dan [EP002](docs/world/EP002_STATE.json).
+- [Catatan versi final Episode 002](docs/episodes/EP002_RELEASE.md).
+- **Source code produksi sedang disinkronkan ke main**. Selama folder `src/` dan `package.json` belum ada di root repository, gunakan ZIP V4 yang sudah dirender di laptop; jangan mengklaim repo sudah bisa dibuild.
 
-## Urutan baca
-0. [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md) — ringkasan singkat untuk sesi AI (baca ini dulu, lalu dokumen di bawah sesuai tugas).
-1. [`CLAUDE.md`](CLAUDE.md) — instruksi developer.
-2. [`docs/PROJECT_BIBLE.md`](docs/PROJECT_BIBLE.md) — identitas dunia dan konsep.
-3. [`docs/CHARACTER_BIBLE.md`](docs/CHARACTER_BIBLE.md) — karakter Gobi.
-4. [`docs/VISUAL_STYLE.md`](docs/VISUAL_STYLE.md) — visual & kualitas.
-5. [`docs/WORLD_RULES.md`](docs/WORLD_RULES.md) — kontinuitas dan struktur dunia.
-6. [`docs/PRODUCTION_WORKFLOW.md`](docs/PRODUCTION_WORKFLOW.md) — Claude Browser → laptop → GitHub.
-7. [`docs/TECHNICAL_SPEC.md`](docs/TECHNICAL_SPEC.md) — kontrak teknis tingkat tinggi.
-8. [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — rancangan arsitektur engine yang disetujui.
-9. [`docs/DECISIONS.md`](docs/DECISIONS.md) — log keputusan (D1–D10).
-10. [`docs/CONTENT_RULES.md`](docs/CONTENT_RULES.md) dan [`docs/QA_CHECKLIST.md`](docs/QA_CHECKLIST.md) — aturan naskah/subtitle dan QA.
-11. [`docs/EPISODE_BRIEF_TEMPLATE.md`](docs/EPISODE_BRIEF_TEMPLATE.md) — template produksi.
+## Cara menjalankan (setelah source tersimpan di root repo)
+```powershell
+npm install
+npm run dev
+npm run test:all
+npm run render:ep002
+```
 
-## Kalimat penutup permanen
-> “Kalian yang komen, kita yang bangun. Yuk, bangun pulau ini bareng-bareng!”
+Hasil render MP4 tidak dimasukkan ke Git. Arsip sementara, `node_modules`, dan kredensial juga tidak di-commit.
 
-## Prinsip kerja
-- GitHub (repo **private** selama pengembangan awal, lihat D1) adalah sumber kebenaran.
-- Claude Browser: implementasi/pembaruan kode; jangan mengaku telah menguji render bila belum.
-- Windows lokal: npm install, preview, QA, final render, Git push.
-- Naskah VO dikunci sebelum sinkronisasi animasi final.
-- Setiap episode menyimpan snapshot kondisi dunia; jangan menghilangkan objek lama tanpa peristiwa yang dijelaskan.
-- Jangan commit `node_modules`, output render, cache, secret, atau ZIP temporary.
+## Identitas produksi
+- Gobi: pemuda sederhana, kaos oranye, celana pendek navy, sepatu krem.
+- Setiap komentar yang **dipilih** berkesempatan menjadi warga bernama; hanya warga yang dibutuhkan adegan ditampilkan di layar.
+- Dunia berkembang tanpa mereset rumah, sawah, warga atau pulau sebelumnya.
+- Durasi dan caption fleksibel; yang utama cerita, reaksi Gobi, pembangunan satisfying, dan interaksi penonton.
+- Outro tetap: **"Kalian yang komen, kita yang bangun. Yuk, bangun pulau ini bareng-bareng!"**
 
-## Roadmap
-Lihat [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Mulai sesi AI dari [`docs/AI_CONTEXT.md`](docs/AI_CONTEXT.md), lalu buka dokumentasi lain hanya jika diperlukan.
