@@ -12,32 +12,33 @@ export function schoolParts(f:number,interior:boolean):Part[]{
  for(const x of [-4.1,4.1])for(const z of [-2.8,2.8])add(part(`school-post-${x}-${z}`,'#7f5938',[x,1.9,z],[.22,3.2,.22]),1.2,1.8);
  add(part('school-back-wall','#e6d7aa',[0,1.9,-2.8],[8.2,3,.18]),1.2,2.35);
  for(const x of [-4.1,4.1]){
+  if(interior&&x>0)continue; // camera-facing section wall only; restored on exterior shots
   add(part(`school-side-low-${x}`,'#d7ba86',[x,.85,0],[.16,1.05,5.5]),1.4,2.35);
   add(part(`school-side-high-${x}`,'#e6d7aa',[x,2.85,0],[.16,.75,5.5]),1.5,2.4);
   for(const z of [-2,0,2])add(part(`school-window-post-${x}-${z}`,'#a08054',[x,1.95,z],[.2,1.1,.12]),2.4,2.8);
  }
  if(!interior){
   for(const x of [-2.85,2.85])add(part(`school-front-panel-${x}`,'#ddc89c',[x,1.85,2.8],[2.45,3,.18]),1.4,2.4);
-  for(const x of [-1.5,1.5])add(part(`school-door-frame-${x}`,'#8c613b',[x,1.75,2.93],[.16,2.9,.25]),2.4,2.8);
-  add(part('school-lintel','#8c613b',[0,3.16,2.93],[3.2,.19,.25]),2.4,2.8);
   for(const x of [-1,1])add(part(`school-roof-${x}`,'#788b88',[x*2.17,3.78,0],[4.55,.16,6.5],'box',[0,0,-x*.21]),3.2,4.4,true);
   add(part('school-ridge','#476a6b',[0,4.26,0],[.18,.18,6.6]),3.8,4.4,true);
  }
+ for(const x of [-1.5,1.5])add(part(`school-door-frame-${x}`,'#8c613b',[x,1.75,2.93],[.16,2.9,.25]),2.4,2.8);
+ if(!interior)add(part('school-lintel','#8c613b',[0,3.16,2.93],[3.2,.19,.25]),2.4,2.8);
  add(part('school-bell-post','#8c613b',[-3.3,2,3.7],[.17,4,.17]),4.4,4.9);
  add(part('school-bell-arm','#8c613b',[-2.85,3.92,3.7],[1.05,.14,.14]),4.4,4.9);
  add(part('school-bell-rope','#c4a366',[-2.4,2.9,3.7],[.035,1.8,.035]),4.5,4.9);
  if(t>=5.2){
   add(part('school-blackboard','#2c5149',[0,2,-2.64],[4,1.7,.10]),5.2,5.55);
-  add(part('teacher-desk','#a77b4d',[-2.45,.92,-1.4],[2,.13,.8]),5.5,5.8);
+  add(part('teacher-desk','#a77b4d',[0,1.30,-2.15],[2,.13,.8]),5.5,5.8);
   for(let i=0;i<8;i++){
-   const x=(i%2?1:-1)*2.45,z=-.65+Math.floor(i/2)*.8,at=5.6+i*.15;
-   add(part(`student-desk-${i}`,'#bd925f',[x,.97,z],[1.6,.13,.58]),at,at+.15);
-   add(part(`student-chair-${i}`,'#a27e53',[x,.55,z+.35],[.62,.14,.5]),at+.1,at+.25);
-   add(part(`chair-back-${i}`,'#a27e53',[x,.91,z+.57],[.62,.7,.09]),at+.1,at+.25);
-   for(const dx of [-.62,.62])add(part(`desk-leg-${i}-${dx}`,'#72543b',[x+dx,.62,z],[.09,.7,.40]),at,at+.15);
+   const x=(i%2?1:-1)*2.45,z=-1.9+Math.floor(i/2)*.8,at=5.6+i*.15;
+   add(part(`student-desk-${i}`,'#bd925f',[x,1.30,z],[1.6,.13,.58]),at,at+.15);
+   add(part(`student-chair-${i}`,'#a27e53',[x,.85,z+.35],[.62,.14,.5]),at+.1,at+.25);
+   add(part(`chair-back-${i}`,'#a27e53',[x,1.20,z+.57],[.62,.7,.09]),at+.1,at+.25);
+   for(const dx of [-.62,.62])add(part(`desk-leg-${i}-${dx}`,'#72543b',[x+dx,.84,z],[.09,.85,.40]),at,at+.15);
   }
-  add(part('teacher-book','#9481ab',[-2.45,1.04,-1.4],[.65,.12,.48]),6.9,7.15);
-  add(part('pencil-cup','#d29d53',[-1.85,1.19,-1.4],[.18,.3,.18],'cylinder'),6.9,7.15);
+  add(part('teacher-book','#9481ab',[0,1.42,-2.15],[.65,.12,.48]),6.9,7.15);
+  add(part('pencil-cup','#d29d53',[.65,1.57,-2.15],[.18,.3,.18],'cylinder'),6.9,7.15);
  }
  return out;
 }

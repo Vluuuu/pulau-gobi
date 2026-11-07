@@ -1,0 +1,196 @@
+{
+  "status": "SOURCE_REVISION_READY_FOR_OWNER_REVIEW_NOT_APPROVED",
+  "date": "2026-11-08",
+  "branch": "codex/ep005-full-20261107",
+  "baselineEp004": "76ee0c8ca6612282452286ea556798eaa2bc02f6",
+  "composition": "Episode005",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "frames": 5360,
+  "seconds": 178.66666666666666,
+  "outro": {
+    "sourceComposition": "Episode004",
+    "sourceStartFrame": 4162,
+    "frames": 165,
+    "editStartFrame": 5195,
+    "unchanged": true
+  },
+  "tests": {
+    "relevant": 23,
+    "passed": 23
+  },
+  "legacySourceChanges": [],
+  "camera": {
+    "sampleFrames": 276,
+    "dialogueShots": 40,
+    "failures": 0,
+    "minimumFaceVisible": 1,
+    "minimumHandsVisible": 0.9,
+    "minimumFacePixels": 53.06724446339297,
+    "minimumFrontFacing": 0.8025358887906642,
+    "method": "orthographic parallel mesh rays; start/25/50/75/end and emphasis samples; own body/held props excluded"
+  },
+  "audio": {
+    "ownerRender": "out/Episode005.mp4",
+    "ownerRenderSeconds": 177.173,
+    "newFrames": 5360,
+    "newSeconds": 178.66666666666666,
+    "boundaries": [
+      {
+        "id": "G1",
+        "masterCutSeconds": 23.566666666666666,
+        "cutRmsDbfs": -87.27,
+        "cutPeakDbfs": -81.01,
+        "oldRenderLeft": {
+          "correlation": 0.99639,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.93834,
+          "lagMs": 33.379
+        }
+      },
+      {
+        "id": "G2a",
+        "masterCutSeconds": 41.86666666666667,
+        "cutRmsDbfs": -87.44,
+        "cutPeakDbfs": -80.49,
+        "oldRenderLeft": {
+          "correlation": 0.86123,
+          "lagMs": 33.197
+        },
+        "oldRenderRight": {
+          "correlation": 0.98945,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "G2b",
+        "masterCutSeconds": 45.5,
+        "cutRmsDbfs": -88.45,
+        "cutPeakDbfs": -80.6,
+        "oldRenderLeft": {
+          "correlation": 0.99435,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.97753,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "G3",
+        "masterCutSeconds": 56.6,
+        "cutRmsDbfs": -87.79,
+        "cutPeakDbfs": -82.19,
+        "oldRenderLeft": {
+          "correlation": 0.98612,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.99331,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "G4",
+        "masterCutSeconds": 76.6,
+        "cutRmsDbfs": -87.04,
+        "cutPeakDbfs": -81.26,
+        "oldRenderLeft": {
+          "correlation": 0.99225,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.9806,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "CH-A",
+        "masterCutSeconds": 88.3,
+        "cutRmsDbfs": -88.62,
+        "cutPeakDbfs": -81.11,
+        "oldRenderLeft": {
+          "correlation": 0.99223,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.88425,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "G5",
+        "masterCutSeconds": 93.1,
+        "cutRmsDbfs": -88.53,
+        "cutPeakDbfs": -81.26,
+        "oldRenderLeft": {
+          "correlation": 0.82797,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.93307,
+          "lagMs": 0.0
+        }
+      },
+      {
+        "id": "G6",
+        "masterCutSeconds": 101.33333333333333,
+        "cutRmsDbfs": -88.79,
+        "cutPeakDbfs": -80.37,
+        "oldRenderLeft": {
+          "correlation": 0.9604,
+          "lagMs": 0.0
+        },
+        "oldRenderRight": {
+          "correlation": 0.92948,
+          "lagMs": 0.0
+        }
+      }
+    ],
+    "newSamplePeakDbfs": -4.148,
+    "sampleClipping": false,
+    "notClaimed": [
+      "human audition",
+      "true peak",
+      "LUFS",
+      "new full MP4 rendered"
+    ]
+  },
+  "captionAlignment": {
+    "words": 285,
+    "matched": 285,
+    "fallbackWords": [],
+    "method": "local-whisper-estimate+locked-script-DP",
+    "humanVerified": false
+  },
+  "continuousVoice": {
+    "sampleExact": true,
+    "rate": 1,
+    "masterPcmSha256": "c5c23108f8afe152e1b9a89fb1287419b9d43d8fdf5f0998ed36c04425915b07",
+    "recoveredPcmSha256": "c5c23108f8afe152e1b9a89fb1287419b9d43d8fdf5f0998ed36c04425915b07"
+  },
+  "stills": [
+    {
+      "path": "out/ep005-evidence/qa-v1-school-access-court.png",
+      "frame": 3153
+    },
+    {
+      "path": "out/ep005-evidence/qa-v1-class-dialogue.png",
+      "frame": 3837
+    }
+  ],
+  "typecheck": {
+    "newDiagnostics": 0,
+    "baseline": "TS2740 src/episode002/Villager.tsx:104"
+  },
+  "notRun": [
+    "new full MP4 render",
+    "human phoneme-by-phoneme audition",
+    "owner visual approval"
+  ],
+  "pushed": false,
+  "merged": false
+}

@@ -9,7 +9,7 @@ export const INSERTS=[
  {id:'G1',master:23.55,frames:285}, {id:'G2a',master:41.85,frames:105},
  {id:'G2b',master:45.49,frames:105}, {id:'G3',master:56.60,frames:105},
  {id:'G4',master:76.60,frames:240}, {id:'CH-A',master:88.30,frames:30},
- {id:'G5',master:93.10,frames:120}, {id:'G6',master:101.34,frames:105},
+ {id:'G5',master:93.10,frames:144}, {id:'G6',master:101.34,frames:126},
 ].map((s,i,a)=>({...s,sourceFrame:Math.round(s.master*FPS),start:Math.round(s.master*FPS)+a.slice(0,i).reduce((n,p)=>n+p.frames,0)}));
 export const gap=(id:string)=>{const s=INSERTS.find(s=>s.id===id)!;return {...s,end:s.start+s.frames};};
 export const editFrame=(seconds:number)=>Math.round(seconds*FPS)+INSERTS.filter(s=>s.sourceFrame<=Math.round(seconds*FPS)).reduce((n,s)=>n+s.frames,0);

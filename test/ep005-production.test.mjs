@@ -12,6 +12,10 @@ import {campusParts as schoolParts,SCHOOL_WINGS} from '../src/episode005/campus.
 import {NATURE} from '../src/episode004/production/natureModel.ts';
 import {distanceToPolylineXZ,octagonBoundaryRadius} from '../src/episode003/world/terrain/terrainMath.ts';
 import {cameraAt} from '../src/episode005/camera.ts';
+import {PORTALS,GOBI_ENTRY,DAMIA_ENTRY,VISITOR_ENTRY} from '../src/episode005/access.ts';
+import {gobiAt} from '../src/episode005/direction.ts';
+import {ALIGNED_CAPTIONS} from '../src/episode005/voiceWords.ts';
+import {CAPTIONS} from '../src/episode005/captions.ts';
 
 test('lossless PCM slices preserve the complete authoritative master exactly',()=>{
  const evidence=JSON.parse(readFileSync(new URL('../docs/episodes/EP005_AUDIO_EVIDENCE.json',import.meta.url)));
@@ -22,10 +26,10 @@ test('lossless PCM slices preserve the complete authoritative master exactly',()
  assert.equal(Buffer.concat(pcm).length/2,evidence.decodedSamples);
  for(let i=1;i<evidence.segments.length;i++)assert.equal(evidence.segments[i].startSample,evidence.segments[i-1].endSample);
 });
-test('5315 frames include the exact original 165-frame outro and eight inserted holds',()=>{
- assert.equal(DURATION,5315);assert.ok(DURATION/30<=179.5);
+test('5360 frames include the unchanged 165-frame outro, with room for physical entry/escort',()=>{
+ assert.equal(DURATION,5360);assert.ok(DURATION/30<=180);
  assert.equal(OUTRO_SOURCE_START,4162);assert.equal(OUTRO_FRAMES,165);assert.equal(OUTRO_SOURCE_START+OUTRO_FRAMES,OLD_DURATION);
- assert.equal(INSERTS.reduce((n,s)=>n+s.frames,0),1095);assert.equal(OUTRO_START,5150);
+ assert.equal(INSERTS.reduce((n,s)=>n+s.frames,0),1140);assert.equal(OUTRO_START,5195);
  assert.equal(SHOTS[0].start,0);assert.equal(SHOTS[SHOTS.length-1].end,OUTRO_START);
  for(let i=1;i<SHOTS.length;i++)assert.equal(SHOTS[i].start,SHOTS[i-1].end,SHOTS[i].id);
  for(const s of INSERTS)assert.equal(masterAt(s.start+1),null);
@@ -54,7 +58,7 @@ test('extension begins at the real river endpoint and clears preserved tree trun
 });
 test('bell, latch, walk into the large door, escort and final count form a continuous causal route',()=>{
  assert.ok(E(89.05)<E(90.6)&&E(90.6)<COW_ROUTE_START&&COW_ROUTE_START<COW_ROUTE_END);
- assert.ok(pathLength(ROUTE.slice(0,-1))>=14&&pathLength(ROUTE.slice(0,-1))<=22);
+ assert.ok(pathLength(ROUTE.slice(0,-1))>=20&&pathLength(ROUTE.slice(0,-1))<=32);
  assert.equal(2.78>1.16+.4,true);assert.equal(2.7>2.12+.3,true);
  const c=cowAt('cow-003',COW_ROUTE_END);assert.ok(c.position.every((v,i)=>Math.abs(v-ROUTE[ROUTE.length-1][i])<1e-9));
  for(let f=E(91.5)+1;f<RETURN_END;f++){
@@ -73,9 +77,46 @@ test('eight empty desks build once, while school is absent in the hook',()=>{
  assert.equal(exterior.filter(p=>p.id.endsWith('upper-slab')).length,3);
  assert.ok(Math.max(...exterior.map(p=>p.position[1]+p.size[1]/2))>8);
 });
-test('mirror shots reuse exactly the original numeric camera presets',()=>{
- for(const [a,b] of [['S01','S32a'],['S02a','S32b'],['S02b','S32c'],['S22a','S32d']]){
-  const x=cameraAt(SHOTS.find(s=>s.id===a).start),y=cameraAt(SHOTS.find(s=>s.id===b).start);
-  for(const k of ['position','target','width','elevation','az'])assert.deepEqual(x[k],y[k],`${a}/${b} ${k}`);
+test('dialogue cameras keep readable scale; environment/build shots explicitly opt out',()=>{
+ for(const s of SHOTS.filter(s=>s.dialog))for(const u of [0,.5,.999]){
+  const c=cameraAt(Math.floor(s.start+(s.end-s.start)*u));assert.ok(c.width<=7.4,s.id);assert.ok(c.elevation<=29,s.id);
  }
+});
+test('one PCM media asset preserves every spoken sample after removing inserted silence',()=>{
+ const report=JSON.parse(readFileSync(new URL('../docs/episodes/EP005_V1_CONTINUOUS_VO.json',import.meta.url)));
+ const wav=readFileSync(new URL('../public/episode005/voice/edited-v4.wav',import.meta.url));let p=12;
+ while(wav.toString('ascii',p,p+4)!=='data')p+=8+wav.readUInt32LE(p+4)+(wav.readUInt32LE(p+4)%2);
+ const pcm=wav.subarray(p+8,p+8+wav.readUInt32LE(p+4));
+ const recovered=Buffer.concat(report.ranges.map(r=>pcm.subarray(r.editStartSample*2,(r.editStartSample+r.samples)*2)));
+ assert.equal(createHash('sha256').update(recovered).digest('hex'),report.masterPcmSha256);
+ assert.equal(report.rate,1);assert.equal(report.speechFades,false);
+});
+test('dynamic captions retain the exact approved words and follow master time',()=>{
+ assert.equal(ALIGNED_CAPTIONS.flatMap(c=>c.words.map(w=>w.text)).join(' '),CAPTIONS.map(c=>c[2]).join(' '));
+ for(const c of ALIGNED_CAPTIONS){assert.ok(c.start<c.end);for(const w of c.words)assert.ok(w.start<w.end,w.text);}
+});
+test('Gobi, Damia, visitors and the cow cross every named portal, in order, with continuous roots',()=>{
+ const actors=[
+  {id:'gobi',a:E(77.4),b:E(81.7),sample:f=>gobiAt(f).position},
+  {id:'damia',a:E(77.8),b:E(81.7),sample:f=>residentAt('warga-11',f).position},
+  {id:'joy',a:E(88.5),b:E(91),sample:f=>residentAt('warga-6',f).position},
+  {id:'ris',a:E(88.5),b:E(91),sample:f=>residentAt('warga-12',f).position},
+  {id:'cow-003',a:COW_ROUTE_START,b:COW_ROUTE_END,sample:f=>cowAt('cow-003',f).position},
+ ];
+ for(const actor of actors){let last=actor.a;
+  for(const portal of PORTALS){let crossed=-1;
+   for(let f=last;f<=actor.b;f++){const p=actor.sample(f),prev=actor.sample(f-1);
+    assert.ok(Math.hypot(p[0]-prev[0],p[1]-prev[1],p[2]-prev[2])<.32,`${actor.id} teleport ${f}`);
+    if(p[2]<=portal.point[2]&&prev[2]>=portal.point[2]&&Math.abs(p[0]-portal.point[0])<portal.width/2-.3){crossed=f;break;}
+   }
+   assert.ok(crossed>=last,`${actor.id} missed ${portal.id}`);last=crossed+1;
+  }
+ }
+});
+test('classroom cutaway restores the upper floor and roof exactly for exterior views',()=>{
+ const ext=schoolParts(gap('G4').end,false),cut=schoolParts(gap('G4').end,true);
+ assert.ok(ext.some(p=>p.id==='campus-A-upper-slab'));assert.ok(ext.some(p=>p.id==='campus-A-upper-roof-1'));
+ assert.ok(!cut.some(p=>p.id==='campus-A-upper-slab'));assert.ok(cut.some(p=>p.id==='campus-A-section-upper-back'));
+ assert.ok(ext.some(p=>p.id==='foyer-attached-roof'));assert.ok(!cut.some(p=>p.id==='foyer-attached-roof'));
+ assert.deepEqual(schoolParts(gap('G4').end,false),ext);
 });

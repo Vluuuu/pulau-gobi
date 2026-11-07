@@ -11,7 +11,7 @@ export const CAMPUS_HERO_TARGET=[-26.1,2.2,-21] as const;
 export const CAMPUS_HERO_GOBI=[-29,0,-13.8] as const;
 export const SCHOOL_NAME='SEKOLAH PULAU GOBI';
 
-export function campusParts(f:number,interior:boolean):Part[]{
+export function campusParts(f:number,interior:boolean,foyer=false):Part[]{
  const t=(f-gap('G4').start)/30,out=classroomParts(f,interior).filter(p=>!p.id.startsWith('school-roof-')&&p.id!=='school-ridge');
  const add=(p:Part,a:number,b:number)=>{const k=ramp(t,a,b);if(k<=0)return;out.push({...p,size:[p.size[0],p.size[1]*k,p.size[2]],position:[p.position[0],p.position[1]-p.size[1]*(1-k)/2,p.position[2]]});};
  const wood='#8f6b48',cream='#e9dcb6',trim='#577b77',roof='#698e8a',glass='#9dc5cf';
@@ -57,6 +57,18 @@ export function campusParts(f:number,interior:boolean):Part[]{
    add(p('balcony-handrail',trim,0,4.88,3.90,8.55,.10,.10),4.4,4.85);
    for(const side of [-1,1])add(p(`porch-column-${side}`,wood,side*3.9,1.93,3.85,.18,3.85,.18),2.0,2.6);
   }
+  if(interior&&index===0){
+   // An architectural section through wing A, not a detached roofless classroom.
+   // Rear upper storey, side returns and rear roof remain physically attached and visible.
+   add(p('section-upper-back',cream,0,5.55,-2.8,8.2,3.2,.17),3.15,4.1);
+   for(const side of [-1,1]){
+    add(p(`section-upper-side-${side}`,cream,side*4.1,5.55,-1.9,.17,3.2,1.8),3.2,4.2);
+    add(p(`section-rear-roof-${side}`,roof,side*2.17,7.63,-1.9,4.6,.19,2.9,[0,0,-side*.23]),4.5,5.2);
+   }
+   add(p('section-floor-edge',wood,0,3.82,-1.0,8.4,.2,.12),2.7,3.15);
+   add(p('section-rear-slab','#b69363',0,3.83,-1.95,8.5,.25,1.95),2.7,3.15);
+   add(p('section-back-tie-beam',cream,0,3.55,-2.8,8.4,.32,.2),2.7,3.15);
+  }
  }
  // Connecting corridor behind the retained courtyard tree, plus a public entrance portico.
  add(part('campus-link-floor','#c7a572',[-5,3.85,-.25],[3.5,.18,1.4]),3.1,3.6);
@@ -73,12 +85,49 @@ export function campusParts(f:number,interior:boolean):Part[]{
   add(part(`campus-front-post-${x}`,wood,[x,.55,13.5],[.12,1.1,.12]),.4,.95);
  }
  for(let i=0;i<8;i++)add(part(`campus-entry-path-${i}`,'#c3b590',[-10,.025,4.2+i*.9],[1.6,.05,.68]),.5,1.1);
- add(part('campus-flag-base','#a5a491',[-10,.12,10],[1.5,.24,1.5]),.4,.9);
- add(part('campus-flag-pole','#d4d7c9',[-10,3.7,10],[.075,7.2,.075],'cylinder'),4.7,5.2);
+ add(part('campus-flag-base','#a5a491',[-14.3,.12,10],[1.5,.24,1.5]),.4,.9);
+ add(part('campus-flag-pole','#d4d7c9',[-14.3,3.7,10],[.075,7.2,.075],'cylinder'),4.7,5.2);
  for(const x of [-13.5,-5.5]){
   add(part(`campus-yard-bench-${x}`,wood,[x,.5,8],[1.8,.14,.55]),.6,1.15);
   add(part(`campus-yard-bench-back-${x}`,trim,[x,.9,8.2],[1.8,.8,.09]),.6,1.15);
   for(const dx of [-.65,.65])add(part(`campus-bench-leg-${x}-${dx}`,wood,[x+dx,.25,8],[.12,.5,.40]),.6,1.15);
  }
- return out;
+ // Public foyer on the SAME A-wing. Its rear doorway is the retained A01 classroom door.
+ add(part('foyer-foundation','#a7a28d',[0,.17,4.3],[8.4,.34,3.0]),0,.4);
+ for(let i=0;i<14;i++)add(part(`foyer-floor-${i}`,'#c9aa76',[-3.9+i*.6,.35,4.3],[.57,.10,3.0]),.6+i*.025,.85+i*.025);
+ for(const x of [-3.95,3.95]){
+  add(part(`foyer-column-${x}`,wood,[x,1.95,5.7],[.2,3.1,.2]),1.2,1.8);
+  if(!(interior&&x>0)){
+   add(part(`foyer-side-${x}`,cream,[x,1.9,4.3],[.16,3.0,2.8]),1.4,2.3);
+   add(part(`foyer-side-window-${x}`,glass,[x*1.005,2.1,4.3],[.06,1.2,1.65]),2.35,2.8);
+  }
+ }
+ for(const x of [-1.68,1.68])add(part(`main-entry-jamb-${x}`,wood,[x,1.95,5.84],[.16,3.1,.24]),2.4,2.8);
+ if(!interior)add(part('main-entry-header',wood,[0,3.48,5.84],[8.4,.20,.24]),2.4,2.8);
+ if(!interior&&!foyer){
+  for(const x of [-2.85,2.85])add(part(`foyer-front-pier-${x}`,cream,[x,1.9,5.75],[2.1,3.0,.15]),1.4,2.35);
+  add(part('foyer-attached-roof',roof,[0,3.66,4.3],[8.7,.15,3.2]),4.2,4.8);
+ }
+ if(!interior)add(part('foyer-ceiling-light','#f1ddaa',[0,3.36,4.35],[.55,.07,.35]),4.6,5.0);
+ add(part('main-entry-step-a','#aaa693',[0,.12,6.15],[3.4,.24,.6]),.3,.6);
+ add(part('main-entry-step-b','#b9b197',[0,.24,5.92],[3.4,.24,.4]),.3,.7);
+ // Marked multi-use assembly/sports court, with a separate flag platform and clear access path.
+ add(part('school-sports-court','#9eaa9f',[-10.2,.028,7.8],[8.0,.045,4.2]),.1,.5);
+ for(const x of [-14.1,-6.3])add(part(`court-side-line-${x}`,'#f4ead5',[x,.056,7.8],[.055,.012,4.0]),.5,.9);
+ for(const z of [5.8,9.8])add(part(`court-end-line-${z}`,'#f4ead5',[-10.2,.056,z],[7.85,.012,.055]),.5,.9);
+ add(part('court-midline','#f4ead5',[-10.2,.056,7.8],[.055,.012,4.0]),.5,.9);
+ for(let i=0;i<20;i++){const a=i*Math.PI/10,b=(i+1)*Math.PI/10;add(part(`court-circle-${i}`,'#f4ead5',[-10.2+.8*Math.cos((a+b)/2),.06,7.8+.8*Math.sin((a+b)/2)],[.26,.012,.04],'box',[0,-(a+b)/2-Math.PI/2,0]),.5,.9);}
+ for(const x of [-14.65,-5.75]){
+  add(part(`court-hoop-pole-${x}`,trim,[x,1.5,7.8],[.10,3.0,.10]),.6,1.1);
+  add(part(`court-backboard-${x}`,'#d7ded1',[x,2.8,7.8],[.10,.70,1.1]),.8,1.2);
+ }
+ // Replace the old partial foreground rails with a continuous perimeter and named gate aperture.
+ const retained=out.filter(p=>!p.id.startsWith('campus-front-')&&!p.id.startsWith('campus-fence-'));
+ const fence=(id:string,x:number,z:number,dx:number,dz:number)=>{
+  const length=Math.hypot(dx,dz),n=Math.ceil(length/1.4),az=Math.atan2(dx,dz);
+  for(let i=0;i<=n;i++)retained.push(part(`${id}-post-${i}`,wood,[x+20+dx*i/n,.65,z+22+dz*i/n],[.12,1.3,.12]));
+  for(const y of [.45,.95])retained.push(part(`${id}-rail-${y}`,trim,[x+20+dx/2,y,z+22+dz/2],[.09,.10,length],'box',[0,az,0]));
+ };
+ if(t>.9){fence('school-west-fence',-35.5,-18,0,8);fence('school-front-west',-35.5,-10,12.9,0);fence('school-front-east',-19.4,-10,.7,0);fence('school-east-fence',-18.7,-10,0,-6.0);}
+ return retained;
 }

@@ -1,5 +1,7 @@
 # EP005 — visual review checkpoint, 7 November 2026
 
+> Catatan historis sebelum QA pemilik. Revisi berikutnya dicatat di [EP005_QA_REVISI_V1_RESULT.md](docs/episodes/EP005_QA_REVISI_V1_RESULT.md). Angka timing dan status pemeriksaan di bawah tidak mewakili source revisi V1.
+
 **WIP, not final.** Owner asked to review exactly two stills before finalization. No full MP4, push or merge has been performed.
 
 Worktree: `D:/pulau-gobi/ep005-full` · branch: `codex/ep005-full-20261107`.

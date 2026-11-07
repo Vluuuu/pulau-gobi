@@ -12,7 +12,8 @@ import {Actors005} from './Actors';
 import {Overlays005} from './Overlays';
 import {Fx005} from './Fx';
 import {Diagnostics005} from './diagnostics';
-import {CUES,muteBeforeLah} from './sounds.ts';
+import {schoolInterior} from './direction.ts';
+import {CUES,cueGain,ambienceGain,musicGain} from './sounds.ts';
 import {AUDIO_SEGMENTS,DURATION,OUTRO_START,OUTRO_SOURCE_START,OUTRO_FRAMES,gap,ramp} from './timeline.ts';
 export {DURATION as EP005_DURATION_IN_FRAMES};
 const Camera005:React.FC<{frame:number}>=({frame:f})=>{
@@ -21,14 +22,14 @@ const Camera005:React.FC<{frame:number}>=({frame:f})=>{
  return <><primitive object={target.current}/><directionalLight position={c.position} target={target.current} color="#fff0da" intensity={.55}/></>;
 };
 export const Episode005:React.FC=()=>{
- const f=useCurrentFrame(),audit=Boolean(getInputProps().ep005Audit),silent=muteBeforeLah(f),musicDuck=['G1','CH-A','G5'].some(id=>{const s=gap(id);return f>=s.start&&f<s.end;});
- return <AbsoluteFill style={{background:'linear-gradient(180deg,#abdbee,#d9edf0 65%,#f1e8df)'}}>
+ const f=useCurrentFrame(),audit=Boolean(getInputProps().ep005Audit);
+ return <AbsoluteFill style={{background:schoolInterior(f)?'linear-gradient(180deg,#ddd1ae,#cbb28a 65%,#d5c09b)':'linear-gradient(180deg,#abdbee,#d9edf0 65%,#f1e8df)'}}>
   {f<OUTRO_START?<>
-   {AUDIO_SEGMENTS.map(a=><Sequence key={a.id} from={a.start} durationInFrames={a.frames} layout="none"><Audio src={staticFile(a.file)} volume={.78}/></Sequence>)}
-   {CUES.map((c,i)=><Sequence key={i} from={c.frame} durationInFrames={c.frames} layout="none"><Audio src={staticFile(c.file)} startFrom={c.trim??0} volume={silent?0:c.volume}/></Sequence>)}
-   <Audio src={staticFile('episode004/sfx/wind-bed.wav')} loop volume={silent?0:.12}/>
-   <Audio src={staticFile('episode005/sfx/music.wav')} loop volume={silent?0:musicDuck?.10:.28}/>
-   {f>=gap('G1').end&&<Audio src={staticFile('episode005/sfx/waterfall.wav')} loop volume={silent?0:.09}/>} 
+   <Audio src={staticFile('episode005/voice/edited-v4.wav')} volume={.78}/>
+   {CUES.map((c,i)=><Sequence key={i} from={c.frame} durationInFrames={c.frames} layout="none"><Audio src={staticFile(c.file)} startFrom={c.trim??0} volume={local=>cueGain(c,local)}/></Sequence>)}
+   <Audio src={staticFile('episode004/sfx/wind-bed.wav')} loop volume={frame=>.12*ambienceGain(frame)}/>
+   <Audio src={staticFile('episode005/sfx/music.wav')} loop volume={frame=>musicGain(frame)}/>
+   <Sequence from={gap('G1').start+159} durationInFrames={OUTRO_START-gap('G1').start-159} layout="none"><Audio src={staticFile('episode005/sfx/waterfall.wav')} loop volume={local=>.09*ramp(local,0,15)*ambienceGain(local+gap('G1').start+159)}/></Sequence>
    <ThreeCanvas width={1080} height={1920} orthographic shadows camera={{near:.1,far:600,zoom:60}}><Camera005 frame={f}/><SceneLighting/><World005 frame={f}/><Actors005 frame={f}/><Fx005 frame={f}/>{audit&&<Diagnostics005 frame={f}/>}</ThreeCanvas>
    <Overlays005 frame={f}/>
   </>:<Sequence from={OUTRO_START} durationInFrames={OUTRO_FRAMES} layout="none">

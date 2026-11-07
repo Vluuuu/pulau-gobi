@@ -1,6 +1,7 @@
 import React from 'react';
 import {Img,staticFile} from 'remotion';
 import {CAPTIONS} from './captions.ts';
+import {ALIGNED_CAPTIONS} from './voiceWords.ts';
 import {masterAt,gap,editFrame as E,ramp} from './timeline.ts';
 import {CAST,FIRST_APPEARANCE,residentAt,gobiAt} from './direction.ts';
 import {cameraAt,project} from './camera.ts';
@@ -16,26 +17,29 @@ export function introTags(f:number){
  {id:'warga-3',a:E(48.57),b:E(50.8)},{id:'warga-6',a:E(88.5),b:E(90.6)},
  {id:'warga-1',a:E(23.81),b:E(26.21)},{id:'warga-2',a:E(23.81),b:E(26.21)},
  {id:'warga-4',a:E(73.54),b:E(76.4)},{id:'warga-5',a:E(73.54),b:E(76.4)}];
- const g=gobiAt(f).pose,faces:Rect[]=[g,...CAST.map(r=>{const p=residentAt(r.id,f);return {x:p.position[0],z:p.position[2]};})].map(p=>{const q=project([p.x,1.7,p.z],c);return {x:q.x-65,y:q.y-60,w:130,h:120};});
+ const gobi=gobiAt(f),faces:Rect[]=[{x:gobi.pose.x,y:gobi.position[1]+1.7,z:gobi.pose.z},...CAST.filter(r=>residentAt(r.id,f).visible).map(r=>{const p=residentAt(r.id,f);return {x:p.position[0],y:p.position[1]+1.7,z:p.position[2]};})].map(p=>{const q=project([p.x,p.y,p.z],c);return {x:q.x-65,y:q.y-60,w:130,h:120};});
  const placed:{id:string;text:string;star:boolean;x:number;y:number;w:number;h:number}[]=[];
  for(const w of windows.filter(w=>f>=w.a&&f<w.b)){
-  const r=CAST.find(r=>r.id===w.id)!,p=residentAt(r.id,f),q=project([p.position[0],2.6,p.position[2]],c);
+  const r=CAST.find(r=>r.id===w.id)!,p=residentAt(r.id,f),q=project([p.position[0],p.position[1]+2.6,p.position[2]],c);
+  if(!p.visible||q.x<0||q.x>1080||q.y<230||q.y>1320)continue;
   const width=Math.min(470,r.name.length*18+58);
   for(const [dx,dy] of [[0,-10],[0,-100],[-140,-60],[140,-60],[0,-200]]){
    const a={x:bound(q.x-width/2+dx,35,1045-width),y:bound(q.y+dy,340,1300),w:width,h:52};
-   if([...faces,...placed,{x:0,y:1410,w:1080,h:510}].some(b=>overlaps(a,b)))continue;
+   const reserved:Rect[]=[{x:0,y:1410,w:1080,h:510},{x:120,y:130,w:850,h:210}];
+   if(['S23c','S30c'].includes(shotAt(f).id))reserved.push({x:190,y:365,w:700,h:165});
+   if([...faces,...placed,...reserved].some(b=>overlaps(a,b)))continue;
    placed.push({id:r.id,text:r.name,star:r.special,...a});break;
   }
  }
  return placed.slice(0,3);
 }
 export const Overlays005:React.FC<{frame:number}>=({frame:f})=>{
- const m=masterAt(f),s=shotAt(f),caption=m===null?null:CAPTIONS.find(([a,b])=>m>=a&&m<b),tags=introTags(f),g=gobiAt(f),c=cameraAt(f),head=project([g.pose.x,2.15+(g.pose.hop??0),g.pose.z],c);
+ const m=masterAt(f),s=shotAt(f),caption=m===null?null:ALIGNED_CAPTIONS.find(c=>m>=c.start&&m<c.end),tags=introTags(f),g=gobiAt(f),c=cameraAt(f),head=project([g.pose.x,g.position[1]+2.15+(g.pose.hop??0),g.pose.z],c);
  const comment=s.id==='S04'?1:s.id==='S18'?2:null;
  const bubble=s.id==='S23c'?'Bang, muridnya mana?':s.id==='S30c'?'Bang... ini murid baru?':null;
  const emotion=['S01','S23b','S28'].includes(s.id)?'?!':s.id==='S25'||s.id==='S33a'?'?':s.id==='S05c'?'💧':null;
  return <>
-  {caption&&<div data-ep005-caption="phrase-provisional" style={{position:'absolute',left:70,top:1430,width:940,height:250,display:'flex',alignItems:'center',justifyContent:'center',textAlign:'center',font:`800 57px ${FONT}`,lineHeight:1.18,color:'#fff',WebkitTextStroke:'2px #26323c',paintOrder:'stroke fill',textShadow:'0 4px 7px #14212f88'}}>{caption[2]}</div>}
+  {caption&&<div data-ep005-caption="word-estimated" style={{position:'absolute',left:70,top:1430,width:940,height:250,display:'flex',alignItems:'center',justifyContent:'center',textAlign:'center',font:`800 57px ${FONT}`,lineHeight:1.18,color:'#fff',WebkitTextStroke:'2px #26323c',paintOrder:'stroke fill',textShadow:'0 4px 7px #14212f88'}}><div>{caption.words.map((w,i)=><React.Fragment key={i}><span style={{display:'inline-block',color:m!==null&&m>=w.start&&m<w.end?'#ffdb6e':'#fff'}}>{w.text}</span>{i<caption.words.length-1?' ':''}</React.Fragment>)}</div></div>}
   {comment&&<div style={{position:'absolute',left:120,top:140,width:840,padding:16,background:'#fff9eb',border:'3px solid #d5c49c',borderRadius:20}}><Img src={staticFile(`episode005/comments/comment-${comment}.png`)} style={{display:'block',width:'100%'}}/></div>}
   {tags.map(t=><div key={t.id} data-ep005-tag={t.id} style={{position:'absolute',left:t.x,top:t.y,width:t.w,height:t.h,background:'#fff9e9',border:`2px solid ${t.star?'#d6ae55':'#809b9b'}`,borderRadius:24,color:'#31463e',display:'flex',alignItems:'center',justifyContent:'center',font:`700 29px ${FONT}`,boxShadow:'0 3px 8px #21362722'}}>{t.star?'★ ':''}{t.text}</div>)}
   {emotion&&c.width<25&&<div style={{position:'absolute',left:bound(head.x+75,35,930),top:bound(head.y-100,330,1260),font:`900 68px ${FONT}`,color:'#e0a442',textShadow:'0 3px 0 #fff5d9'}}>{emotion}</div>}

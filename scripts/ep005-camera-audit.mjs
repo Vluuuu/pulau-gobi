@@ -29,7 +29,7 @@ try{
   const rs=rows.filter(r=>r.shot===shot.id);console.log(`${shot.id} face=${Math.min(...rs.map(r=>r.faceVisible))} hands=${Math.min(...rs.map(r=>r.handsVisible))}`);
  }
  await writeFile(path.join(out,selected?'camera-mesh-targeted.json':'camera-mesh.json'),JSON.stringify(rows,null,2));
- const fail=rows.filter(r=>r.faceVisible<.95||r.handsVisible<.90);
+ const fail=rows.filter(r=>r.faceVisible<.95||r.handsVisible<.90||!r.faceInFrame||r.facePixels<50||r.frontFacing<.78);
  console.log(JSON.stringify({frames:rows.length,failures:fail.length,shots:[...new Set(fail.map(r=>r.shot))]}));
  if(fail.length)process.exitCode=1;
 }finally{await browser.close({silent:true});await new Promise(r=>server.close(r));await writeFile(path.join(out,'camera-browser-logs.json'),JSON.stringify(logs,null,2));}

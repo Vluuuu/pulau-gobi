@@ -1,0 +1,116 @@
+{
+  "file": "episode005/voice/edited-v4.wav",
+  "sampleRate": 44100,
+  "masterPcmSha256": "c5c23108f8afe152e1b9a89fb1287419b9d43d8fdf5f0998ed36c04425915b07",
+  "editedPcmSha256": "5e66750742176f701397b6898799e2bbd41e368a0a0a0de41fc9485aa57a16c2",
+  "recoveredPcmSha256": "c5c23108f8afe152e1b9a89fb1287419b9d43d8fdf5f0998ed36c04425915b07",
+  "sampleExact": true,
+  "speechFades": false,
+  "rate": 1,
+  "seconds": 173.15755102040816,
+  "ranges": [
+    {
+      "sourceStartSample": 0,
+      "editStartSample": 0,
+      "samples": 1037820
+    },
+    {
+      "sourceStartSample": 1037820,
+      "editStartSample": 1456770,
+      "samples": 808500
+    },
+    {
+      "sourceStartSample": 1846320,
+      "editStartSample": 2419620,
+      "samples": 160230
+    },
+    {
+      "sourceStartSample": 2006550,
+      "editStartSample": 2734200,
+      "samples": 489510
+    },
+    {
+      "sourceStartSample": 2496060,
+      "editStartSample": 3378060,
+      "samples": 882000
+    },
+    {
+      "sourceStartSample": 3378060,
+      "editStartSample": 4612860,
+      "samples": 515970
+    },
+    {
+      "sourceStartSample": 3894030,
+      "editStartSample": 5172930,
+      "samples": 211680
+    },
+    {
+      "sourceStartSample": 4105710,
+      "editStartSample": 5596290,
+      "samples": 363090
+    },
+    {
+      "sourceStartSample": 4468800,
+      "editStartSample": 6144600,
+      "samples": 1491648
+    }
+  ],
+  "inserts": [
+    {
+      "id": "G1",
+      "master": 23.55,
+      "frames": 285,
+      "sourceFrame": 707,
+      "start": 707
+    },
+    {
+      "id": "G2a",
+      "master": 41.85,
+      "frames": 105,
+      "sourceFrame": 1256,
+      "start": 1541
+    },
+    {
+      "id": "G2b",
+      "master": 45.49,
+      "frames": 105,
+      "sourceFrame": 1365,
+      "start": 1755
+    },
+    {
+      "id": "G3",
+      "master": 56.6,
+      "frames": 105,
+      "sourceFrame": 1698,
+      "start": 2193
+    },
+    {
+      "id": "G4",
+      "master": 76.6,
+      "frames": 240,
+      "sourceFrame": 2298,
+      "start": 2898
+    },
+    {
+      "id": "CH-A",
+      "master": 88.3,
+      "frames": 30,
+      "sourceFrame": 2649,
+      "start": 3489
+    },
+    {
+      "id": "G5",
+      "master": 93.1,
+      "frames": 144,
+      "sourceFrame": 2793,
+      "start": 3663
+    },
+    {
+      "id": "G6",
+      "master": 101.34,
+      "frames": 126,
+      "sourceFrame": 3040,
+      "start": 4054
+    }
+  ]
+}

@@ -11,7 +11,7 @@ try{
  const cs=await getCompositions(serveUrl,{puppeteerInstance:browser,chromiumOptions,onBrowserLog});
  const c=cs.find(c=>c.id==='Episode005');if(c?.durationInFrames!==DURATION)throw Error('composition metadata');
  await writeFile(path.join(out,'compositions.json'),JSON.stringify(cs,null,2));
- for(const [name,frame] of [['school-exterior-scale',E(78.2)],['waterfall-hero',gap('G1').end-15]]){
+ for(const [name,frame] of [['qa-v1-school-access-court',E(77.1)],['qa-v1-class-dialogue',gap('G5').end+30]]){
   await renderStill({serveUrl,composition:c,frame,output:path.join(out,`${name}.png`),imageFormat:'png',puppeteerInstance:browser,chromiumOptions,onBrowserLog});
   console.log(`STILL ${name} frame=${frame}`);
  }

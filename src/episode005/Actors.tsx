@@ -3,14 +3,15 @@ import {ResidentActor} from '../episode003/characters/ResidentActor';
 import {PilotGobi} from '../episode004/pilot/Actors';
 import {Parts} from '../episode004/production/Parts';
 import {part} from '../episode004/production/part.ts';
-import {CAST,COW_IDS,cowAt,gobiAt,residentAt,schoolInterior,FIRST_APPEARANCE} from './direction.ts';
+import {CAST,COW_IDS,cowAt,gobiAt,residentAt,schoolInterior,FIRST_APPEARANCE,RETURN_START} from './direction.ts';
 import {cameraAt} from './camera.ts';
-import {gap,masterAt,pulse,editFrame as E} from './timeline.ts';
+import {gap,masterAt,pulse,ramp,editFrame as E} from './timeline.ts';
 import {shotAt} from './shots.ts';
+import {ALIGNED_CAPTIONS} from './voiceWords.ts';
 const Cow:React.FC<{id:string;frame:number}>=({id,frame:f})=>{
  const p=cowAt(id,f),i=COW_IDS.indexOf(id as typeof COW_IDS[number]);if(!p.visible)return null;
- const blink=(f+i*39)%137<5,chew=Math.sin(f*.21+i)*.025,inside=p.position[2]<-18.95&&p.position[0]<-16&&f>=gap('G5').start&&f<E(103.1);
- return <group name={id} position={[p.position[0],p.position[1]+(inside?.39:0),p.position[2]]} rotation-y={p.heading}>
+ const blink=(f+i*39)%137<5,chew=Math.sin(f*.21+i)*.025,inside=p.position[1]>.2&&p.walk===0;
+ return <group name={id} position={[...p.position]} rotation-y={p.heading}>
   <mesh rotation-x={-Math.PI/2} position-y={.02}><circleGeometry args={[.83,12]}/><meshBasicMaterial color="#30452d" transparent opacity={.18} depthWrite={false}/></mesh>
   <group position-y={Math.abs(Math.sin(p.stride))*p.walk*.045}>
    <mesh position={[0,1.14,-.1]} scale={[.58,.60,1.02]}><icosahedronGeometry args={[1,1]}/><meshStandardMaterial color={i===1?'#d9b993':'#f0ead9'} flatShading/></mesh>
@@ -19,7 +20,7 @@ const Cow:React.FC<{id:string;frame:number}>=({id,frame:f})=>{
     <mesh position-y={-.32}><cylinderGeometry args={[.105,.09,.64,6]}/><meshStandardMaterial color="#e7ddc9"/></mesh>
     <mesh position={[0,-.66,.035]}><boxGeometry args={[.22,.17,.28]}/><meshStandardMaterial color="#485350"/></mesh>
    </group>))}
-   <group position={[0,1.52,.72]} rotation={[-p.noseLift*.35+Math.sin(f*.035+i)*.04,(inside?1.7:0)+Math.sin(f*.027+i)*.10,0]}>
+   <group position={[0,1.52-p.noseLift*.35,.72]} rotation={[-p.noseLift*.35+Math.sin(f*.035+i)*.04,(inside?1.0*(1-ramp(f,RETURN_START-16,RETURN_START)):0)+Math.sin(f*.027+i)*.10,0]}>
     <mesh scale={[.37,.48,.42]}><icosahedronGeometry args={[1,1]}/><meshStandardMaterial color={i===2?'#30464a':'#e7dfca'} flatShading/></mesh>
     <mesh position={[0,-.15+chew,.34]} scale={[.37,.21,.23]}><icosahedronGeometry args={[1,1]}/><meshStandardMaterial color="#dcaea0" flatShading/></mesh>
     {[-1,1].map(side=><React.Fragment key={side}>
@@ -54,17 +55,18 @@ const Prop:React.FC<{id:string;frame:number}>=({id,frame:f})=>{
  return null;
 };
 export const Actors005:React.FC<{frame:number}>=({frame:f})=>{
- const g=gobiAt(f),cam=cameraAt(f),inside=schoolInterior(f);
+ const g=gobiAt(f),cam=cameraAt(f),inside=schoolInterior(f),master=masterAt(f);
+ const speaking=master!==null&&ALIGNED_CAPTIONS.some(c=>c.words.some(w=>master>=w.start&&master<w.end));
  // Speech facing follows the selected static camera, while walking follows the route tangent.
- const sample={...g,local:g.position,pose:{...g.pose,rotY:g.pose.walk?g.pose.rotY:cam.az*Math.PI/180}};
+ const sample={...g,local:g.position,pose:{...g.pose,rotY:g.shot.dialog?cam.az*Math.PI/180+.10:g.pose.walk?g.pose.rotY:cam.az*Math.PI/180,phase:g.shot.dialog&&g.pose.walk?-(g.pose.phase??0):g.pose.phase}};
  return <group name="ep005-cast">
-  <group position-y={inside?.39:0} name="ep005-gobi"><PilotGobi frame={f} sample={sample} voiceSpeaking={masterAt(f)!==null}/></group>
-  {['S11','S12a','S13a'].includes(g.shot.id)&&<group position={[g.pose.x,.92+(g.pose.hop??0),g.pose.z]} rotation-y={sample.pose.rotY}>
+  <group position-y={g.position[1]} name="ep005-gobi"><PilotGobi frame={f} sample={sample} voiceSpeaking={speaking}/></group>
+  {['S11','S12a','S13a'].includes(g.shot.id)&&<group name="ep005-gobi-props" position={[g.pose.x,g.position[1]+.92+(g.pose.hop??0),g.pose.z]} rotation-y={sample.pose.rotY}>
    {g.shot.id==='S12a'?<Parts parts={[part('gobi-corn-seedbag','#dfc483',[-.30,.08,.49],[.25,.40,.24],'ico'),part('gobi-carrot-seedbag','#d89e71',[.30,.08,.49],[.25,.40,.24],'ico')]} />:<Parts parts={[part('gobi-harvest-basket','#b68b57',[0,0,.51],[.40,.36,.35],'cylinder'),part('gobi-basket-rice','#e2c171',[0,.23,.51],[.37,.17,.32],'ico')]}/>}
   </group>}
   {CAST.map(r=>{const p=residentAt(r.id,f);return p.visible?<group key={r.id} name={`ep005-${r.id}`}>
-   <ResidentActor resident={{id:r.id,visual:r.visual,isNewInEp003:!r.isLegacy}} frame={f} pose={{...p,position:[p.position[0],p.position[1]+(inside&&p.position[2]<-18.95?.39:0),p.position[2]]}} stride={p.stride}/>
-   <group position={[p.position[0],p.position[1]+(inside&&p.position[2]<-18.95?.39:0),p.position[2]]} rotation-y={p.heading}><Prop id={r.id} frame={f}/></group>
+   <ResidentActor resident={{id:r.id,visual:r.visual,isNewInEp003:!r.isLegacy}} frame={f} pose={p} stride={p.stride}/>
+   <group position={[...p.position]} rotation-y={p.heading}><Prop id={r.id} frame={f}/></group>
   </group>:null;})}
   {COW_IDS.map(id=><Cow key={id} id={id} frame={f}/>)}
  </group>;
