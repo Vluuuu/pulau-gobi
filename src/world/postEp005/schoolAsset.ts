@@ -307,6 +307,16 @@ export function buildSchoolAsset(options: SchoolAssetOptions = {}): SchoolAsset 
   add('bell', '#d7b15f', [-2.4, 3.72, 3.7], [.23, .38, .23], 'site', false, undefined, 'cone');
   add('bell-rope', '#c4a366', [-2.4, 2.9, 3.7], [.035, 1.8, .035]);
 
+  // Upper-floor inspection keeps its real slab and walls. Only the requested A02
+  // infill/roof/ceiling is hidden; the original A01 cutaway keeps its prior behaviour.
+  if (options.cutaway?.room === 'A02') {
+    const cut = options.cutaway;
+    const hidePart = (p: SchoolPart) => {
+      if (cut.overhead && (/^A-(roof-|rafter-|tie-beam-)/.test(p.id) || p.section === 'A-overhead' && p.id.startsWith('upper-ceiling-'))) return true;
+      return (cut.walls ?? []).some(w => p.id.startsWith(`A-1-${w}-panel-`) || p.id.startsWith(`A-1-${w}-skirting`) || p.id.startsWith(`A-1-${w}-`) && p.glass);
+    };
+    return {parts: parts.filter(p => !hidePart(p)), labels};
+  }
   const hidden = new Set((options.cutaway?.walls ?? []).map(w => `A01-${w}`));
   // Foyer is retained as context. Only its camera-facing infill is removed with
   // the corresponding classroom face; jambs, wall thickness and posts stay visible.

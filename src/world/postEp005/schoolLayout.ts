@@ -45,5 +45,5 @@ export type CutawayWall = 'front' | 'back' | 'east' | 'west';
 export type SchoolAssetOptions = {
   // Explicit static pose only. EP006 owns any future movement/timing.
   doors?: 'closed' | 'open';
-  cutaway?: {room: 'A01'; walls?: readonly CutawayWall[]; overhead?: boolean};
+  cutaway?: {room: 'A01' | 'A02'; walls?: readonly CutawayWall[]; overhead?: boolean};
 };

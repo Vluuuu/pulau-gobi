@@ -4,6 +4,8 @@
   "private": true,
   "description": "Pulau Gobi - Episode 001 & 002 (low-poly 3D, Remotion + React Three Fiber)",
   "scripts": {
+    "viewer": "node scripts/world-viewer.mjs",
+    "build:viewer": "node scripts/world-viewer.mjs --build",
     "dev": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts Episode001 out/episode001.mp4 --gl=angle",
     "still": "remotion still src/index.ts Episode001 out/preview.png --frame=330 --gl=angle",
@@ -31,7 +33,9 @@
   },
   "devDependencies": {
     "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.7",
     "@types/three": "0.169.0",
+    "esbuild": "0.28.1",
     "typescript": "5.6.3"
   }
 }

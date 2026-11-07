@@ -69,7 +69,9 @@ const SchoolFlag:React.FC<{frame:number}>=({frame:f})=>{
  },[f]);useEffect(()=>()=>geometry.dispose(),[geometry]);
  return <mesh position={[-14.3,6.35,10]} geometry={geometry}><meshStandardMaterial vertexColors side={DoubleSide} roughness={.9}/></mesh>;
 };
-export const World005:React.FC<{frame:number}>=({frame:f})=>{
+// Optional asset slot for future world consumers. Episode005 supplies no override,
+// so its original geometry, timing and school gate remain exactly the default path.
+export const World005:React.FC<{frame:number;schoolOverride?:React.ReactNode}>=({frame:f,schoolOverride})=>{
  const G1=gap('G1'),carve=ramp(f,G1.start+21,G1.start+130),water=ramp(f,G1.start+36,G1.start+159),interior=schoolInterior(f),foyer=foyerInterior(f);
  const extension=useMemo(()=>partialChannel(water),[water]);
  const ranch=useMemo(()=>ranchParts(1).filter(p=>p.id!=='gate'),[]);
@@ -90,11 +92,11 @@ export const World005:React.FC<{frame:number}>=({frame:f})=>{
   </group>
   <Parts parts={[part('waiting-bench','#a58255',[-2,.42,4.3],[1.5,.15,.55]),part('waiting-leg-a','#765b3b',[-2.55,.21,4.3],[.12,.42,.44]),part('waiting-leg-b','#765b3b',[-1.45,.21,4.3],[.12,.42,.44])]}/>
   {f>=E(67.67)&&<Parts parts={ROUTE.slice(1,-1).flatMap((p,i)=>{const a=ROUTE[i];return a[1]>.2||p[1]>.2?[]:[part(`school-path-${i}`,'#c6b38a',[(a[0]+p[0])/2,.012,(a[2]+p[2])/2],[1.65,.025,Math.hypot(p[0]-a[0],p[2]-a[2])],'box',[0,Math.atan2(p[0]-a[0],p[2]-a[2]),0])];})}/>}
-  {f>=gap('G4').start+27&&<group name="school-gate" position={[...SCHOOL_GATE]}>
+  {schoolOverride===undefined&&f>=gap('G4').start+27&&<group name="school-gate" position={[...SCHOOL_GATE]}>
    <Parts parts={[part('school-gate-post-left','#8f6b48',[-1.68,1.65,0],[.23,3.3,.23]),part('school-gate-post-right','#8f6b48',[1.68,1.65,0],[.23,3.3,.23]),part('school-gate-arch','#577b77',[0,3.3,0],[3.6,.22,.28])]}/>
    {[-1,1].map(side=><group key={side} position={[side*1.6,0,0]} rotation-y={-side*gateOpen*1.48}><Parts parts={[part(`school-gate-leaf-${side}`,'#577b77',[-side*.8,.75,0],[1.55,1.45,.08])]}/></group>)}
   </group>}
-  <group name="school-001" position={[...SCHOOL.position]}>
+  {schoolOverride===undefined?<group name="school-001" position={[...SCHOOL.position]}>
    <Parts parts={campusParts(f,interior,foyer)}/>
    {f>=gap('G4').start+42&&[-14.35,-6.05].map(x=><mesh key={`sports-hoop-${x}`} position={[x,2.48,7.8]} rotation-x={Math.PI/2}><torusGeometry args={[.22,.026,5,16]}/><meshStandardMaterial color="#b37c49"/></mesh>)}
    {f>=gap('G4').start+147&&!interior&&<><Sign text={SCHOOL_NAME} position={[-10,4.58,4.03]} width={8.0} height={.9}/>
@@ -113,7 +115,7 @@ export const World005:React.FC<{frame:number}>=({frame:f})=>{
    {f>=gap('G4').start+156&&<Sign text="SELAMAT DATANG" position={[0,2,-2.56]} width={3.7} height={.7}/>}
    {f>=gap('G4').start+147&&<group position={[-2.4,3.7,3.7]} rotation-z={f>=E(89)&&f<E(90.4)?Math.sin(f*.5)*.38:Math.sin(f*.03)*.025}><mesh><coneGeometry args={[.23,.38,9,1,true]}/><meshStandardMaterial color="#d7b15f" side={DoubleSide}/></mesh><mesh position-y={-.2}><sphereGeometry args={[.07,6,4]}/><meshStandardMaterial color="#7c6944"/></mesh></group>}
    {f>=gap('G4').start+147&&<Parts parts={[part('class-bell-rope','#c4a366',[-2.8,2.1,1.5],[.035,1.6,.035]),part('class-bell-pulley','#b99b5e',[-2.8,3.0,1.5],[.15,.15,.12],'cylinder'),part('class-bell-rope-guide','#c4a366',[-2.8,3.05,2.55],[.03,.03,2.1])]}/>}
-  </group>
+  </group>:schoolOverride}
   {f>=E(48.57)&&<group position={[15.7,0,3.6]}><Parts parts={[part('warteg-stock-shelf','#a78253',[.45,.45,0],[1.5,.12,.65]),...Array.from({length:5},(_,i)=>part(`warteg-rice-stock-${i}`,'#ead4a3',[(i%3)*.45,.72+Math.floor(i/3)*.4,0],[.4,.42,.38],'ico'))]}/></group>}
   <Waterfall frame={f}/>
  </group>;

@@ -1,4 +1,5 @@
 export {PostEp005School} from './SchoolCampus';
+export {PostEp005World, POST_EP005_REFERENCE_FRAME} from './World';
 export {buildSchoolAsset} from './schoolAsset.ts';
 export {POST_EP005_WORLD} from './snapshot.ts';
 export {SCHOOL_SITE, WINGS, LEVELS, CLASSROOM, SCHOOL_PORTALS, SCHOOL_ENTRY_ROUTE, UPPER_ACCESS_ROUTE, toLocal, toWorld} from './schoolLayout.ts';
