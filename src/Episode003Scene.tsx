@@ -19,7 +19,7 @@ import {Episode003Captions} from './episode003/captions/Episode003Captions';
 import {StoryOverlays} from './episode003/captions/StoryOverlays';
 export {EP003_DURATION_IN_FRAMES};
 
-const Episode003World:React.FC<{frame:number}>=({frame})=>{
+export const Episode003World:React.FC<{frame:number}>=({frame})=>{
   const root=useRef<Group>(null),expansion=buildProgress(frame,'expansion');
   const visibleRadius=radiusForExpansion(expansion,L.initialRadius,L.targetRadius);
   useLayoutEffect(()=>{root.current?.traverse(n=>{if(n instanceof Mesh&&n.material&&'roughness' in n.material){

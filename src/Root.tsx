@@ -6,9 +6,11 @@ import {BuildPreview, BUILD_PREVIEW_FRAMES} from './episode002/BuildPreview';
 import {NpcPreview, NPC_PREVIEW_FRAMES} from './episode002/NpcPreview';
 import {DURATION_IN_FRAMES, FPS} from './timeline';
 import {Episode003,EP003_DURATION_IN_FRAMES} from './Episode003Scene';
+import {Episode004VisualPilot,EP004_PILOT_DURATION} from './episode004/pilot/PilotScene';
 
 export const Root: React.FC = () => (
   <>
+  <Composition id="Episode004VisualPilot" component={Episode004VisualPilot} durationInFrames={EP004_PILOT_DURATION} fps={30} width={1080} height={1920}/>
   <Composition id="Episode003" component={Episode003} durationInFrames={EP003_DURATION_IN_FRAMES} fps={30} width={1080} height={1920} />
   <Composition
     id="Episode002"
