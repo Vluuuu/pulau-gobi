@@ -6,9 +6,9 @@ import {EP003_ROSTER} from '../../episode003/state/roster.ts';
 import {PILOT_VO} from './audio.ts';
 import {gobiAt,oktaaAt,world,KOST} from './plan.ts';
 export const OKTAA=EP003_ROSTER.find(r=>r.id==='warga-1')!;
-export const PilotGobi:React.FC<{frame:number}>=({frame})=>{
- const ref=useRef<Group>(null),g=gobiAt(frame);
- const speaking=PILOT_VO.some(v=>v.words.some(w=>frame>=v.startFrame+w.start*30&&frame<v.startFrame+w.end*30));
+export const PilotGobi:React.FC<{frame:number;sample?:ReturnType<typeof gobiAt>;voiceSpeaking?:boolean}>=({frame,sample,voiceSpeaking})=>{
+ const ref=useRef<Group>(null),g=sample??gobiAt(frame);
+ const speaking=voiceSpeaking??PILOT_VO.some(v=>v.words.some(w=>frame>=v.startFrame+w.start*30&&frame<v.startFrame+w.end*30));
  const p={...g.pose,surprise:Math.max(g.pose.surprise??0,speaking?.22:0)};
  useLayoutEffect(()=>{ref.current?.traverse(n=>{if(n instanceof Mesh){n.castShadow=true;n.receiveShadow=true;
   if(Math.abs(n.position.z-.46)<.0001){const e=(1+.8*(p.surprise??0))*(1+(n.position.x<0?.35:-.2)*(p.confuse??0))*g.pupil;
