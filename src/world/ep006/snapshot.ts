@@ -1,0 +1,18 @@
+import {POST_EP005_WORLD} from '../postEp005/snapshot.ts';
+import {RESIDENTS,STUDENTS,HEADMASTER,COWS,COMMENT_MANIFEST} from './roster.ts';
+import {RIVER_LINE,RIVER_WIDTH,BRIDGE,OBSERVATION,SEATS} from './layout.ts';
+import {TRANSPLANTS} from './landscaping.ts';
+const freeze=<T,>(value:T):Readonly<T>=>{if(value&&typeof value==='object'){Object.values(value).forEach(v=>freeze(v));Object.freeze(value);}return value;};
+const clone=<T,>(value:T)=>freeze(JSON.parse(JSON.stringify(value)) as T);
+// Clone first: importing the current state must never mutate a historical module.
+export const POST_EP006_WORLD=clone({
+  ...POST_EP005_WORLD,id:'post-ep006-world-v1',schemaVersion:2,basedOnCommit:'3759f2e',firstConsumerEpisode:6,
+  school:{...POST_EP005_WORLD.school,firstHeadmasterId:HEADMASTER.id,selectedStudentIds:STUDENTS.map(s=>s.id),seats:SEATS,teachingTopic:'ikan'},
+  water:{...POST_EP005_WORLD.water,centerline:RIVER_LINE,width:RIVER_WIDTH,bedY:-.65,waterY:-.15,fish:{count:14,asset:'Fish006',species:'stylized freshwater fish; species not identified'}},
+  bridge:BRIDGE,observation:OBSERVATION,landscaping:{retainedPlantIds:true,transplants:TRANSPLANTS},
+  population:{...POST_EP005_WORLD.population,residents:RESIDENTS,cows:POST_EP005_WORLD.population.cows.map((c,i)=>({...c,...COWS[i]}))},
+  comments:COMMENT_MANIFEST,
+  editorial:{candidateCount:null,recordedCandidateCount:361,countStatus:'VO claim only; owner data not confirmed; no numeric UI',newStreetLights:0,teaserEpisode:7,
+    audio:'Original EP006 master retained intact as input; full recorded CTA replaced with complete canonical EP004 audiovisual tail, never doubled',
+    snapshotPose:'daylight classroom inspection fixture; episode timeline separately directs the field trip and return'},
+});

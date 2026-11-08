@@ -1,7 +1,7 @@
 // The viewer and future episodes consume this same entry point. Change the active
 // snapshot/assembler here when EP006 adds assets; do not create viewer-only meshes.
-export {PostEp005World as CurrentWorld} from './postEp005/World';
-export {POST_EP005_WORLD as CURRENT_WORLD_STATE} from './postEp005/snapshot.ts';
+export {World006 as CurrentWorld} from './ep006/World';
+export {POST_EP006_WORLD as CURRENT_WORLD_STATE} from './ep006/snapshot.ts';
 export {SceneLighting as WorldLighting} from '../episode003/camera/SceneCamera';
 
 export type WorldLandmark = {id: string; name: string; description: string; sceneNames: readonly string[]};
@@ -15,6 +15,8 @@ export const WORLD_LANDMARKS: readonly WorldLandmark[] = [
   {id: 'ranch', name: 'Kandang sapi', description: '3 sapi permanen · pakan & air', sceneNames: ['ranch-004']},
   {id: 'farm', name: 'Kebun', description: 'Tunas jagung & wortel · irigasi', sceneNames: ['farm-004']},
   {id: 'rice', name: 'Sawah lama', description: 'Kondisi setelah panen', sceneNames: ['rice-plot-001']},
-  {id: 'river', name: 'Sungai', description: 'Aliran lama hingga bibir pulau', sceneNames: ['river-001', 'river-001-extension']},
+  {id: 'river', name: 'Sungai', description: 'Sungai EP006 lebih lebar · ikan', sceneNames: ['river-001', 'river-fish-006']},
+  {id: 'bridge', name: 'Jembatan', description: 'Bentang diperpanjang · railing · jalan terhubung', sceneNames: ['bridge-001']},
+  {id: 'observation', name: 'Belajar alam', description: 'Dek observasi ikan · pagar', sceneNames: ['river-observation-006']},
   {id: 'waterfall', name: 'Air terjun', description: 'Aliran panjang & kabut di bawah', sceneNames: ['waterfall-001']},
 ];

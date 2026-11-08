@@ -1,0 +1,2488 @@
+{
+  "id": "post-ep006-world-v1",
+  "schemaVersion": 2,
+  "basedOnCommit": "3759f2e",
+  "firstConsumerEpisode": 6,
+  "publishedEpisode005": {
+    "historical": true,
+    "modifyComposition": false
+  },
+  "island": {
+    "radius": 52,
+    "house": {
+      "position": [
+        -5,
+        0,
+        -1
+      ],
+      "rotationY": 0.7853981633974483,
+      "scale": 1.65
+    },
+    "ricePlot": {
+      "position": [
+        4.9,
+        0,
+        -2.6
+      ],
+      "rotationY": 0.7853981633974483,
+      "scale": 1.9
+    },
+    "warteg": {
+      "position": [
+        14,
+        0,
+        6
+      ],
+      "rotationY": 2.356194490192345,
+      "scale": 1.5
+    },
+    "farm": {
+      "position": [
+        10,
+        0,
+        -12
+      ],
+      "rotation": 0.7853981633974483,
+      "width": 10,
+      "depth": 8
+    },
+    "ranch": {
+      "position": [
+        -12,
+        0,
+        -14
+      ],
+      "rotation": 0.7853981633974483,
+      "width": 10,
+      "depth": 8
+    },
+    "kost": {
+      "position": [
+        4,
+        0,
+        14
+      ],
+      "rotation": 0.7853981633974483,
+      "width": 12,
+      "depth": 6
+    }
+  },
+  "water": {
+    "riverId": "river-001",
+    "original": {
+      "centerline": [
+        [
+          -22,
+          -6
+        ],
+        [
+          -16,
+          2
+        ],
+        [
+          -13,
+          10
+        ],
+        [
+          -15,
+          20
+        ]
+      ],
+      "width": 3,
+      "bedY": -0.35,
+      "waterY": -0.15
+    },
+    "extension": [
+      [
+        -15,
+        20
+      ],
+      [
+        -10.5,
+        37.5
+      ],
+      [
+        -10.5,
+        48.5
+      ]
+    ],
+    "waterfallId": "waterfall-001",
+    "built": true,
+    "centerline": [
+      [
+        -22,
+        -6
+      ],
+      [
+        -16,
+        2
+      ],
+      [
+        -13,
+        10
+      ],
+      [
+        -15,
+        20
+      ],
+      [
+        -10.5,
+        37.5
+      ],
+      [
+        -10.5,
+        48.5
+      ]
+    ],
+    "width": 5.4,
+    "bedY": -0.65,
+    "waterY": -0.15,
+    "fish": {
+      "count": 14,
+      "asset": "Fish006",
+      "species": "stylized freshwater fish; species not identified"
+    }
+  },
+  "school": {
+    "id": "school-001",
+    "variant": "school-001-post-ep005-v1",
+    "component": "PostEp005School",
+    "placement": {
+      "position": [
+        -20,
+        0,
+        -22
+      ],
+      "rotation": 0,
+      "width": 8.4,
+      "depth": 5.8
+    },
+    "wings": [
+      {
+        "id": "A",
+        "x": 0,
+        "z": 0,
+        "width": 8.4,
+        "depth": 5.8
+      },
+      {
+        "id": "B",
+        "x": -5,
+        "z": -5,
+        "width": 8.4,
+        "depth": 5.8
+      },
+      {
+        "id": "C",
+        "x": -10,
+        "z": -2,
+        "width": 8.4,
+        "depth": 5.8
+      }
+    ],
+    "floors": 2,
+    "firstTeacherId": "warga-11",
+    "selectedStudentIds": [
+      "warga-13",
+      "warga-14",
+      "warga-15",
+      "warga-16",
+      "warga-17",
+      "warga-18",
+      "warga-19",
+      "warga-20"
+    ],
+    "classroomA01": {
+      "desks": 8,
+      "enclosedByDefault": true,
+      "cutawayDefault": false
+    },
+    "portals": [
+      {
+        "id": "school-gate",
+        "point": [
+          -1,
+          0,
+          12
+        ],
+        "width": 3.2,
+        "height": 3.3
+      },
+      {
+        "id": "main-entry",
+        "point": [
+          0,
+          0.4,
+          5.84
+        ],
+        "width": 2.4,
+        "height": 2.8
+      },
+      {
+        "id": "foyer",
+        "point": [
+          0,
+          0.4,
+          4.3
+        ],
+        "width": 3.2,
+        "height": 3.1
+      },
+      {
+        "id": "class-A01",
+        "point": [
+          0,
+          0.4,
+          2.8
+        ],
+        "width": 1.5,
+        "height": 2.65
+      }
+    ],
+    "pedestrianRoute": [
+      [
+        -1,
+        0,
+        12
+      ],
+      [
+        -1,
+        0,
+        8.7
+      ],
+      [
+        0,
+        0,
+        7
+      ],
+      [
+        0,
+        0.12,
+        6.45
+      ],
+      [
+        0,
+        0.24,
+        6.15
+      ],
+      [
+        0,
+        0.4,
+        5.95
+      ],
+      [
+        0,
+        0.4,
+        5.84
+      ],
+      [
+        0,
+        0.4,
+        4.3
+      ],
+      [
+        0,
+        0.4,
+        2.8
+      ],
+      [
+        0,
+        0.4,
+        1.7
+      ],
+      [
+        0,
+        0.4,
+        -1.4
+      ]
+    ],
+    "upperAccessRoute": [
+      [
+        0,
+        0.4,
+        4.3
+      ],
+      [
+        0,
+        0.4,
+        4.9
+      ],
+      [
+        -2.3,
+        0.4,
+        4.9
+      ],
+      [
+        -3.3,
+        0.4,
+        4.3
+      ],
+      [
+        -5.15,
+        0.4,
+        4.3
+      ],
+      [
+        -5.15,
+        0.4,
+        3.35
+      ],
+      [
+        -6.7,
+        0.4,
+        1.35
+      ],
+      [
+        -10,
+        0.4,
+        1.35
+      ],
+      [
+        -10,
+        0.4,
+        0.8
+      ],
+      [
+        -10,
+        0.4,
+        -3.1
+      ],
+      [
+        -7.35,
+        0.4,
+        -3.1
+      ],
+      [
+        -7.35,
+        0.4,
+        -3.5
+      ],
+      [
+        -7.35,
+        2.18,
+        -6.5
+      ],
+      [
+        -7.35,
+        2.18,
+        -6.95
+      ],
+      [
+        -5.65,
+        2.18,
+        -6.95
+      ],
+      [
+        -5.65,
+        2.18,
+        -6.5
+      ],
+      [
+        -5.65,
+        3.96,
+        -3.5
+      ],
+      [
+        -5.65,
+        3.96,
+        -2.65
+      ],
+      [
+        -10,
+        3.96,
+        -2.65
+      ],
+      [
+        -10,
+        3.96,
+        0.8
+      ],
+      [
+        -10,
+        3.96,
+        1.35
+      ],
+      [
+        -6.7,
+        3.96,
+        1.35
+      ],
+      [
+        -5.15,
+        3.96,
+        3.35
+      ],
+      [
+        0,
+        3.96,
+        3.35
+      ],
+      [
+        0,
+        3.96,
+        2.8
+      ]
+    ],
+    "firstHeadmasterId": "warga-21",
+    "seats": [
+      {
+        "id": "student-chair-1",
+        "position": [
+          -22.2,
+          0.4,
+          -22.63
+        ],
+        "desk": [
+          -22.2,
+          1.1800000000000002,
+          -22.95
+        ],
+        "row": 0
+      },
+      {
+        "id": "student-chair-2",
+        "position": [
+          -17.8,
+          0.4,
+          -22.63
+        ],
+        "desk": [
+          -17.8,
+          1.1800000000000002,
+          -22.95
+        ],
+        "row": 0
+      },
+      {
+        "id": "student-chair-3",
+        "position": [
+          -22.2,
+          0.4,
+          -21.71
+        ],
+        "desk": [
+          -22.2,
+          1.1800000000000002,
+          -22.03
+        ],
+        "row": 1
+      },
+      {
+        "id": "student-chair-4",
+        "position": [
+          -17.8,
+          0.4,
+          -21.71
+        ],
+        "desk": [
+          -17.8,
+          1.1800000000000002,
+          -22.03
+        ],
+        "row": 1
+      },
+      {
+        "id": "student-chair-5",
+        "position": [
+          -22.2,
+          0.4,
+          -20.79
+        ],
+        "desk": [
+          -22.2,
+          1.1800000000000002,
+          -21.11
+        ],
+        "row": 2
+      },
+      {
+        "id": "student-chair-6",
+        "position": [
+          -17.8,
+          0.4,
+          -20.79
+        ],
+        "desk": [
+          -17.8,
+          1.1800000000000002,
+          -21.11
+        ],
+        "row": 2
+      },
+      {
+        "id": "student-chair-7",
+        "position": [
+          -22.2,
+          0.4,
+          -19.87
+        ],
+        "desk": [
+          -22.2,
+          1.1800000000000002,
+          -20.19
+        ],
+        "row": 3
+      },
+      {
+        "id": "student-chair-8",
+        "position": [
+          -17.8,
+          0.4,
+          -19.87
+        ],
+        "desk": [
+          -17.8,
+          1.1800000000000002,
+          -20.19
+        ],
+        "row": 3
+      }
+    ],
+    "teachingTopic": "ikan"
+  },
+  "population": {
+    "gobi": {
+      "id": "gobi",
+      "countedInResidents": false
+    },
+    "residents": [
+      {
+        "id": "warga-1",
+        "name": "oktaa.blushh",
+        "cohort": 2,
+        "special": true,
+        "visual": {
+          "seed": 1001,
+          "shirt": "#ff7a59",
+          "hair": "#3b2a20",
+          "pants": "#2b3a55",
+          "skin": "#f1c9a5",
+          "scale": 1,
+          "hairStyle": 0,
+          "accessory": null
+        },
+        "isLegacy": true
+      },
+      {
+        "id": "warga-2",
+        "name": "Afriza SuperStore",
+        "cohort": 2,
+        "special": true,
+        "visual": {
+          "seed": 1002,
+          "shirt": "#4aa8ff",
+          "hair": "#e8c35a",
+          "pants": "#2b3a55",
+          "skin": "#f1c9a5",
+          "scale": 1,
+          "hairStyle": 0,
+          "accessory": null
+        },
+        "isLegacy": true
+      },
+      {
+        "id": "warga-3",
+        "name": "shifalina_",
+        "cohort": 3,
+        "special": true,
+        "visual": {
+          "seed": 3003,
+          "shirt": "#e85d9a",
+          "hair": "#2a1d1a",
+          "pants": "#3a3f58",
+          "skin": "#e8b98f",
+          "scale": 1,
+          "hairStyle": 2,
+          "accessory": 0
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-4",
+        "name": "damar_zan",
+        "cohort": 3,
+        "special": true,
+        "visual": {
+          "seed": 4004,
+          "shirt": "#3fae7a",
+          "hair": "#1f1a17",
+          "pants": "#5a4a3a",
+          "skin": "#d9a77d",
+          "scale": 1,
+          "hairStyle": 1,
+          "accessory": null
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-5",
+        "name": "Eka Agustin",
+        "cohort": 3,
+        "special": true,
+        "visual": {
+          "seed": 5005,
+          "shirt": "#8e6bd8",
+          "hair": "#4a2f22",
+          "pants": "#2f4a5e",
+          "skin": "#f0c8a0",
+          "scale": 1,
+          "hairStyle": 3,
+          "accessory": 1
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-6",
+        "name": "joy.__3.15",
+        "cohort": 3,
+        "special": false,
+        "visual": {
+          "seed": 6006,
+          "shirt": "#f2b134",
+          "hair": "#241a15",
+          "pants": "#3b3b4f",
+          "skin": "#e0b088",
+          "scale": 1,
+          "hairStyle": 0,
+          "accessory": null
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-7",
+        "name": "irtizadelanorillaridwan",
+        "cohort": 4,
+        "special": true,
+        "visual": {
+          "id": "warga-7",
+          "name": "irtizadelanorillaridwan",
+          "role": "Irtiza",
+          "cohort": 4,
+          "tier": "special",
+          "seed": 71,
+          "shirt": "#6b9d79",
+          "hair": "#3c2d23",
+          "pants": "#5d5543",
+          "skin": "#edbf98",
+          "hairStyle": 1,
+          "scale": 1,
+          "accessory": 1
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-8",
+        "name": "fredrikz_24",
+        "cohort": 4,
+        "special": true,
+        "visual": {
+          "id": "warga-8",
+          "name": "fredrikz_24",
+          "role": "Fredrikz",
+          "cohort": 4,
+          "tier": "special",
+          "seed": 83,
+          "shirt": "#b67a4f",
+          "hair": "#332b25",
+          "pants": "#3c5466",
+          "skin": "#d8a77d",
+          "hairStyle": 0,
+          "scale": 1,
+          "accessory": 1
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-9",
+        "name": "Xyree",
+        "cohort": 4,
+        "special": true,
+        "visual": {
+          "id": "warga-9",
+          "name": "Xyree",
+          "handle": "ffbetaffbeta53",
+          "role": "Penjaga kandang",
+          "cohort": 4,
+          "tier": "special",
+          "seed": 97,
+          "shirt": "#d5b256",
+          "hair": "#252a31",
+          "pants": "#485b62",
+          "skin": "#edc3a1",
+          "hairStyle": 2,
+          "scale": 1,
+          "accessory": 1
+        },
+        "isLegacy": false
+      },
+      {
+        "id": "warga-10",
+        "name": "guapusingnjir",
+        "cohort": 5,
+        "special": true,
+        "isLegacy": false,
+        "visual": {
+          "id": "warga-10",
+          "name": "guapusingnjir",
+          "special": true,
+          "seed": 105,
+          "shirt": "#277c57",
+          "hair": "#252a26",
+          "pants": "#334842",
+          "skin": "#e9bf93",
+          "hairStyle": 1,
+          "scale": 1,
+          "accessory": 1
+        }
+      },
+      {
+        "id": "warga-11",
+        "name": "DamiaInsyirah🫐🤍",
+        "cohort": 5,
+        "special": true,
+        "isLegacy": false,
+        "visual": {
+          "id": "warga-11",
+          "name": "DamiaInsyirah🫐🤍",
+          "special": true,
+          "seed": 115,
+          "shirt": "#a7a8d6",
+          "hair": "#373449",
+          "pants": "#5d607d",
+          "skin": "#ecc8b0",
+          "hairStyle": 2,
+          "scale": 1,
+          "accessory": 1
+        }
+      },
+      {
+        "id": "warga-12",
+        "name": "RIS_26",
+        "cohort": 5,
+        "special": false,
+        "isLegacy": false,
+        "visual": {
+          "id": "warga-12",
+          "name": "RIS_26",
+          "special": false,
+          "seed": 125,
+          "shirt": "#6fa4c2",
+          "hair": "#332a26",
+          "pants": "#596678",
+          "skin": "#dfb28c",
+          "hairStyle": 0,
+          "scale": 1,
+          "accessory": 1
+        }
+      },
+      {
+        "id": "warga-13",
+        "name": "posyaryn07",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_01.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 613,
+          "shirt": "#83aebb",
+          "hair": "#332c28",
+          "pants": "#485c70",
+          "skin": "#e7b88d",
+          "hairStyle": 0,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-14",
+        "name": "uz_daus",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_02.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 630,
+          "shirt": "#c98c73",
+          "hair": "#252c32",
+          "pants": "#485c70",
+          "skin": "#c9916c",
+          "hairStyle": 1,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-15",
+        "name": "capiwasa",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_03.png",
+        "verification": "owner-confirmed-literal",
+        "visual": {
+          "seed": 647,
+          "shirt": "#94af78",
+          "hair": "#48392e",
+          "pants": "#485c70",
+          "skin": "#efc7a0",
+          "hairStyle": 2,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-16",
+        "name": "Rissa-i3f",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_04.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 664,
+          "shirt": "#b899c3",
+          "hair": "#332c28",
+          "pants": "#485c70",
+          "skin": "#e7b88d",
+          "hairStyle": 3,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-17",
+        "name": "bsk_rfi",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_05.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 681,
+          "shirt": "#d6b865",
+          "hair": "#252c32",
+          "pants": "#485c70",
+          "skin": "#c9916c",
+          "hairStyle": 0,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-18",
+        "name": "FaRzHaN-BoY",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_06.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 698,
+          "shirt": "#85b3a0",
+          "hair": "#48392e",
+          "pants": "#485c70",
+          "skin": "#efc7a0",
+          "hairStyle": 1,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-19",
+        "name": "MisbahulAmmar",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_07.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 715,
+          "shirt": "#8b9bc0",
+          "hair": "#332c28",
+          "pants": "#485c70",
+          "skin": "#e7b88d",
+          "hairStyle": 2,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-20",
+        "name": "athrr_0202",
+        "cohort": 6,
+        "special": false,
+        "isLegacy": false,
+        "role": "student",
+        "nameSource": "episode006/comments/student_08.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 732,
+          "shirt": "#c993a4",
+          "hair": "#252c32",
+          "pants": "#485c70",
+          "skin": "#c9916c",
+          "hairStyle": 3,
+          "accessory": null,
+          "scale": 0.84
+        }
+      },
+      {
+        "id": "warga-21",
+        "name": "GhanimMiyaz",
+        "role": "headmaster",
+        "cohort": 6,
+        "special": true,
+        "isLegacy": false,
+        "nameSource": "episode006/comments/Ghanim_Miyaz.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 791,
+          "shirt": "#536779",
+          "hair": "#292e34",
+          "pants": "#43556c",
+          "skin": "#dca983",
+          "hairStyle": 1,
+          "accessory": null,
+          "scale": 1
+        }
+      },
+      {
+        "id": "warga-22",
+        "name": "velora.nyxflare",
+        "role": "cow-naming-contributor",
+        "cohort": 6,
+        "special": true,
+        "isLegacy": false,
+        "nameSource": "episode006/comments/velora_nyxflare.png",
+        "verification": "original-screenshot",
+        "visual": {
+          "seed": 809,
+          "shirt": "#9577ae",
+          "hair": "#292e34",
+          "pants": "#43556c",
+          "skin": "#dca983",
+          "hairStyle": 1,
+          "accessory": null,
+          "scale": 1
+        }
+      }
+    ],
+    "cows": [
+      {
+        "id": "cow-001",
+        "home": [
+          -9.31299423149112,
+          0,
+          -14.565685424949239
+        ],
+        "location": "ranch-004",
+        "returnedAfterSchoolVisit": false,
+        "name": "Sappy",
+        "nameSource": "episode006/comments/velora_nyxflare.png",
+        "assignment": "editorial order: existing cow-001..003; commenter did not specify individual markings"
+      },
+      {
+        "id": "cow-002",
+        "home": [
+          -12.848528137423857,
+          0,
+          -11.454415587728429
+        ],
+        "location": "ranch-004",
+        "returnedAfterSchoolVisit": false,
+        "name": "Oopet",
+        "nameSource": "episode006/comments/velora_nyxflare.png",
+        "assignment": "editorial order: existing cow-001..003; commenter did not specify individual markings"
+      },
+      {
+        "id": "cow-003",
+        "home": [
+          -10.161522368914977,
+          0,
+          -12.161522368914977
+        ],
+        "location": "ranch-004",
+        "returnedAfterSchoolVisit": true,
+        "name": "Rembo",
+        "nameSource": "episode006/comments/velora_nyxflare.png",
+        "assignment": "editorial order: existing cow-001..003; commenter did not specify individual markings"
+      }
+    ]
+  },
+  "progress": {
+    "rice": "post-harvest stubble and three retained bundles; no second harvest",
+    "farm": "corn and carrot sprouts from EP005; no mature produce or new growth stage",
+    "ranch": "three permanent cows, feed stocked, cow-003 returned, gate latch retained",
+    "kost": {
+      "roomCount": 6,
+      "floors": 2
+    },
+    "warteg": "existing shop and EP005 rice stock retained"
+  },
+  "retainedAssets": [
+    {
+      "id": "terrain-and-rocks",
+      "source": "episode003/world/terrain/render/terrainGeometry.ts",
+      "state": "radius 52; full EP005 channel carve"
+    },
+    {
+      "id": "house-001",
+      "source": "episode003/world/house/RenovatedHouseEP003.tsx",
+      "state": "built; original placement"
+    },
+    {
+      "id": "river-001",
+      "source": "episode003/world/river/RiverEP003.tsx",
+      "state": "original river plus complete CHANNEL"
+    },
+    {
+      "id": "waterfall-001",
+      "source": "episode005/World.tsx",
+      "state": "retain EP005 asset; no waterfall polish in this patch"
+    },
+    {
+      "id": "warteg-001",
+      "source": "episode003/world/warteg/WartegEP003.tsx",
+      "state": "built plus EP005 stock shelf"
+    },
+    {
+      "id": "kost-004",
+      "source": "episode004/pilot/KostProxy.tsx",
+      "state": "progress 1; enhanced; six rooms"
+    },
+    {
+      "id": "farm-004",
+      "source": "episode004/production/buildModels.ts + episode005/models.ts",
+      "state": "full irrigation and retained EP005 sprouts"
+    },
+    {
+      "id": "rice-plot-001",
+      "source": "episode005/models.ts",
+      "state": "post-harvest"
+    },
+    {
+      "id": "ranch-004",
+      "source": "episode004/production/buildModels.ts + episode005/World.tsx",
+      "state": "troughs, hay, shelter, feed stock and closed latched gate"
+    },
+    {
+      "id": "decor-legacy",
+      "source": "episode002/IslandDecor3D.tsx + episode004/production/Nature.tsx",
+      "state": "all plants, paths, trees and decorations retained"
+    },
+    {
+      "id": "school-approach",
+      "source": "episode005/layout.ts",
+      "state": [
+        [
+          -9.31299423149112,
+          0,
+          -11.31299423149112
+        ],
+        [
+          -7.8987806691180245,
+          0,
+          -9.898780669118025
+        ],
+        [
+          -12.282842712474618,
+          0,
+          -5.514718625761431
+        ],
+        [
+          -18,
+          0,
+          -8.6
+        ],
+        [
+          -21,
+          0,
+          -10
+        ],
+        [
+          -21,
+          0,
+          -13.3
+        ],
+        [
+          -20,
+          0,
+          -15
+        ],
+        [
+          -20,
+          0.4,
+          -16.18
+        ],
+        [
+          -20,
+          0.4,
+          -17.6
+        ],
+        [
+          -20,
+          0.4,
+          -19.16
+        ],
+        [
+          -20,
+          0.4,
+          -20.6
+        ],
+        [
+          -20,
+          0.4,
+          -21.4
+        ]
+      ]
+    }
+  ],
+  "bridge": {
+    "id": "bridge-001",
+    "center": [
+      -14.2,
+      0,
+      16
+    ],
+    "angle": 1.373400766945016,
+    "oldLength": 3.8,
+    "length": 7.8,
+    "width": 1.8,
+    "deckY": 0.27,
+    "provenance": "EP006 reconstruction; baseline has no bridge model"
+  },
+  "observation": {
+    "center": [
+      -9.6,
+      0.16,
+      21
+    ],
+    "width": 3.1,
+    "depth": 4.9
+  },
+  "landscaping": {
+    "retainedPlantIds": true,
+    "transplants": [
+      {
+        "id": 3,
+        "kind": "tree",
+        "from": [
+          -28.135537983113494,
+          -30.968631595725913
+        ],
+        "to": [
+          -29.18969680434607,
+          -33.56261486082566
+        ]
+      },
+      {
+        "id": 4,
+        "kind": "tree",
+        "from": [
+          -29.146668506834292,
+          -9.696489035401738
+        ],
+        "to": [
+          -29.803315888784223,
+          -8.347854831557603
+        ]
+      },
+      {
+        "id": 10,
+        "kind": "tree",
+        "from": [
+          -25.766365202705135,
+          -19.184738388502044
+        ],
+        "to": [
+          -36.356029734530864,
+          -18.716758577621086
+        ]
+      },
+      {
+        "id": 14,
+        "kind": "tree",
+        "from": [
+          -9.932046968336275,
+          28.570633331642185
+        ],
+        "to": [
+          -8.89693449300087,
+          27.48502651358833
+        ]
+      },
+      {
+        "id": 20,
+        "kind": "tree",
+        "from": [
+          -31.39039107751067,
+          -31.45022068981122
+        ],
+        "to": [
+          -31.017312588608835,
+          -33.56760408473967
+        ]
+      },
+      {
+        "id": 45,
+        "kind": "tree",
+        "from": [
+          -12.559148002499436,
+          38.70635460383419
+        ],
+        "to": [
+          -14.697344625346428,
+          38.93133282954884
+        ]
+      },
+      {
+        "id": 67,
+        "kind": "tree",
+        "from": [
+          -31.525122565039805,
+          -17.33341162426367
+        ],
+        "to": [
+          -36.26547134302041,
+          -17.030767504714277
+        ]
+      },
+      {
+        "id": 74,
+        "kind": "tree",
+        "from": [
+          -33.239475810145386,
+          -28.03197004541107
+        ],
+        "to": [
+          -36.983606690714986,
+          -26.36119658704962
+        ]
+      },
+      {
+        "id": 88,
+        "kind": "tree",
+        "from": [
+          -34.51189199989437,
+          -12.597239281913682
+        ],
+        "to": [
+          -36.53035254065621,
+          -13.33772361354224
+        ]
+      },
+      {
+        "id": 108,
+        "kind": "tree",
+        "from": [
+          -34.604655265801064,
+          -16.28995738038865
+        ],
+        "to": [
+          -37.84625843907098,
+          -15.109064130748175
+        ]
+      },
+      {
+        "id": 114,
+        "kind": "tree",
+        "from": [
+          -23.98189821832818,
+          -12.18855830625405
+        ],
+        "to": [
+          -18.52755237116734,
+          -8.297528702208442
+        ]
+      },
+      {
+        "id": 123,
+        "kind": "tree",
+        "from": [
+          -25.14935296874514,
+          -1.5123726586329282
+        ],
+        "to": [
+          -26.649642189138014,
+          0.027637813790212906
+        ]
+      },
+      {
+        "id": 133,
+        "kind": "tree",
+        "from": [
+          -14.275028130899118,
+          31.76565395814124
+        ],
+        "to": [
+          -16.414606783156778,
+          31.977085249116087
+        ]
+      },
+      {
+        "id": 134,
+        "kind": "tree",
+        "from": [
+          -16.47816562288363,
+          -31.004047540885622
+        ],
+        "to": [
+          -14.564351199869058,
+          -30.024346385297143
+        ]
+      },
+      {
+        "id": 138,
+        "kind": "tree",
+        "from": [
+          -10.745888359743411,
+          17.30461245313054
+        ],
+        "to": [
+          -8.641729223398368,
+          16.863008185787393
+        ]
+      },
+      {
+        "id": 143,
+        "kind": "tree",
+        "from": [
+          -33.51385791943132,
+          -20.799091658135094
+        ],
+        "to": [
+          -36.29452675629802,
+          -21.12754381550112
+        ]
+      },
+      {
+        "id": 146,
+        "kind": "bush",
+        "from": [
+          -34.51189199989437,
+          -12.597239281913682
+        ],
+        "to": [
+          -36.71985087276386,
+          -9.946311592270508
+        ]
+      },
+      {
+        "id": 177,
+        "kind": "bush",
+        "from": [
+          -15.724341556081201,
+          22.841579326419907
+        ],
+        "to": [
+          -17.83648051591562,
+          22.439871703453182
+        ]
+      },
+      {
+        "id": 181,
+        "kind": "bush",
+        "from": [
+          -34.604655265801064,
+          -16.28995738038865
+        ],
+        "to": [
+          -37.81670345424124,
+          -17.54902307968245
+        ]
+      },
+      {
+        "id": 190,
+        "kind": "bush",
+        "from": [
+          -16.574957491143326,
+          -26.322696331891617
+        ],
+        "to": [
+          -14.32183565894709,
+          -24.660335959023968
+        ]
+      },
+      {
+        "id": 191,
+        "kind": "bush",
+        "from": [
+          -23.98189821832818,
+          -12.18855830625405
+        ],
+        "to": [
+          -29.21047635943774,
+          -7.0228569383552735
+        ]
+      },
+      {
+        "id": 197,
+        "kind": "bush",
+        "from": [
+          -20.102159159727464,
+          -8.638975070339962
+        ],
+        "to": [
+          -17.302367701507183,
+          -8.604802120851383
+        ]
+      },
+      {
+        "id": 207,
+        "kind": "bush",
+        "from": [
+          -25.14935296874514,
+          -1.5123726586329282
+        ],
+        "to": [
+          -24.0216620105823,
+          -2.501469773621025
+        ]
+      },
+      {
+        "id": 225,
+        "kind": "bush",
+        "from": [
+          -26.290258145850284,
+          -20.163603133975805
+        ],
+        "to": [
+          -38.15292123207824,
+          -19.221677180068237
+        ]
+      },
+      {
+        "id": 226,
+        "kind": "bush",
+        "from": [
+          -15.81156436879638,
+          -28.365120921166636
+        ],
+        "to": [
+          -13.08676031563865,
+          -27.720572341232433
+        ]
+      },
+      {
+        "id": 230,
+        "kind": "bush",
+        "from": [
+          -14.275028130899118,
+          31.76565395814124
+        ],
+        "to": [
+          -15.334326483512713,
+          33.636586078810005
+        ]
+      },
+      {
+        "id": 231,
+        "kind": "bush",
+        "from": [
+          -16.47816562288363,
+          -31.004047540885622
+        ],
+        "to": [
+          -13.900629220631577,
+          -32.09780532717359
+        ]
+      },
+      {
+        "id": 240,
+        "kind": "bush",
+        "from": [
+          -10.184597300934971,
+          37.75096438023162
+        ],
+        "to": [
+          -6.826747890947653,
+          36.95891176843881
+        ]
+      },
+      {
+        "id": 244,
+        "kind": "bush",
+        "from": [
+          -10.745888359743411,
+          17.30461245313054
+        ],
+        "to": [
+          -10.117548304745162,
+          14.576025130854635
+        ]
+      },
+      {
+        "id": 255,
+        "kind": "bush",
+        "from": [
+          -33.51385791943132,
+          -20.799091658135094
+        ],
+        "to": [
+          -36.89048352540737,
+          -20.091349108144726
+        ]
+      },
+      {
+        "id": 256,
+        "kind": "bush",
+        "from": [
+          -12.557765359957735,
+          29.439929191541488
+        ],
+        "to": [
+          -8.477253305198154,
+          29.839205250129716
+        ]
+      },
+      {
+        "id": 271,
+        "kind": "bush",
+        "from": [
+          -16.586656309098366,
+          -27.8641483773806
+        ],
+        "to": [
+          -12.450562948281803,
+          -25.528504630871055
+        ]
+      },
+      {
+        "id": 291,
+        "kind": "bush",
+        "from": [
+          -24.505256051720313,
+          -26.677924853632742
+        ],
+        "to": [
+          -26.236586824476262,
+          -35.15288761197618
+        ]
+      },
+      {
+        "id": 293,
+        "kind": "bush",
+        "from": [
+          -18.68549397093763,
+          -22.045638556114973
+        ],
+        "to": [
+          -14.617833731937221,
+          -22.559584253689263
+        ]
+      },
+      {
+        "id": 298,
+        "kind": "grass",
+        "from": [
+          -10.041063197940577,
+          42.39269063699479
+        ],
+        "to": [
+          -7.418637653662307,
+          41.41142397358631
+        ]
+      },
+      {
+        "id": 300,
+        "kind": "grass",
+        "from": [
+          -12.989346208625086,
+          37.39068288381123
+        ],
+        "to": [
+          -14.173225721993353,
+          36.46958066482198
+        ]
+      },
+      {
+        "id": 316,
+        "kind": "grass",
+        "from": [
+          -18.84612502800236,
+          16.046691362354423
+        ],
+        "to": [
+          -19.30788922432115,
+          14.619535509968966
+        ]
+      },
+      {
+        "id": 321,
+        "kind": "grass",
+        "from": [
+          -9.95261489743065,
+          16.53305478276761
+        ],
+        "to": [
+          -9.480288920491665,
+          15.10935953043703
+        ]
+      },
+      {
+        "id": 330,
+        "kind": "grass",
+        "from": [
+          -27.267972920604112,
+          -17.05873885712461
+        ],
+        "to": [
+          -27.08312923200295,
+          -9.060874591535683
+        ]
+      },
+      {
+        "id": 337,
+        "kind": "grass",
+        "from": [
+          -28.227198194332846,
+          -25.553554664308372
+        ],
+        "to": [
+          -35.97810096914347,
+          -23.57277043188097
+        ]
+      },
+      {
+        "id": 338,
+        "kind": "grass",
+        "from": [
+          -25.449462740731978,
+          -22.883506595663007
+        ],
+        "to": [
+          -28.171815646247754,
+          -33.12795849207161
+        ]
+      },
+      {
+        "id": 350,
+        "kind": "grass",
+        "from": [
+          -20.49917042886442,
+          -20.01849500627555
+        ],
+        "to": [
+          -15.117869131434949,
+          -19.569500188617386
+        ]
+      },
+      {
+        "id": 362,
+        "kind": "grass",
+        "from": [
+          -12.419982129041689,
+          31.202703458990705
+        ],
+        "to": [
+          -15.068885443727233,
+          32.1100684513989
+        ]
+      },
+      {
+        "id": 364,
+        "kind": "grass",
+        "from": [
+          -10.748333792748102,
+          29.634696223643175
+        ],
+        "to": [
+          -9.286970886313917,
+          29.29643825152984
+        ]
+      },
+      {
+        "id": 368,
+        "kind": "grass",
+        "from": [
+          -8.443209572964621,
+          46.11809942907578
+        ],
+        "to": [
+          -7.357065929585685,
+          44.26262321366704
+        ]
+      },
+      {
+        "id": 374,
+        "kind": "grass",
+        "from": [
+          -18.627497227328522,
+          -32.282156539923825
+        ],
+        "to": [
+          -18.637273070045104,
+          -33.782124683885286
+        ]
+      },
+      {
+        "id": 378,
+        "kind": "grass",
+        "from": [
+          -18.88487113958884,
+          -24.229609309744248
+        ],
+        "to": [
+          -14.979860708666285,
+          -25.478966558246874
+        ]
+      },
+      {
+        "id": 387,
+        "kind": "grass",
+        "from": [
+          -13.977800153799947,
+          25.64273620684701
+        ],
+        "to": [
+          -16.611248773221273,
+          26.59402394926142
+        ]
+      },
+      {
+        "id": 390,
+        "kind": "grass",
+        "from": [
+          -19.11395249022254,
+          10.289410345189316
+        ],
+        "to": [
+          -17.740729004772117,
+          9.685873056360045
+        ]
+      },
+      {
+        "id": 391,
+        "kind": "grass",
+        "from": [
+          -21.180504197953255,
+          -22.525237391734844
+        ],
+        "to": [
+          -15.218492205027104,
+          -23.55330013116506
+        ]
+      },
+      {
+        "id": 401,
+        "kind": "grass",
+        "from": [
+          -14.076315515757948,
+          27.002894886884448
+        ],
+        "to": [
+          -16.85930768351412,
+          27.311041920308092
+        ]
+      },
+      {
+        "id": 420,
+        "kind": "grass",
+        "from": [
+          -35.33942321414457,
+          -13.140122440947962
+        ],
+        "to": [
+          -36.28442761949582,
+          -11.975233315809128
+        ]
+      },
+      {
+        "id": 423,
+        "kind": "grass",
+        "from": [
+          -26.851056982529368,
+          -3.6471162130921138
+        ],
+        "to": [
+          -28.17978873233371,
+          -2.951076029581206
+        ]
+      },
+      {
+        "id": 429,
+        "kind": "grass",
+        "from": [
+          -14.994088682833738,
+          24.832353461477275
+        ],
+        "to": [
+          -17.118967529497368,
+          25.160057423921177
+        ]
+      },
+      {
+        "id": 433,
+        "kind": "grass",
+        "from": [
+          -33.894999764758445,
+          -20.819446011161457
+        ],
+        "to": [
+          -35.969123583000076,
+          -20.253309643664405
+        ]
+      },
+      {
+        "id": 443,
+        "kind": "grass",
+        "from": [
+          -19.826020278526908,
+          1.5111267997183895
+        ],
+        "to": [
+          -19.958184204081913,
+          3.005293020987593
+        ]
+      },
+      {
+        "id": 451,
+        "kind": "grass",
+        "from": [
+          -25.059697711413428,
+          -10.857183828609902
+        ],
+        "to": [
+          -23.138251866363632,
+          -8.82050863002254
+        ]
+      },
+      {
+        "id": 455,
+        "kind": "grass",
+        "from": [
+          -33.33791676462764,
+          -19.468457641570765
+        ],
+        "to": [
+          -35.63752919224964,
+          -17.871027617210867
+        ]
+      },
+      {
+        "id": 486,
+        "kind": "grass",
+        "from": [
+          -33.748956196820835,
+          -16.980063234801403
+        ],
+        "to": [
+          -35.748043462805526,
+          -16.188766765089916
+        ]
+      },
+      {
+        "id": 505,
+        "kind": "grass",
+        "from": [
+          -28.930638434225543,
+          -28.322339818624464
+        ],
+        "to": [
+          -26.646304887534235,
+          -33.21537775506648
+        ]
+      },
+      {
+        "id": 506,
+        "kind": "grass",
+        "from": [
+          -21.889181170223605,
+          5.936545181653829
+        ],
+        "to": [
+          -23.28560199839701,
+          5.388814526455947
+        ]
+      },
+      {
+        "id": 509,
+        "kind": "grass",
+        "from": [
+          -11.83831555685949,
+          38.239901935553526
+        ],
+        "to": [
+          -13.894429187340604,
+          37.61149383682327
+        ]
+      },
+      {
+        "id": 525,
+        "kind": "grass",
+        "from": [
+          -20.971717321803276,
+          -18.550237388563282
+        ],
+        "to": [
+          -14.921724783472289,
+          -18.559739290445222
+        ]
+      },
+      {
+        "id": 533,
+        "kind": "grass",
+        "from": [
+          -19.86543010303528,
+          12.218600015045663
+        ],
+        "to": [
+          -21.28303898493581,
+          12.708890804227677
+        ]
+      },
+      {
+        "id": 546,
+        "kind": "grass",
+        "from": [
+          -26.79154670342302,
+          -21.198751685899254
+        ],
+        "to": [
+          -35.93798363075208,
+          -19.515691516329724
+        ]
+      },
+      {
+        "id": 555,
+        "kind": "grass",
+        "from": [
+          -33.37786894779252,
+          -10.548414975604064
+        ],
+        "to": [
+          -33.22480524530001,
+          -9.0562449105715
+        ]
+      },
+      {
+        "id": 563,
+        "kind": "grass",
+        "from": [
+          -26.876026038853972,
+          -30.5407246669724
+        ],
+        "to": [
+          -27.44631199781146,
+          -33.28203346479434
+        ]
+      },
+      {
+        "id": 582,
+        "kind": "grass",
+        "from": [
+          -31.38468510361999,
+          -31.73474154000574
+        ],
+        "to": [
+          -32.510765843816515,
+          -33.56625516718913
+        ]
+      },
+      {
+        "id": 585,
+        "kind": "grass",
+        "from": [
+          -31.222550813823062,
+          -10.44189846402574
+        ],
+        "to": [
+          -31.467836126981197,
+          -8.962089315807999
+        ]
+      },
+      {
+        "id": 586,
+        "kind": "grass",
+        "from": [
+          -31.59537802036953,
+          -27.09715437343416
+        ],
+        "to": [
+          -35.646399091656285,
+          -27.72899951268168
+        ]
+      },
+      {
+        "id": 588,
+        "kind": "grass",
+        "from": [
+          -35.4289810108283,
+          -23.67619795709202
+        ],
+        "to": [
+          -36.23964725107681,
+          -22.41412813060802
+        ]
+      },
+      {
+        "id": 593,
+        "kind": "grass",
+        "from": [
+          -25.084560377638425,
+          -29.770777804935328
+        ],
+        "to": [
+          -25.334010739216602,
+          -33.21174780147824
+        ]
+      },
+      {
+        "id": 595,
+        "kind": "grass",
+        "from": [
+          -29.700989223148913,
+          -22.18089725894139
+        ],
+        "to": [
+          -36.33583041299535,
+          -23.113035867473997
+        ]
+      },
+      {
+        "id": 597,
+        "kind": "grass",
+        "from": [
+          -21.655086416451706,
+          -28.23356462149825
+        ],
+        "to": [
+          -22.922338339042266,
+          -33.48276194725106
+        ]
+      },
+      {
+        "id": 602,
+        "kind": "grass",
+        "from": [
+          -35.28525950292528,
+          -10.551705936638687
+        ],
+        "to": [
+          -34.80519371857537,
+          -9.130601843795203
+        ]
+      },
+      {
+        "id": 626,
+        "kind": "grass",
+        "from": [
+          -29.95176773853025,
+          -9.504667724905119
+        ],
+        "to": [
+          -30.811754542782072,
+          -8.275675171423718
+        ]
+      },
+      {
+        "id": 647,
+        "kind": "grass",
+        "from": [
+          -27.38300394988267,
+          -19.812836379029275
+        ],
+        "to": [
+          -37.286243702499206,
+          -20.776341647409073
+        ]
+      },
+      {
+        "id": 653,
+        "kind": "grass",
+        "from": [
+          -24.04181715155726,
+          -26.030212785520995
+        ],
+        "to": [
+          -26.0921262689387,
+          -33.76301515744171
+        ]
+      },
+      {
+        "id": 656,
+        "kind": "flower",
+        "from": [
+          -34.51189199989437,
+          -12.597239281913682
+        ],
+        "to": [
+          -35.66516570457234,
+          -11.63809395293671
+        ]
+      },
+      {
+        "id": 689,
+        "kind": "flower",
+        "from": [
+          -15.724341556081201,
+          22.841579326419907
+        ],
+        "to": [
+          -17.72828526253135,
+          23.62049499668135
+        ]
+      },
+      {
+        "id": 693,
+        "kind": "flower",
+        "from": [
+          -34.604655265801064,
+          -16.28995738038865
+        ],
+        "to": [
+          -35.673090482090295,
+          -14.424227981844213
+        ]
+      },
+      {
+        "id": 702,
+        "kind": "flower",
+        "from": [
+          -16.574957491143326,
+          -26.322696331891617
+        ],
+        "to": [
+          -15.111798737122639,
+          -26.653099813308852
+        ]
+      },
+      {
+        "id": 703,
+        "kind": "flower",
+        "from": [
+          -23.98189821832818,
+          -12.18855830625405
+        ],
+        "to": [
+          -23.64473152214192,
+          -8.755073397450337
+        ]
+      },
+      {
+        "id": 719,
+        "kind": "flower",
+        "from": [
+          -25.14935296874514,
+          -1.5123726586329282
+        ],
+        "to": [
+          -23.680632298604962,
+          -1.2076439381240356
+        ]
+      },
+      {
+        "id": 738,
+        "kind": "flower",
+        "from": [
+          -26.290258145850284,
+          -20.163603133975805
+        ],
+        "to": [
+          -36.37608514770179,
+          -25.147436366410773
+        ]
+      },
+      {
+        "id": 739,
+        "kind": "flower",
+        "from": [
+          -15.81156436879638,
+          -28.365120921166636
+        ],
+        "to": [
+          -14.652596410843827,
+          -27.412863985020046
+        ]
+      },
+      {
+        "id": 743,
+        "kind": "flower",
+        "from": [
+          -14.275028130899118,
+          31.76565395814124
+        ],
+        "to": [
+          -15.373145660118071,
+          30.743823300927403
+        ]
+      },
+      {
+        "id": 744,
+        "kind": "flower",
+        "from": [
+          -16.47816562288363,
+          -31.004047540885622
+        ],
+        "to": [
+          -14.997854327228346,
+          -31.246283929472003
+        ]
+      },
+      {
+        "id": 753,
+        "kind": "flower",
+        "from": [
+          -10.184597300934971,
+          37.75096438023162
+        ],
+        "to": [
+          -7.395963046648227,
+          38.002994132083685
+        ]
+      },
+      {
+        "id": 758,
+        "kind": "flower",
+        "from": [
+          -10.745888359743411,
+          17.30461245313054
+        ],
+        "to": [
+          -9.952176670618519,
+          15.306482889126618
+        ]
+      },
+      {
+        "id": 769,
+        "kind": "flower",
+        "from": [
+          -33.51385791943132,
+          -20.799091658135094
+        ],
+        "to": [
+          -36.72032330266611,
+          -22.07230795795101
+        ]
+      },
+      {
+        "id": 770,
+        "kind": "flower",
+        "from": [
+          -12.557765359957735,
+          29.439929191541488
+        ],
+        "to": [
+          -15.972961063801515,
+          29.928742350577725
+        ]
+      },
+      {
+        "id": 779,
+        "kind": "flower",
+        "from": [
+          -17.878937698380934,
+          4.784547741859735
+        ],
+        "to": [
+          -18.796457847192503,
+          3.5978899240686086
+        ]
+      },
+      {
+        "id": 788,
+        "kind": "flower",
+        "from": [
+          -16.586656309098366,
+          -27.8641483773806
+        ],
+        "to": [
+          -15.2310097409849,
+          -28.506193844899986
+        ]
+      },
+      {
+        "id": 806,
+        "kind": "stone",
+        "from": [
+          -18.901503285928378,
+          9.90613181254311
+        ],
+        "to": [
+          -17.50901326296316,
+          10.463780031353426
+        ]
+      },
+      {
+        "id": 809,
+        "kind": "stone",
+        "from": [
+          -21.238574393789108,
+          -10.183087008395947
+        ],
+        "to": [
+          -19.37290492821867,
+          -9.114547142392759
+        ]
+      },
+      {
+        "id": 810,
+        "kind": "stone",
+        "from": [
+          -15.845780111353138,
+          26.12510206006783
+        ],
+        "to": [
+          -17.180292261164503,
+          26.809994257428734
+        ]
+      },
+      {
+        "id": 819,
+        "kind": "stone",
+        "from": [
+          -32.61660681992882,
+          -10.861517602459182
+        ],
+        "to": [
+          -32.615418824817,
+          -8.711517930676042
+        ]
+      },
+      {
+        "id": 824,
+        "kind": "stone",
+        "from": [
+          -13.964299386378556,
+          25.676121628527884
+        ],
+        "to": [
+          -16.73067700131776,
+          26.108735649987313
+        ]
+      },
+      {
+        "id": 828,
+        "kind": "stone",
+        "from": [
+          -33.14158773995123,
+          -21.773867026026483
+        ],
+        "to": [
+          -35.93227611480869,
+          -22.002030113390425
+        ]
+      },
+      {
+        "id": 842,
+        "kind": "stone",
+        "from": [
+          -10.6597627682105,
+          25.11351061821447
+        ],
+        "to": [
+          -9.376368909172651,
+          25.889977103379113
+        ]
+      },
+      {
+        "id": 846,
+        "kind": "stone",
+        "from": [
+          -29.415530188961757,
+          -9.297035131114555
+        ],
+        "to": [
+          -30.843582042569608,
+          -8.838049397777256
+        ]
+      }
+    ]
+  },
+  "comments": {
+    "students": [
+      {
+        "id": "warga-13",
+        "username": "posyaryn07",
+        "source": "episode006/comments/student_01.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-14",
+        "username": "uz_daus",
+        "source": "episode006/comments/student_02.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-15",
+        "username": "capiwasa",
+        "source": "episode006/comments/student_03.png",
+        "verification": "owner-confirmed-literal"
+      },
+      {
+        "id": "warga-16",
+        "username": "Rissa-i3f",
+        "source": "episode006/comments/student_04.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-17",
+        "username": "bsk_rfi",
+        "source": "episode006/comments/student_05.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-18",
+        "username": "FaRzHaN-BoY",
+        "source": "episode006/comments/student_06.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-19",
+        "username": "MisbahulAmmar",
+        "source": "episode006/comments/student_07.png",
+        "verification": "original-screenshot"
+      },
+      {
+        "id": "warga-20",
+        "username": "athrr_0202",
+        "source": "episode006/comments/student_08.png",
+        "verification": "original-screenshot"
+      }
+    ],
+    "ideas": [
+      {
+        "username": "damar_zan",
+        "residentId": "warga-4",
+        "existing": true,
+        "file": "damar_zan.png",
+        "text": "Besarin sungai nya bang trs tambahin ikan"
+      },
+      {
+        "username": "GhanimMiyaz",
+        "displayName": "Ghanim Miyaz",
+        "residentId": "warga-21",
+        "existing": false,
+        "file": "Ghanim_Miyaz.png",
+        "text": "aku bang aku jadi kepala sekolah nya"
+      },
+      {
+        "username": "velora.nyxflare",
+        "residentId": "warga-22",
+        "existing": false,
+        "file": "velora_nyxflare.png",
+        "text": "Nama sapi: Sappy, Oopet & Rembo 🤣🤣"
+      }
+    ],
+    "applicantCount": null,
+    "followerVerification": "not-performed"
+  },
+  "editorial": {
+    "candidateCount": null,
+    "recordedCandidateCount": 361,
+    "countStatus": "VO claim only; owner data not confirmed; no numeric UI",
+    "newStreetLights": 0,
+    "teaserEpisode": 7,
+    "audio": "Original EP006 master retained intact as input; full recorded CTA replaced with complete canonical EP004 audiovisual tail, never doubled",
+    "snapshotPose": "daylight classroom inspection fixture; episode timeline separately directs the field trip and return"
+  }
+}

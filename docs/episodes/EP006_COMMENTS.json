@@ -1,0 +1,78 @@
+{
+  "students": [
+    {
+      "id": "warga-13",
+      "username": "posyaryn07",
+      "source": "episode006/comments/student_01.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-14",
+      "username": "uz_daus",
+      "source": "episode006/comments/student_02.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-15",
+      "username": "capiwasa",
+      "source": "episode006/comments/student_03.png",
+      "verification": "owner-confirmed-literal"
+    },
+    {
+      "id": "warga-16",
+      "username": "Rissa-i3f",
+      "source": "episode006/comments/student_04.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-17",
+      "username": "bsk_rfi",
+      "source": "episode006/comments/student_05.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-18",
+      "username": "FaRzHaN-BoY",
+      "source": "episode006/comments/student_06.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-19",
+      "username": "MisbahulAmmar",
+      "source": "episode006/comments/student_07.png",
+      "verification": "original-screenshot"
+    },
+    {
+      "id": "warga-20",
+      "username": "athrr_0202",
+      "source": "episode006/comments/student_08.png",
+      "verification": "original-screenshot"
+    }
+  ],
+  "ideas": [
+    {
+      "username": "damar_zan",
+      "residentId": "warga-4",
+      "existing": true,
+      "file": "damar_zan.png",
+      "text": "Besarin sungai nya bang trs tambahin ikan"
+    },
+    {
+      "username": "GhanimMiyaz",
+      "displayName": "Ghanim Miyaz",
+      "residentId": "warga-21",
+      "existing": false,
+      "file": "Ghanim_Miyaz.png",
+      "text": "aku bang aku jadi kepala sekolah nya"
+    },
+    {
+      "username": "velora.nyxflare",
+      "residentId": "warga-22",
+      "existing": false,
+      "file": "velora_nyxflare.png",
+      "text": "Nama sapi: Sappy, Oopet & Rembo 🤣🤣"
+    }
+  ],
+  "applicantCount": null,
+  "followerVerification": "not-performed"
+}

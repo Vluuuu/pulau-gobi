@@ -1,0 +1,80 @@
+{
+  "version": "EP006 handoff no-render",
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "bytes": 2698,
+      "sha256": "bd1f25a1a8d19b1e1289de539fcdf18041eb091f7bbfa2a3bdc2d74ea065de74"
+    },
+    {
+      "path": "CODEX_HANDOFF_README.md",
+      "bytes": 7854,
+      "sha256": "8477243aa96f0d22eff24cc2787fe74fb2e1bcbbdfc89fefc68f7d908bcae8d9"
+    },
+    {
+      "path": "EP006_STORYBOARD_TEKNIS_V1.md",
+      "bytes": 16984,
+      "sha256": "e26dd60f83f4ab3aaa1dd09d05b9bd47ede2f5deaa9a65d13ca438bd323050db"
+    },
+    {
+      "path": "audio/eps6.mp3",
+      "bytes": 1828790,
+      "sha256": "3c2b3ce778fdd9225507d0a6b9e83190a0c60ce3facead3e4b0f663ee5070d29"
+    },
+    {
+      "path": "comments/student_01.png",
+      "bytes": 6559,
+      "sha256": "00b3def9669dcbf94090dac1336f0a22b65ee1014019aa758b212db1b664081b"
+    },
+    {
+      "path": "comments/student_02.png",
+      "bytes": 7741,
+      "sha256": "11847a5988ef5373e9b846eb24f09cdc2c503c89a11ec70626d9d9809831656f"
+    },
+    {
+      "path": "comments/student_03.png",
+      "bytes": 7923,
+      "sha256": "df9db0812a238a75c9add292a1735882eb62d288703b1eab34aa4bce3472f861"
+    },
+    {
+      "path": "comments/student_04.png",
+      "bytes": 4673,
+      "sha256": "d87f1c634f9492126f558fbe457da15d778ce395aaf8b802782ac5259387332c"
+    },
+    {
+      "path": "comments/student_05.png",
+      "bytes": 6792,
+      "sha256": "178fb04e7e18854230605e9d6ec116ff640acc34547cd27189aa6ea537d376dc"
+    },
+    {
+      "path": "comments/student_06.png",
+      "bytes": 5259,
+      "sha256": "543fd54e64080c758f23bc1934af51fec46a9a8c89efe35bac2c53a652c85602"
+    },
+    {
+      "path": "comments/student_07.png",
+      "bytes": 5297,
+      "sha256": "63cd27b668b7b72efbfaa9687cd7579371ac16292694dbe16f7d65bbcd0770a9"
+    },
+    {
+      "path": "comments/student_08.png",
+      "bytes": 4466,
+      "sha256": "fcd79c19026bc3f778854674f4a90de6910c6f0c0219e9bb44929df135458dfa"
+    },
+    {
+      "path": "comments/damar_zan.png",
+      "bytes": 4600,
+      "sha256": "bcfd40735b2e4acc52210df6b0430d7e196cd1821a0cc05d42dd432361a57bfd"
+    },
+    {
+      "path": "comments/velora_nyxflare.png",
+      "bytes": 7965,
+      "sha256": "bb21b88838a52fcf1b91ceec43a09b4bb440b2b13969ce819135b669a8252630"
+    },
+    {
+      "path": "comments/Ghanim_Miyaz.png",
+      "bytes": 5822,
+      "sha256": "d30c3bf7809e507fc2768b67dbc2440c256d2b5cd17dcdc8a8fe8d2ace56146e"
+    }
+  ]
+}

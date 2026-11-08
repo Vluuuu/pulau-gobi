@@ -1,5 +1,7 @@
 # Pulau Gobi 3D World Viewer
 
+**Worktree EP006:** gunakan `D:\pulau-gobi\ep006-production`. Entry point bersama kini memakai `src/world/ep006/World.tsx` dan snapshot pasca-EP006: 22 warga, tiga sapi bernama, kelas dengan delapan murid, sungai/ikan, satu jembatan dan dek observasi. UI kelas adalah fixture inspeksi siang hari. Model sekolah World Polish tetap sama. Lihat `EP006_README.md` untuk perubahan source, selisih jembatan yang tidak ada pada baseline, EDL audio, dan pemeriksaan minimal. Bagian di bawah merupakan catatan viewer baseline `3759f2e`; hasil build/browser yang disebut di sana bukan hasil QA EP006.
+
 Aplikasi browser interaktif untuk inspeksi dunia pasca-EP005 dan episode berikutnya. Entry point React DOM + R3F biasa; tidak memasang Remotion composition, Player, audio, subtitle atau outro.
 
 Branch `codex/world-viewer`, dibuat dari `codex/post-ep005-world-polish` commit `9b0a22b`. Worktree: `D:/pulau-gobi/world-viewer`.

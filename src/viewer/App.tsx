@@ -55,7 +55,7 @@ export const App: React.FC = () => {
   return <div className="viewer-shell" data-ready={ready}>
     <aside className="sidebar" aria-label="Kontrol dunia">
       <header className="brand"><span className="brand-icon" aria-hidden="true">◈</span><div><h1>Pulau Gobi</h1><p>3D WORLD VIEWER</p></div><span className="live-badge">LIVE 3D</span></header>
-      <div className="world-summary"><span className="status-dot"/> Dunia pasca-EP005<span>{CURRENT_WORLD_STATE.population.residents.length} warga · {CURRENT_WORLD_STATE.population.cows.length} sapi</span></div>
+      <div className="world-summary"><span className="status-dot"/> Dunia pasca-EP006<span>{CURRENT_WORLD_STATE.population.residents.length} warga · {CURRENT_WORLD_STATE.population.cows.length} sapi</span></div>
       <button className="home-button" onClick={() => focusAsset(null)}><span aria-hidden="true">⌂</span> Kembali ke seluruh pulau</button>
       <section><div className="section-heading"><h2>Jelajahi dunia</h2><span>{WORLD_LANDMARKS.length} lokasi</span></div>
         <nav className="landmarks" aria-label="Pilih bangunan atau zona">{WORLD_LANDMARKS.map((asset, i) => <button key={asset.id} className={selected === asset.id ? 'landmark selected' : 'landmark'} aria-pressed={selected === asset.id} onClick={() => focusAsset(asset.id, asset.id === 'school' ? schoolView : 'campus')}><span className="landmark-number">{String(i + 1).padStart(2, '0')}</span><span><strong>{asset.name}</strong><small>{asset.description}</small></span><span className="landmark-arrow" aria-hidden="true">↗</span></button>)}</nav>

@@ -19,5 +19,9 @@ Belum ada yang dipilih. Aturan: **tidak ada aset masuk repo atau episode tanpa b
 | ID aset | Jenis | Sumber/URL | Lisensi dan syarat (kutip) | Atribusi wajib? | Boleh komersial? | Tanggal dicek | Dipakai di |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | _(kosong)_ | | | | | | | |
+| EP006 master VO + 11 screenshot | MP3/PNG | ZIP `PulauGobi_EP006_CODEX_HANDOFF_NO_RENDER.zip` dari pemilik | Input milik/diberikan pemilik untuk produksi; screenshot disalin autentik, tidak dibuat ulang | Mengikuti hak input pemilik | Mengikuti hak input pemilik | 2026-11-08 | EP006 |
+| EP006 action SFX | 5 WAV pendek | `scripts/ep006-assets.py` | Original procedural pada project; tanpa sample eksternal | Tidak | Ya | 2026-11-08 | EP006 |
+| EP006 world/characters | 3D procedural | Source baseline `3759f2e` + `src/world/ep006` | Reuse aset original project; identitas Gobi dan model sekolah World Polish dipertahankan | Tidak | Mengikuti project | 2026-11-08 | EP006 |
+| EP004 canonical outro; EP005 bell/cow SFX | Source composition + audio | Aset project existing, file tidak diubah | Reuse penuh sesuai permintaan pemilik; ketentuan asli tetap berlaku | Mengikuti aset asli | Mengikuti aset asli | 2026-11-08 | EP006 |
 
 Aset buatan sendiri (procedural, termasuk Gobi) dicatat sebagai `original`, dengan pemilik hak yang jelas. Untuk audio ElevenLabs, catat file, paket langganan saat dibuat, dan tanggal.

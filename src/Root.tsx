@@ -9,9 +9,11 @@ import {Episode003,EP003_DURATION_IN_FRAMES} from './Episode003Scene';
 import {Episode004VisualPilot,EP004_PILOT_DURATION} from './episode004/pilot/PilotScene';
 import {Episode004,EP004_DURATION_IN_FRAMES} from './episode004/production/Episode004';
 import {Episode005,EP005_DURATION_IN_FRAMES} from './episode005/Episode005';
+import {Episode006,EP006_DURATION_IN_FRAMES} from './episode006/Episode006';
 
 export const Root: React.FC = () => (
   <>
+  <Composition id="Episode006" component={Episode006} durationInFrames={EP006_DURATION_IN_FRAMES} fps={30} width={1080} height={1920}/>
   <Composition id="Episode005" component={Episode005} durationInFrames={EP005_DURATION_IN_FRAMES} fps={30} width={1080} height={1920}/>
   <Composition id="Episode004" component={Episode004} durationInFrames={EP004_DURATION_IN_FRAMES} fps={30} width={1080} height={1920}/>
   <Composition id="Episode004VisualPilot" component={Episode004VisualPilot} durationInFrames={EP004_PILOT_DURATION} fps={30} width={1080} height={1920}/>
