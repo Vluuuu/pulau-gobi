@@ -19,6 +19,12 @@
 
 **Aturan koordinasi:** tentukan file ownership sebelum tugas paralel. B tidak boleh menulis ulang sistem kamera F, rig D, roster E, environment A atau subtitles C tanpa sinkronisasi. E mendefinisikan **data** warga, D merender **visual**. B mengatur **kapan dan di mana** karakter/shot digunakan. Gunakan sesi seperlunya, bukan seluruh enam setiap episode.
 
+## Rujukan wajib EP007 dan seterusnya
+
+**Sebelum implementasi episode berikutnya, wajib membaca [EP006 Postmortem & Standar QA](production/EP006_POSTMORTEM_AND_FUTURE_QA.md)** bersama konteks produksi, keputusan dunia, storyboard final dan world state terbaru. EP006 sudah dipublikasikan dan tidak direvisi lagi; dokumen ini merupakan evaluasi untuk produksi mendatang.
+
+Checklist dokumen tersebut menjadi **gate QA wajib sebelum owner render/publish**: VO bebas replay/overlap tak sengaja dan wajib listening review, subtitle dengan word-level active highlight yang sinkron, sinematografi dengan intent dan konteks jelas, blocking berdasarkan ukuran tubuh sepanjang gerakan, serta outro resmi sekali lengkap dalam world state episode aktif. Untuk EP007+, ikuti batas validasi efisien dalam dokumen tersebut: satu typecheck dan grup tes terarah, ulang hanya kasus gagal setelah diperbaiki; tidak menjalankan render, still, screenshot, preview browser otomatis atau camera sweep massal atas inisiatif sendiri. Persetujuan kualitas tetap memerlukan preview penuh oleh owner di Windows, bukan hanya tes kode.
+
 ## Alur per episode
 1. ChatGPT + owner pilih komentar/kandidat, sepakati arah kreatif, hook, konsekuensi, payoff, CTA. Gunakan world snapshot episode sebelumnya.
 2. Susun naskah dan storyboard **termasuk type shot kamera** serta target close-up, aktivitas warga, dan efek pembangunan. Finalkan ide dan durasi fleksibel.
