@@ -17,30 +17,46 @@ export const bridgePoint = (along:number, y=BRIDGE.deckY, lateral=0):V3 => [BRID
 export const WEST_BANK = bridgePoint(-BRIDGE.length/2,0);
 export const EAST_BANK = bridgePoint(BRIDGE.length/2,0);
 export const OBSERVATION = {center:[-10.0,.16,21.8] as V3,width:4.6,depth:5.2};
-export const TEACHER_OBS:V3=[-9.7,.16,19.75];
-export const HEADMASTER_OBS:V3=[-11.65,.16,23.3];
+export const TEACHER_OBS:V3=[-6.9,0,20.2]; // dry east-bank teaching bay; keeps the deck aisle open
+export const HEADMASTER_OBS:V3=[-11.65,.16,23.65];
+export const GOBI_OBS:V3=[-8.25,.16,23.8];
+export const FIELD_HUB:V3=bridgePoint(-9.2,0,0);
+export const BRIDGE_PORTAL:V3=bridgePoint(-4.5,0,0);
+export const RETURN_HUB:V3=[-25.5,0,-4.5]; // west fork: no reversal across the arriving file
+// Legacy EP005 end poses are below the polished foyer floor; warga-2 stood
+// exactly on the A01 lane. Retain these visitors in the open west forecourt.
+export const SCHOOL_VISITORS:Record<string,V3>={
+  'warga-1':[-33,0,-11.8],'warga-2':[-31.6,0,-10.5],'warga-10':[-29,0,-11.4],
+  'warga-6':[-31,0,-12.6],'warga-12':[-29.6,0,-13.3],
+};
 export const FISH_TAKEOFF:V3=[-13.1,-.34,23.15];
 export const FISH_LANDING:V3=[-13.0,-.34,23.65];
 export const SEATS = Array.from({length:8},(_,i)=>{
   const x=(i%2?1:-1)*2.2,z=-.95+Math.floor(i/2)*.92;
   return {id:`student-chair-${i+1}`,position:toWorld([x,LEVELS.ground,z+.32]),desk:toWorld([x,LEVELS.ground+.78,z]),row:Math.floor(i/2)};
 });
+export function chairSideRoute(i:number):V3[]{
+  const s=SEATS[i].position,x=s[0]-Math.sign(s[0]+20)*.65,z=s[2]+.14,door=toWorld(SCHOOL_ENTRY_ROUTE[SCHOOL_ENTRY_ROUTE.length-3]);
+  // Retained left-hinged leaf extends into A01. Clear its tip before using
+  // the narrow lane beside the rear west desks; turn to the board at the chair.
+  return i%2===0&&i>=4?[door,[-20,.4,-21.12],[-21.13,.4,-21.12],[-21.13,.4,z],[x,.4,z]]:[door,[-20,.4,z],[x,.4,z]];
+}
 export function entryRoute(i:number):V3[] {
   // Formation joins the gate in short pairs, then the real doors and aisle.
   // Approach each chair from its side; do not pass through its backrest.
   const seat=SEATS[i].position;
-  return [ASSEMBLY[i],[SCHOOL_GATE[0],0,-8.8],...SCHOOL_ENTRY_ROUTE.slice(0,-1).map(toWorld),
-    [-20,LEVELS.ground,seat[2]], [seat[0]-Math.sign(seat[0]+20)*.65,LEVELS.ground,seat[2]],seat];
+  return [ASSEMBLY[i],[ASSEMBLY[i][0],0,-9.15],[-21,0,-9.15],...SCHOOL_ENTRY_ROUTE.slice(0,-2).map(toWorld),
+    ...chairSideRoute(i).slice(1),seat];
 }
 // West-bank approach goes around the river head; both bridge ends meet dry land.
 export const FIELD_PATH:readonly V3[] = [[-21,0,-10],[-27.2,0,-8],[-33.8,0,-1.8],[-34,0,5],[-29.5,0,10],[-24.5,0,14],WEST_BANK];
-export const CROSSING:readonly V3[] = [WEST_BANK,bridgePoint(-3.3),bridgePoint(3.3),EAST_BANK,[-10.1,.16,19.2]];
+export const CROSSING:readonly V3[] = [WEST_BANK,bridgePoint(-3.3),bridgePoint(3.3),EAST_BANK,[-10.1,.16,19.6]];
 // Two compact ranks, with a separate front/side teaching and principal bay.
-export const OBS_SPOTS:V3[] = Array.from({length:8},(_,i)=>[-10.9+(i%4)*.88,.16,20.65+Math.floor(i/4)*1.35]);
+export const OBS_SPOTS:V3[] = Array.from({length:8},(_,i)=>[-11.15+(i%4)*.95,.16,21.15+Math.floor(i/4)*1.30]);
 export const SCHOOL_GOBI:V3=[-25,0,-7.5];
-export const BRIDGE_GOBI:V3=[WEST_BANK[0]-.9,0,WEST_BANK[2]+1.5];
+export const BRIDGE_GOBI:V3=bridgePoint(-4.25,0,3.9);
 export const RIVER_GOBI:V3=[WEST_BANK[0]-1.0,0,WEST_BANK[2]-2.0];
 export const CLASS_GOBI:V3=[-18.7,.4,-17.65]; // foyer; never blocks teacher/board
-export const HEADMASTER_CLASS:V3=[-20.7,.4,-18.35]; // foyer side bay, clear of door flow
+export const HEADMASTER_CLASS:V3=[-22.65,.4,-17.6]; // independent foyer bay, outside both door lanes
 export const TEACHER_CLASS:V3=[-22.8,.4,-23.65];
 export const OUTRO_GOBI:V3=SCHOOL_GOBI;

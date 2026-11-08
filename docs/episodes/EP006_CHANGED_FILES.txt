@@ -1,42 +1,19 @@
-# EP006 major revision — changed-files manifest
-Baseline: 4037ea4
+# EP006 blocking and camera correction — changed files
+Baseline: c652fc9
 Original world baseline: 3759f2e
 Branch: codex/ep006-production
 
-EP006_README.md
-WORLD_VIEWER.md
-docs/LICENSES_AND_ASSETS.md
-docs/episodes/EP006_AUDIO_EDL.json
 docs/episodes/EP006_CAMERA_DIRECTION.json
-docs/episodes/EP006_MAJOR_REVISION.md
-docs/episodes/EP006_MAJOR_REVISION_REQUEST.md
-docs/episodes/EP006_REVISION_AUDIO.json
-docs/episodes/EP006_REVISION_VALIDATION.md
-docs/episodes/EP006_SHOT_EDL.csv
-docs/episodes/EP006_VALIDATION.md
+docs/episodes/EP006_CHANGED_FILES.txt
+docs/episodes/EP006_FINAL_BLOCKING_CORRECTION.md
 docs/world/EP006_STATE.json
-public/episode006/sfx/splash-contact.wav
-public/episode006/voice/story-edit.wav
-scripts/ep006-assets.py
-scripts/ep006-audio-performance.py
-scripts/ep006-metadata.mjs
+EP006_README.md
 src/episode006/ActedRig.tsx
 src/episode006/Actors.tsx
-src/episode006/Episode006.tsx
-src/episode006/Overlays.tsx
-src/episode006/audioPerformance.ts
 src/episode006/camera.ts
+src/episode006/choreography.ts
 src/episode006/direction.ts
-src/episode006/performance.ts
-src/episode006/shots.ts
-src/episode006/sounds.ts
-src/episode006/timeline.ts
-src/world/ep006/Structures.tsx
-src/world/ep006/Water.tsx
-src/world/ep006/World.tsx
-src/world/ep006/landscaping.ts
 src/world/ep006/layout.ts
 src/world/ep006/snapshot.ts
-src/world/ep006/waterModel.ts
-test/ep006-production.test.mjs
-docs/episodes/EP006_CHANGED_FILES.txt
+src/world/ep006/Structures.tsx
+test/ep006-blocking.test.mjs

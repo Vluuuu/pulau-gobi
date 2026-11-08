@@ -2,7 +2,7 @@ import React,{useMemo,useEffect} from 'react';
 import {CanvasTexture,Quaternion,Vector3} from 'three';
 import {Parts} from '../../episode004/production/Parts';
 import {part} from '../../episode004/production/part.ts';
-import {BRIDGE,OBSERVATION,CROSSING,FIELD_PATH} from './layout.ts';
+import {BRIDGE,OBSERVATION,CROSSING,FIELD_PATH,FIELD_HUB} from './layout.ts';
 import type {V3} from './layout.ts';
 import {ramp,clamp} from '../../episode006/timeline.ts';
 
@@ -25,7 +25,9 @@ export const Bridge006:React.FC<{progress:number}>=({progress})=>{
   return <group name="bridge-001" position={[...BRIDGE.center]} rotation-y={BRIDGE.angle}><Parts parts={parts}/></group>;
 };
 export const Walkway006:React.FC<{visible:boolean}>=({visible})=>{
-  const parts=useMemo(()=>[FIELD_PATH].flatMap((path,k)=>path.slice(1).map((b,i)=>{
+  // Keep the established path/trees; its west-bank fork reaches the spaced
+  // holding formation without sending the group through permanent tree 18.
+  const parts=useMemo(()=>[FIELD_PATH,[FIELD_PATH[FIELD_PATH.length-2],[-25.45,0,16.9] as V3,[-25.45,0,19.5] as V3,FIELD_HUB]].flatMap((path,k)=>path.slice(1).map((b,i)=>{
     const a=path[i];return part(`field-walkway-${k}-${i}`,'#c5b68c',[(a[0]+b[0])/2,.014,(a[2]+b[2])/2],[1.9,.026,Math.hypot(b[0]-a[0],b[2]-a[2])],'box',[0,Math.atan2(b[0]-a[0],b[2]-a[2]),0]);})),[]);
   const a=CROSSING[3],b=CROSSING[4],delta=new Vector3(b[0]-a[0],b[1]-a[1],b[2]-a[2]),q=new Quaternion().setFromUnitVectors(new Vector3(0,0,1),delta.clone().normalize());
   return visible?<group name="nature-walkway-006"><Parts parts={parts}/><mesh name="observation-access-ramp" position={[(a[0]+b[0])/2,(a[1]+b[1])/2-.018,(a[2]+b[2])/2]} quaternion={q} receiveShadow><boxGeometry args={[1.9,.036,delta.length()]}/><meshStandardMaterial color="#c5b68c" roughness={.9}/></mesh></group>:null;

@@ -51,7 +51,7 @@ export const ActedRig:React.FC<{children:React.ReactNode;frame:number;kind:'gobi
    if(side>0&&rightTarget){const p=parent.parent!.worldToLocal(new Vector3(...rightTarget));goal=p.toArray() as [number,number,number];}
    if(!gobi&&acting.shock>0)goal=lerp3(goal,[side*.34,.72+(.12*side),.27],acting.shock);
    if(!gobi&&acting.wipe>0)goal=lerp3(goal,side>0?[.08,1.12,.28]:[-.17,.65,.27],acting.wipe);
-   const ik=solveLimb(shoulder,goal,upper,lower,[side*.7,-.2,.3]),q=orient(shoulder,ik.joint),low=orient(ik.joint,ik.tip);
+   const ik=solveLimb(shoulder,goal,upper,lower,speed>.1?[0,0,1]:[side*.7,-.2,.3]),q=orient(shoulder,ik.joint),low=orient(ik.joint,ik.tip);
    parent.quaternion.copy(q);hinge.quaternion.copy(q.clone().invert().multiply(low));
    if(bone.point)bone.point.visible=side>0&&acting.point&&!chalk;
    const c=bone.hand?.getObjectByName('ep006-chalk-tip');if(c)c.visible=side>0&&chalk;

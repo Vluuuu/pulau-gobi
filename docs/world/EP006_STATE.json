@@ -1,7 +1,7 @@
 {
-  "id": "post-ep006-world-v2",
-  "schemaVersion": 3,
-  "basedOnCommit": "4037ea4",
+  "id": "post-ep006-world-v3",
+  "schemaVersion": 4,
+  "basedOnCommit": "c652fc9",
   "firstConsumerEpisode": 6,
   "publishedEpisode005": {
     "historical": true,
@@ -589,6 +589,21 @@
     ],
     "productionInterior": "intact roof/ceiling/walls; perspective cameras inside A01/foyer",
     "visitors": {
+      "warga-1": [
+        -33,
+        0,
+        -11.8
+      ],
+      "warga-2": [
+        -31.6,
+        0,
+        -10.5
+      ],
+      "warga-10": [
+        -29,
+        0,
+        -11.4
+      ],
       "warga-6": [
         -31,
         0,
@@ -1231,14 +1246,73 @@
     "width": 4.6,
     "depth": 5.2,
     "teacherBay": [
-      -9.7,
-      0.16,
-      19.75
+      -6.9,
+      0,
+      20.2
     ],
     "headmasterBay": [
       -11.65,
       0.16,
-      23.3
+      23.65
+    ],
+    "gobiBay": [
+      -8.25,
+      0.16,
+      23.8
+    ],
+    "pupilSlots": [
+      [
+        -11.15,
+        0.16,
+        21.15
+      ],
+      [
+        -10.200000000000001,
+        0.16,
+        21.15
+      ],
+      [
+        -9.25,
+        0.16,
+        21.15
+      ],
+      [
+        -8.3,
+        0.16,
+        21.15
+      ],
+      [
+        -11.15,
+        0.16,
+        22.45
+      ],
+      [
+        -10.200000000000001,
+        0.16,
+        22.45
+      ],
+      [
+        -9.25,
+        0.16,
+        22.45
+      ],
+      [
+        -8.3,
+        0.16,
+        22.45
+      ]
+    ]
+  },
+  "schoolBlocking": {
+    "gobiFoyer": [
+      -18.7,
+      0.4,
+      -17.65
+    ],
+    "headmasterFoyer": [
+      -22.65,
+      0.4,
+      -17.6
     ]
   },
   "naturePath": [

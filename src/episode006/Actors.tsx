@@ -19,22 +19,26 @@ const Bone:React.FC<{a:V3;b:V3;width:number;depth:number;color:string}>=({a,b,wi
 const Student006:React.FC<{index:number;frame:number;snapshot:boolean}>=({index:i,frame:f,snapshot})=>{
  const r=STUDENTS[i],p=studentAt(i,f,snapshot),v=r.visual,seat=p.seat,walk=Math.min(1,p.speed),cycle=footCycle(p.distance,p.speed,-1,.72),hip=.72-.15*seat-.06*walk*(1-seat)+cycle.bob*(1-seat),blink=(f+v.seed)%137<4;
  const writing=p.activity==='write'||p.activity==='note',reading=p.activity==='read',bodyY=hip+.03;
+ const chair=SEATS[i].position,dx=chair[0]-p.position[0],dz=chair[2]+.33-p.position[2];
+ const hook:V3=[Math.cos(p.heading)*dx-Math.sin(p.heading)*dz,.4+.84-p.position[1],Math.sin(p.heading)*dx+Math.cos(p.heading)*dz];
+ const bag=lerp3([cycle.sway*(1-seat),bodyY+.24,-.14],hook,p.pack),bagPosition:V3=[bag[0],bag[1]+Math.sin(p.pack*Math.PI)*.50,bag[2]];
  const idleL:V3=[-.25,-.09,.04],idleR:V3=[.25,-.09,.04];let left=idleL,right=idleR;
  if(writing){const stroke=p.action*(.5+.5*Math.sin(f*.60+i*2));right=[.17+stroke*.028,.38,.34+Math.sin(f*.43+i)*.015];left=[-.16,.34,.31];}
  if(reading){left=[-.16,.36,.28];right=[.16,.36,.28];}
  if(p.activity==='raise')right=lerp3(idleR,[.22,.82,.14],p.action);
  if(p.activity==='point')right=[.26,.25,.43];
- if(p.speed>.1){left=[-.25,-.04,Math.sin(p.stride)*.13];right=[.25,-.04,-Math.sin(p.stride)*.13];}
+ if(p.speed>.1){left=[-.235,-.04,Math.sin(p.stride)*.13];right=[.235,-.04,-Math.sin(p.stride)*.13];}
+ if(p.activity==='stow'){const hand:V3=[bagPosition[0],bagPosition[1]-bodyY,bagPosition[2]];left=lerp3(left,hand,.9);right=lerp3(right,hand,.9);}
  if(p.react>.01){left=lerp3(left,[-.38,.48,.25],p.react);right=lerp3(right,[.38,.52,.25],p.react);}
  return <group name={`resident-${r.id}`} position={[...p.position]} rotation-y={p.heading}>
   <mesh rotation-x={-Math.PI/2} position-y={.012}><circleGeometry args={[.30,12]}/><meshBasicMaterial color="#30452d" transparent opacity={.16} depthWrite={false}/></mesh>
-  {[-1,1].map(side=>{const foot=footCycle(p.distance,p.speed,side,.72),root:V3=[side*.10,hip,0],goal:V3=[side*.10,.075+foot.lift*(1-seat)+.1525*seat,foot.z*(1-seat)+.30*seat],ik=solveLimb(root,goal,.30,.34,[0,0,1]);return <React.Fragment key={`leg${side}`}>
+  <group position={[...bagPosition]} rotation-y={angleDelta(p.heading,Math.PI)*p.pack}><mesh castShadow><boxGeometry args={[.29,.31,.13]}/><meshStandardMaterial color={i%2?'#b38b65':'#627e98'}/></mesh></group>
+  {[-1,1].map(side=>{const foot=footCycle(p.distance,p.speed,side,.72),root:V3=[side*.10,hip,0],goal:V3=[side*.10+Math.sin(p.stepYaw)*foot.z*(1-seat),.075+foot.lift*(1-seat)+.1525*seat,Math.cos(p.stepYaw)*foot.z*(1-seat)+.30*Math.max(seat,p.pack)],ik=solveLimb(root,goal,.30,.34,[0,0,1]);return <React.Fragment key={`leg${side}`}>
    <Bone a={root} b={ik.joint} width={.14} depth={.15} color={v.pants}/><Bone a={ik.joint} b={ik.tip} width={.115} depth={.12} color={v.pants}/>
    <mesh position={[ik.tip[0],ik.tip[1],ik.tip[2]+.035]} castShadow><boxGeometry args={[.16,.10,.23]}/><meshStandardMaterial color="#e9dfc8"/></mesh>
   </React.Fragment>;})}
   <group position={[cycle.sway*(1-seat),bodyY,0]} rotation={[p.lean,0,-cycle.sway*.7*(1-seat)]}>
    <mesh position={[0,.22,0]} castShadow><boxGeometry args={[.36,.44,.14]}/><meshStandardMaterial color={v.shirt} flatShading/></mesh>
-   {seat<.5&&<mesh position={[0,.24,-.14]} castShadow><boxGeometry args={[.29,.31,.13]}/><meshStandardMaterial color={i%2?'#b38b65':'#627e98'}/></mesh>}
    <group position={[0,.65,0]} rotation={[p.headPitch,p.headYaw,p.react*.10]}>
     <mesh castShadow><icosahedronGeometry args={[.22,1]}/><meshStandardMaterial color={v.skin} flatShading/></mesh>
     <mesh position={[0,.035,-.02]}><sphereGeometry args={[.235,8,5,0,Math.PI*2,0,Math.PI*.55]}/><meshStandardMaterial color={v.hair}/></mesh>
@@ -44,7 +48,7 @@ const Student006:React.FC<{index:number;frame:number;snapshot:boolean}>=({index:
     {[-1,1].map(side=><mesh key={side} position={[side*.078,.01,.205]} scale-y={blink?.1:1+p.react*.5}><sphereGeometry args={[.025,6,4]}/><meshBasicMaterial color="#1b2630"/></mesh>)}
     <mesh position={[0,-.08,.204]} scale={[1+p.happy*.5,1+p.react*1.8,1]}><boxGeometry args={[.065,.025,.018]}/><meshBasicMaterial color="#995d52"/></mesh>
    </group>
-   {[-1,1].map(side=>{const root:V3=[side*.235,.38,0],goal=side<0?left:right,ik=solveLimb(root,goal,.22,.28,[side*.6,-.4,.3]);return <React.Fragment key={`arm${side}`}>
+   {[-1,1].map(side=>{const root:V3=[side*.235,.38,0],goal=side<0?left:right,ik=solveLimb(root,goal,.22,.28,p.speed>.1?[0,0,1]:[side*.6,-.4,.3]);return <React.Fragment key={`arm${side}`}>
     <Bone a={root} b={ik.joint} width={.12} depth={.14} color={v.shirt}/><Bone a={ik.joint} b={ik.tip} width={.10} depth={.10} color={v.skin}/>
     <group position={[...ik.tip]}><mesh><boxGeometry args={[.12,.075,.12]}/><meshStandardMaterial color={v.skin}/></mesh>
      {writing&&side===1&&<mesh position={[0,-.03,.03]} rotation-z={.17}><cylinderGeometry args={[.012,.012,.20,5]}/><meshStandardMaterial color="#d7b157"/></mesh>}
@@ -72,6 +76,7 @@ export const Actors006:React.FC<{frame:number;snapshot?:boolean}>=({frame:f,snap
    const p=adultAt(r.id,f,snapshot),actor=<ResidentActor resident={{id:r.id,visual:r.visual,isNewInEp003:!r.isLegacy}} pose={p} stride={p.stride} frame={f}/>;
    if(r.id!=='warga-11'&&r.id!=='warga-21')return <React.Fragment key={r.id}>{actor}</React.Fragment>;
    const a={...gestureAt(p.kind==='formal'?'formal':'present',f,r.id==='warga-11'?1200:0,r.visual.seed),shock:p.react,wipe:p.wipe};
+   if(p.speed>.1){a.left=[-.46,.04,Math.sin(p.stride)*.13];a.right=[.46,.04,-Math.sin(p.stride)*.13];}
    return <React.Fragment key={r.id}><ActedRig frame={f} kind="adult" acting={a} distance={p.distance} speed={p.speed} mouth={r.id==='warga-11'?mouth:0} rightTarget={p.handTarget} chalk={p.writing} stepYaw={'travelHeading' in p?angleDelta(p.heading,p.travelHeading):0}>{actor}</ActedRig>{r.id==='warga-21'&&<WetPrincipal frame={f} pose={p} roll={a.bodyRoll}/>}</React.Fragment>;
   })}
   {SEATS.map((s,i)=><group key={s.id} position={[...s.desk]}><mesh position={[0,.075,.04]}><boxGeometry args={[.46,.025,.29]}/><meshStandardMaterial color="#eddfba"/></mesh><mesh position={[.27,.08,.04]} rotation-z={.15}><boxGeometry args={[.10,.04,.18]}/><meshStandardMaterial color={STUDENTS[i].visual.shirt}/></mesh></group>)}
