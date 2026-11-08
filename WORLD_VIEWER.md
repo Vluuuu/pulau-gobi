@@ -1,5 +1,7 @@
 # Pulau Gobi 3D World Viewer
 
+**Revisi mayor EP006 dari 4037ea4:** CurrentWorld memakai layout v2 dengan hulu terpisah dari forecourt, dua rank murid, satu jembatan, dek/ramp, tanaman yang direlokasi dengan ID tetap, serta practical light kelas existing. Cutaway hanya opsi inspeksi manual; film produksi kini memakai bangunan utuh. Visual outro juga memakai world ini. Lihat `EP006_README.md` dan `docs/episodes/EP006_MAJOR_REVISION.md`. Belum ada preview/visual approval pada revisi ini.
+
 **Worktree EP006:** gunakan `D:\pulau-gobi\ep006-production`. Entry point bersama kini memakai `src/world/ep006/World.tsx` dan snapshot pasca-EP006: 22 warga, tiga sapi bernama, kelas dengan delapan murid, sungai/ikan, satu jembatan dan dek observasi. UI kelas adalah fixture inspeksi siang hari. Model sekolah World Polish tetap sama. Lihat `EP006_README.md` untuk perubahan source, selisih jembatan yang tidak ada pada baseline, EDL audio, dan pemeriksaan minimal. Bagian di bawah merupakan catatan viewer baseline `3759f2e`; hasil build/browser yang disebut di sana bukan hasil QA EP006.
 
 Aplikasi browser interaktif untuk inspeksi dunia pasca-EP005 dan episode berikutnya. Entry point React DOM + R3F biasa; tidak memasang Remotion composition, Player, audio, subtitle atau outro.

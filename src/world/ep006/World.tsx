@@ -34,21 +34,24 @@ const RetainedAssets:React.FC<{widen:number}>=({widen})=> <>
 </>;
 export const ChalkLesson:React.FC<{progress:number}>=({progress})=>{
   if(progress<=0)return null;
-  const points=Array.from({length:29},(_,i)=>{const t=i/28*Math.PI*2;return [-20+Math.cos(t)*.65,2.22+Math.sin(t)*.27,-24.508] as const;});
+  const points=Array.from({length:41},(_,i)=>{const t=Math.PI+i/40*Math.PI*2;return [-20.1+Math.cos(t)*.8,2.18+Math.sin(t)*.36,-24.475] as const;});
   return <group name="fish-blackboard-lesson">
-    <WorldLabel text="IKAN • AMATI • JAGA AIR" position={[-20,2.65,-24.50]} width={4.3} height={.30}/>
-    <mesh position={[-20,2.12,-24.505]}><planeGeometry args={[4.3,.65]}/><meshStandardMaterial color="#31564d"/></mesh>
+    <mesh position={[-20,2.22,-24.49]}><planeGeometry args={[4.52,1.46]}/><meshStandardMaterial color="#193d37" roughness={1}/></mesh>
+    <WorldLabel text="IKAN • AMATI • JAGA AIR" position={[-20,2.76,-24.47]} width={4.15} height={.30}/>
     <Parts parts={points.slice(1,Math.max(2,Math.floor(points.length*progress))).map((p,i)=>{const a=points[i],dx=p[0]-a[0],dy=p[1]-a[1];return part(`fish-chalk-${i}`,'#eee8c9',[(p[0]+a[0])/2,(p[1]+a[1])/2,p[2]],[Math.hypot(dx,dy),.022,.012],'box',[0,0,Math.atan2(dy,dx)]);})}/>
-    <mesh position={[-19.65,2.27,-24.48]}><sphereGeometry args={[.035,6,4]}/><meshBasicMaterial color="#eee8c9"/></mesh>
+    <mesh position={[-19.66,2.26,-24.46]}><sphereGeometry args={[.045,6,4]}/><meshBasicMaterial color="#eee8c9"/></mesh>
+    <Parts parts={[part('fish-tail-a','#eee8c9',[-21.05,2.32,-24.46],[.42,.025,.014],'box',[0,0,.65]),part('fish-tail-b','#eee8c9',[-21.05,2.04,-24.46],[.42,.025,.014],'box',[0,0,-.65])]}/>
   </group>;
 };
 export const World006:React.FC<{frame?:number;school?:SchoolAssetOptions;residents?:boolean;snapshot?:boolean}>=({frame=OUTRO_START-1,school,residents=true,snapshot=true})=>{
-  const interior=!snapshot&&shotAt(frame).interior;
-  const schoolOptions=school??{doors:'open',cutaway:interior?{room:'A01',overhead:true,walls:['front','east']}:undefined};
+  // Production is filmed inside full rooms. Viewer alone may request cutaway.
+  const schoolOptions:SchoolAssetOptions=school??{doors:'open'};
   const widen=snapshot?1:ramp(frame,E(38.74),E(43.5)),bridge=snapshot?1:ramp(frame,E(57.8),E(62.5)),fish=snapshot?1:ramp(frame,E(43.8),E(45.6));
   return <group name="post-ep006-world">
     <Terrain006 widen={widen}/><River006 frame={snapshot?9000:frame} widen={widen}/><RetainedAssets widen={widen}/>
     <PostEp005School {...schoolOptions}/><ChalkLesson progress={snapshot?1:ramp(frame,E(29.3),E(31.6))}/>
+    <group name="school-existing-ceiling-fixture-lighting"><pointLight position={[-22,3.28,-22.8]} color="#fff2d5" intensity={10} distance={12} decay={2}/><pointLight position={[-18.2,3.28,-20.7]} color="#f4f5ed" intensity={8} distance={11} decay={2}/><pointLight position={[-20,3.15,-17.6]} color="#fff1d4" intensity={5} distance={7} decay={2}/></group>
+    <Parts parts={Array.from({length:8},(_,i)=>{const x=(i%2?1:-1)*2.2,z=-.95+Math.floor(i/2)*.92;return part(`chair-footrest-${i}`,'#97724d',[-20+x,.55,-22+z+.02],[.42,.055,.18]);})}/>
     <Waterfall006 frame={snapshot?9000:frame}/><Fish006 frame={snapshot?9000:frame} reveal={fish} jumpFrame={SPLASH_FRAME}/>
     <Bridge006 progress={bridge}/><Walkway006 visible={snapshot||frame>=E(43.5)}/><Observation006 progress={snapshot?1:ramp(frame,E(62.5),E(62.94))}/>
     {residents&&<Actors006 frame={frame} snapshot={snapshot}/>}

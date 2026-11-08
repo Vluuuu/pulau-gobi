@@ -6,7 +6,9 @@ import {buildRiverBanks,buildRiverLining,buildRiverWater,buildRiverHighlights} f
 import type {RiverBuffers} from '../../episode003/world/river/riverGeometry.ts';
 import {LIP} from '../../episode005/layout.ts';
 import {RIVER_LINE,RIVER_WIDTH} from './layout.ts';
-import {widthAt,taperRiverPositions,fishAt} from './waterModel.ts';
+import {widthAt,taperRiverPositions,fishAt,splashAt,splashDropletAt,FISH_FLIGHT} from './waterModel.ts';
+import {FISH_TAKEOFF,FISH_LANDING} from './layout.ts';
+import {ramp} from '../../episode006/timeline.ts';
 import {sampleRiverTrenchHeight} from '../../episode003/world/terrain/terrainMath.ts';
 
 const geometry = (b:RiverBuffers) => {const g=new BufferGeometry();g.setAttribute('position',new BufferAttribute(b.positions,3));g.setAttribute('color',new BufferAttribute(b.colors,3));g.setIndex(new BufferAttribute(b.indices,1));g.computeVertexNormals();return g;};
@@ -50,10 +52,11 @@ export const Waterfall006:React.FC<{frame:number}>=({frame:f})=><group name="wat
 </group>;
 
 export const Fish006:React.FC<{frame:number;reveal:number;jumpFrame:number}>=({frame,reveal,jumpFrame})=><group name="river-fish-006">
-  {Array.from({length:14},(_,i)=>{const p=fishAt(i,frame,jumpFrame);return <group key={i} position={p.position} rotation-y={p.heading} scale={reveal}>
-    <mesh scale={[.10,.10,.31]}><icosahedronGeometry args={[1,1]}/><meshStandardMaterial color={i%3===0?'#e4b357':'#90bfc1'} flatShading/></mesh>
+  {Array.from({length:14},(_,i)=>{const p=fishAt(i,frame,jumpFrame);return <group key={i} position={p.position} rotation={[p.pitch,p.heading,0]} scale={reveal}>
+    <mesh scale={[i===0?.15:.10,i===0?.14:.10,i===0?.42:.31]}><icosahedronGeometry args={[1,1]}/><meshStandardMaterial color={i%3===0?'#e4b357':'#90bfc1'} flatShading/></mesh>
     <group position-z={-.28} rotation-y={Math.sin(frame*.33+i)*.45}><mesh rotation-z={Math.PI/2} scale={[.11,.17,.045]}><coneGeometry args={[1,1,3]}/><meshStandardMaterial color="#5d969f"/></mesh></group>
     {[-1,1].map(side=><mesh key={side} position={[side*.083,.035,.16]}><sphereGeometry args={[.022,5,4]}/><meshBasicMaterial color="#182e37"/></mesh>)}
   </group>;})}
-  {frame>=jumpFrame+17&&frame<jumpFrame+39&&Array.from({length:14},(_,i)=>{const t=(frame-jumpFrame-17)/22;return <mesh key={`splash${i}`} position={[-10.7+Math.sin(i*2.4)*t*.4,1.55+t*.7-t*t*.8,23+Math.cos(i*2.4)*t*.45]} scale={.035*(1-t)}><icosahedronGeometry args={[1,0]}/><meshBasicMaterial color="#d9f5f5"/></mesh>;})}
+  {Array.from({length:18},(_,i)=>{const p=splashDropletAt(i,frame);return p.visible?<mesh key={`arc${i}`} position={[...p.position]} scale={[p.scale,p.scale*1.8,p.scale]}><icosahedronGeometry args={[1,1]}/><meshBasicMaterial color="#d9f5f5"/></mesh>:null;})}
+  {[0,1,2].map(i=>{const before=frame<jumpFrame+8,origin=before?FISH_TAKEOFF:FISH_LANDING,start=before?jumpFrame-24+i*5:jumpFrame+FISH_FLIGHT+i*5,u=ramp(frame,start,start+35),visible=frame>=start&&frame<start+35;return visible?<mesh key={`ripple${i}`} position={[origin[0],-.137,origin[2]]} rotation-x={-Math.PI/2} scale={.15+u*1.1}><torusGeometry args={[1,.028,5,36]}/><meshBasicMaterial color="#d2f5ef" transparent opacity={(1-u)*.72} depthWrite={false}/></mesh>:null;})}
 </group>;

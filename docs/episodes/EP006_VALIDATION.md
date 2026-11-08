@@ -1,5 +1,7 @@
 # EP006 — minimal verification record
 
+**Catatan historis baseline 4037ea4.** Hasil revisi mayor terbaru ada di `EP006_REVISION_VALIDATION.md`; jangan menganggap hasil di bawah sebagai pemeriksaan ulang revisi mayor.
+
 Baseline `3759f2e`, branch `codex/ep006-production`.
 
 | Pemeriksaan | Status |

@@ -37,7 +37,7 @@
       "sourceOutSample": 1449420,
       "sourceInSeconds": 29.166666666666668,
       "sourceOutSeconds": 32.86666666666667,
-      "destinationFrame": 1265,
+      "destinationFrame": 1355,
       "samples": 163170
     },
     {
@@ -45,7 +45,7 @@
       "sourceOutSample": 2021250,
       "sourceInSeconds": 32.86666666666667,
       "sourceOutSeconds": 45.833333333333336,
-      "destinationFrame": 1451,
+      "destinationFrame": 1541,
       "samples": 571830
     },
     {
@@ -53,7 +53,7 @@
       "sourceOutSample": 2162370,
       "sourceInSeconds": 45.833333333333336,
       "sourceOutSeconds": 49.03333333333333,
-      "destinationFrame": 1930,
+      "destinationFrame": 2020,
       "samples": 141120
     },
     {
@@ -61,7 +61,7 @@
       "sourceOutSample": 2766540,
       "sourceInSeconds": 49.03333333333333,
       "sourceOutSeconds": 62.733333333333334,
-      "destinationFrame": 2116,
+      "destinationFrame": 2206,
       "samples": 604170
     },
     {
@@ -69,7 +69,7 @@
       "sourceOutSample": 2894430,
       "sourceInSeconds": 62.733333333333334,
       "sourceOutSeconds": 65.63333333333334,
-      "destinationFrame": 2617,
+      "destinationFrame": 2707,
       "samples": 127890
     },
     {
@@ -77,7 +77,7 @@
       "sourceOutSample": 3438330,
       "sourceInSeconds": 65.63333333333334,
       "sourceOutSeconds": 77.96666666666667,
-      "destinationFrame": 2794,
+      "destinationFrame": 2884,
       "samples": 543900
     },
     {
@@ -85,7 +85,7 @@
       "sourceOutSample": 3699990,
       "sourceInSeconds": 77.96666666666667,
       "sourceOutSeconds": 83.9,
-      "destinationFrame": 3209,
+      "destinationFrame": 3299,
       "samples": 261660
     },
     {
@@ -93,7 +93,7 @@
       "sourceOutSample": 3902850,
       "sourceInSeconds": 83.9,
       "sourceOutSeconds": 88.5,
-      "destinationFrame": 3507,
+      "destinationFrame": 3597,
       "samples": 202860
     },
     {
@@ -101,7 +101,7 @@
       "sourceOutSample": 4298280,
       "sourceInSeconds": 88.5,
       "sourceOutSeconds": 97.46666666666667,
-      "destinationFrame": 3735,
+      "destinationFrame": 3825,
       "samples": 395430
     },
     {
@@ -109,7 +109,7 @@
       "sourceOutSample": 4801020,
       "sourceInSeconds": 97.46666666666667,
       "sourceOutSeconds": 108.86666666666666,
-      "destinationFrame": 4034,
+      "destinationFrame": 4124,
       "samples": 502740
     }
   ],
@@ -131,7 +131,7 @@
     {
       "id": "entry",
       "source": 29.166666667,
-      "frames": 210,
+      "frames": 300,
       "sourceFrame": 875,
       "start": 1055
     },
@@ -140,70 +140,70 @@
       "source": 32.866666667,
       "frames": 75,
       "sourceFrame": 986,
-      "start": 1376
+      "start": 1466
     },
     {
       "id": "fish",
       "source": 45.833333333,
       "frames": 90,
       "sourceFrame": 1375,
-      "start": 1840
+      "start": 1930
     },
     {
       "id": "waterfall",
       "source": 49.033333333,
       "frames": 90,
       "sourceFrame": 1471,
-      "start": 2026
+      "start": 2116
     },
     {
       "id": "bridge",
       "source": 62.733333333,
       "frames": 90,
       "sourceFrame": 1882,
-      "start": 2527
+      "start": 2617
     },
     {
       "id": "crossing",
       "source": 65.633333333,
       "frames": 90,
       "sourceFrame": 1969,
-      "start": 2704
+      "start": 2794
     },
     {
       "id": "splash",
       "source": 77.966666667,
       "frames": 45,
       "sourceFrame": 2339,
-      "start": 3164
+      "start": 3254
     },
     {
       "id": "cows",
       "source": 83.9,
       "frames": 120,
       "sourceFrame": 2517,
-      "start": 3387
+      "start": 3477
     },
     {
       "id": "home",
       "source": 88.5,
       "frames": 90,
       "sourceFrame": 2655,
-      "start": 3645
+      "start": 3735
     },
     {
       "id": "dark",
       "source": 97.466666667,
       "frames": 30,
       "sourceFrame": 2924,
-      "start": 4004
+      "start": 4094
     },
     {
       "id": "breath",
       "source": 108.86666666666666,
-      "frames": 30,
+      "frames": 18,
       "sourceFrame": 3266,
-      "start": 4376
+      "start": 4466
     }
   ],
   "duplicateCtaReplaced": {
@@ -214,13 +214,15 @@
       109.065986
     ],
     "canonicalFile": "episode004/voice/ep004_vo_19.mp3",
-    "canonicalSourceFrame": 4162,
-    "videoDestinationFrame": 4406,
-    "framesIncludingOriginalHold": 165
+    "canonicalAudioSourceInSeconds": 0,
+    "legacyReferenceFrame": 4162,
+    "videoDestinationFrame": 4484,
+    "framesIncludingOriginalHold": 165,
+    "visualWorld": "EP006 CurrentWorld, continuous scene; EP004 visual composition is not reused"
   },
   "captionMethod": "faster-whisper-base-cpu-int8",
   "humanListeningVerified": false,
   "recordedApplicantCount": 361,
   "applicantCountOwnerConfirmed": false,
-  "durationFrames": 4571
+  "durationFrames": 4649
 }

@@ -4,11 +4,14 @@ import {CAPTIONS} from './voice.ts';
 import {masterAt,ramp,clamp} from './timeline.ts';
 import {shotAt} from './shots.ts';
 import {STUDENTS,COWS} from '../world/ep006/roster.ts';
+import {OUTRO_START} from './timeline.ts';
+import {OUTRO_CAPTIONS} from './audioPerformance.ts';
 const FONT='Arial, sans-serif';
 const Comment:React.FC<{file:string;top:number}>=({file,top})=><div style={{position:'absolute',left:110,top,width:860,padding:16,boxSizing:'border-box',borderRadius:18,background:'#25262b',boxShadow:'0 8px 24px #10222c40'}}><Img src={staticFile(`episode006/comments/${file}`)} style={{display:'block',width:'100%',height:145,objectFit:'contain'}}/></div>;
 const Label:React.FC<{text:string;top?:number}>=({text,top=505})=><div style={{position:'absolute',left:90,top,width:900,textAlign:'center',font:`bold 40px ${FONT}`,color:'#fff5da',textShadow:'0 3px 6px #14212f'}}>{text}</div>;
 export const Overlays006:React.FC<{frame:number}>=({frame:f})=>{
-  const s=shotAt(f),q=f-s.start,m=masterAt(f),caption=m===null?undefined:CAPTIONS.find(c=>m>=c.start&&m<c.end);
+  const s=shotAt(f),q=f-s.start,m=masterAt(f),outroTime=(f-OUTRO_START)/30;
+  const caption=f>=OUTRO_START?(OUTRO_CAPTIONS.find(c=>outroTime>=c.start&&outroTime<c.end)??(outroTime>=4.46?OUTRO_CAPTIONS[OUTRO_CAPTIONS.length-1]:undefined)):m===null?undefined:CAPTIONS.find(c=>m>=c.start&&m<c.end);
   const pair=['S06','S07','S08','S09'].indexOf(s.id),cow=Math.min(2,Math.floor(q/Math.max(1,(s.end-s.start)/3)));
   return <>
     {s.id==='S02'&&<Label text="KILAS BALIK EP005" top={160}/>}

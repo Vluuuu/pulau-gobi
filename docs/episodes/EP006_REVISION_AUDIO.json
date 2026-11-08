@@ -1,0 +1,15 @@
+{
+  "method": "30fps block RMS, active blocks above 0.015, gain matching; not LUFS or human listening",
+  "storyGain": 0.82,
+  "outroGain": 0.65934,
+  "storyActiveRmsBeforeGain": 0.12704398263723904,
+  "outroActiveRmsBeforeGain": 0.1579996120751252,
+  "storyActiveRmsAfterGain": 0.104176065762536,
+  "outroActiveRmsAfterGain": 0.10417546422561305,
+  "outroSamplePeakAfterGain": 0.47889074707031254,
+  "outroSha256": "f3b527f7a51c4c94d45e0b45d22da8a712e104eda49dfea58c3decb7a3fe3e07",
+  "outroDecodedSamples": 206208,
+  "outroVisualWorld": "EP006 CurrentWorld; no Episode004 composition mounted",
+  "envelopeFrames": 4649,
+  "humanListeningVerified": false
+}

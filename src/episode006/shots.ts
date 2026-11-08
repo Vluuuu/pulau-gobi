@@ -18,10 +18,10 @@ const starts:[string,number,string,boolean?,boolean?][]=[
  ['S26',E(69.06),'Damia teaches; different student actions'],['S27',E(72.69),'Serious headmaster'],
  ['S28',E(74.58),'Fish leap causes splash'],['S29',E(76.9),'Staggered reactions'],
  ['S30',E(78.2),'Velora original comment'],['S31',E(81.64),'Sappy, Oopet, Rembo'],
- ['S32',E(84.1),'Wrong cow turns'],['S33',E(86.56),'Sunset: school exit'],
- ['S34',E(90.14),'Return over bridge'],['S35',E(93.95),'Gobi sees dark path',false,true],
+ ['S32',E(84.1),'Wrong cow turns'],['S33',E(86.56),'Sunset: school geography and actual return group'],
+ ['S34',E(90.14),'Completed bridge insert and group return'],['S35',E(93.95),'Gobi sees dark path',false,true],
  ['S36',E(99.74),'Where should lights go?',false,true],['S37',hold('breath').start,'Breath and gentle transition'],
- ['S38',OUTRO_START,'Full original EP004 outro'],
+ ['S38',OUTRO_START,'Current EP006 world; complete official EP004 VO19'],
 ];
 export const SHOTS:Shot[]=starts.map((s,i)=>({id:s[0],start:s[1],end:starts[i+1]?.[1]??DURATION,intent:s[2],interior:s[3]??false,dialogue:s[4]??false}));
 export const shotAt=(f:number)=>SHOTS.find(s=>f>=s.start&&f<s.end)??SHOTS[SHOTS.length-1];
